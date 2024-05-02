@@ -1,13 +1,13 @@
 /**
-* * i18n features for Astro
-**/
+ * * i18n features for Astro
+ **/
 
-import {ui, defaultLang, routes} from './ui';
+import { ui, defaultLang, routes } from "./ui";
 
 const showDefaultLang = false;
 
 export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split('/');
+  const [, lang] = url.pathname.split("/");
   if (lang in ui) return lang as keyof typeof ui;
   return defaultLang;
 }
@@ -20,12 +20,12 @@ export function useTranslations(lang: keyof typeof ui) {
 
 export function useTranslatedPath(lang: keyof typeof ui) {
   return function translatePath(path: string, l: string = lang) {
-    const pathName = path.replaceAll('/', '');
+    const pathName = path.replaceAll("/", "");
     const hasTranslation =
       defaultLang !== l &&
       routes[l] !== undefined &&
       routes[l][pathName] !== undefined;
-    const translatedPath = hasTranslation ? '/' + routes[l][pathName] : path;
+    const translatedPath = hasTranslation ? "/" + routes[l][pathName] : path;
 
     return !showDefaultLang && l === defaultLang
       ? translatedPath
@@ -35,7 +35,7 @@ export function useTranslatedPath(lang: keyof typeof ui) {
 
 export function getRouteFromUrl(url: URL): string | undefined {
   const pathname = new URL(url).pathname;
-  const parts = pathname?.split('/');
+  const parts = pathname?.split("/");
   const path = parts.pop() || parts.pop();
 
   if (path === undefined) {
@@ -51,7 +51,7 @@ export function getRouteFromUrl(url: URL): string | undefined {
 
   const getKeyByValue = (
     obj: Record<string, string>,
-    value: string,
+    value: string
   ): string | undefined => {
     return Object.keys(obj).find((key) => obj[key] === value);
   };
