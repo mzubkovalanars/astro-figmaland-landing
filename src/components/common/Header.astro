@@ -1,0 +1,42 @@
+---
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "@/i18n/utils";
+import LanguageSelector from "@/components/LanguageSelector/LanguageSelector.astro";
+import Logo from "@public/logo-dark.svg";
+import { navLinks } from "@/utils/constants";
+import type { ui } from "@/i18n/ui";
+import MenuDrawer from "@/components/common/MenuDrawer";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<header
+  class='sticky top-0 left-0 right-0 my-0 mx-auto py-5 px-[30px] bg-transparent text-zinc-50 max-w-[1098px]'
+>
+  <div class='flex items-center'>
+    <a href='/'>
+      <img src={Logo.src} alt='figma land' width='206' height='76' />
+    </a>
+    <ul class='flex items-center gap-8 ml-11'>
+      {
+        navLinks.map((item) => (
+          <li class='p-[10px]'>
+            <a href={translatePath(item.href)}>{t(item.title)}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class='flex items-center gap-5 ml-auto'>
+      <LanguageSelector />
+      <a href={translatePath("/login/")}>
+        {t("nav.login")}
+      </a>
+    </div>
+  </div>
+  <MenuDrawer client:only />
+</header>

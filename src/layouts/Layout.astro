@@ -1,6 +1,6 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
-import LanguageSelector from '@/components/LanguageSelector/LanguageSelector.astro';
+import Header from '@/components/common/Header.astro';
 
 changeLanguage("en");
 
@@ -22,25 +22,7 @@ const { title } = Astro.props;
 		<title>{t(title)}</title>
 	</head>
 	<body>
-		<LanguageSelector />
+		<Header />
 		<slot />
 	</body>
 </html>
-<style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
