@@ -1,7 +1,9 @@
 {
   "nav.home": "Home",
-  "nav.blog": "Blog",
+  "nav.product": "Product",
   "nav.about": "About",
+  "nav.blog": "Blog",
+  "nav.contact": "Contact",
   "nav.login": "Login",
   "login.page": "Login page"
 }
