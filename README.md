@@ -5,6 +5,7 @@
 - [Astro](https://astro.build/)
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
 - [astro-i18next](https://github.com/yassinedoghri/astro-i18next)
 - [i18next](https://www.i18next.com/)
