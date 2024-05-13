@@ -13,7 +13,7 @@ export const ui = {
 
 export const routes: Record<string, Record<string, string>> = {
   no: {
-    login: "leistungen",
+    login: "logg-inn",
   },
 };
 

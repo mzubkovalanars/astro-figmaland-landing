@@ -1,9 +1,9 @@
 {
-  "nav.home": "Page d'Accueil",
-  "nav.product": "Blogue",
-  "nav.about": "À propos de",
-  "nav.blog": "Blogue",
-  "nav.contact": "Blogue",
-  "nav.login": "Login no",
-  "login.page": "Login page no"
+  "nav.home": "Hjem",
+  "nav.product": "Produkt",
+  "nav.about": "Om oss",
+  "nav.blog": "Blogg",
+  "nav.contact": "Kontakt",
+  "nav.login": "Logg inn",
+  "login.page": "Innloggingsside"
 }

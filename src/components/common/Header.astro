@@ -7,7 +7,6 @@ import {
 import LanguageSelector from "@/components/LanguageSelector/LanguageSelector.astro";
 import Logo from "@public/logo-dark.svg";
 import { navLinks } from "@/utils/constants";
-import type { ui } from "@/i18n/ui";
 import MenuDrawer from "@/components/common/MenuDrawer";
 
 const lang = getLangFromUrl(Astro.url);
@@ -22,7 +21,7 @@ const translatePath = useTranslatedPath(lang);
     <a href='/'>
       <img src={Logo.src} alt='figma land' width='206' height='76' />
     </a>
-    <ul class='flex items-center gap-8 ml-11'>
+    <ul class='items-center gap-8 ml-11 menu'>
       {
         navLinks.map((item) => (
           <li class='p-[10px]'>
@@ -33,10 +32,10 @@ const translatePath = useTranslatedPath(lang);
     </ul>
     <div class='flex items-center gap-5 ml-auto'>
       <LanguageSelector />
-      <a href={translatePath("/login/")}>
+      <a href={translatePath("/login/")} class="py-[13px] px-12 border border-white">
         {t("nav.login")}
       </a>
     </div>
+      <MenuDrawer client:only="react" lang={lang} />
   </div>
-  <MenuDrawer client:only />
 </header>

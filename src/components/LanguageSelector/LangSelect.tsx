@@ -25,13 +25,17 @@ const LangSelect: React.FC<SelectProps> = ({ lng, route }) => {
 
   return (
     <Select onValueChange={handleChange}>
-      <SelectTrigger className='w-[60px]'>
+      <SelectTrigger className='w-16'>
         <SelectValue placeholder={lng} />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className='min-w-9'>
         <SelectGroup>
           {Object.entries(languages).map(([lang, label]) => (
-            <SelectItem value={lang} key={lang}>
+            <SelectItem
+              value={lang}
+              key={lang}
+              className='text-center px-3 py-2'
+            >
               {label}
             </SelectItem>
           ))}
