@@ -4,73 +4,145 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 24 24 24;
+    --foreground: 0 0 100 60%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 68 82 254;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 2 228 192;
+    --secondary-foreground: 17 45 87;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --first-text: 0 0 0;
+    --second-text: 92 92 92;
+    --light-text: 255 255 255;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 208 208 208;
+    --input: 255 255 255;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 24 24 24;
+    --foreground: 0 0 100 60%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --primary: 68 82 254;
+    --primary-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --secondary: 2 228 192;
+    --secondary-foreground: 17 45 87;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --first-text: 0 0 0;
+    --second-text: 92 92 92;
+    --light-text: 255 255 255;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --border: 208 208 208;
+    --input: 255 255 255;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --radius: 0.5rem;
+  }
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+  @font-face {
+    font-family: "Graphik";
+    src:
+      url("/fonts/Graphik-Regular.woff") format("woff"),
+      url("/fonts/Graphik-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+  @font-face {
+    font-family: "Graphik";
+    src:
+      url("/fonts/Graphik-Medium.woff") format("woff"),
+      url("/fonts/Graphik-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "SpaceGrotesk";
+    src: url("/fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-light;
   }
+}
+
+.menu {
+  display: none;
+}
+
+.menu-select-lang {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .menu {
+    display: flex;
+  }
+
+  .menu-select-lang {
+    display: flex;
+  }
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.menu-icon.burger {
+  width: 66px;
+  height: 52px;
+  padding: 12px 0;
+  margin-left: 16px;
+  background-image: url('data:image/svg+xml,<svg width="44" height="27" viewBox="0 0 44 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0.25H44V4.66667H0V0.25ZM11 11.2917H44V15.7083H11V11.2917ZM24.75 22.3333H44V26.75H24.75V22.3333Z" fill="white"/></svg>');
+  background-size: 44px 26px;
+}
+
+.menu-icon.close {
+  width: 48px;
+  padding: 0;
+  margin-left: auto;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path stroke="%23F7FBFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.846" d="M12.715 12.686 1.286 1.258m11.429 0L1.286 12.686"></path></svg>');
+  background-size: 26px 26px;
+}
+
+@media (max-width: 600px) {
+  .drawer-content {
+    width: 100vw;
+    border: none;
+  }
+}
+
+.rounded-full {
+  display: none;
 }
