@@ -94,24 +94,6 @@
   }
 }
 
-.menu {
-  display: none;
-}
-
-.menu-select-lang {
-  display: none;
-}
-
-@media (min-width: 960px) {
-  .menu {
-    display: flex;
-  }
-
-  .menu-select-lang {
-    display: flex;
-  }
-}
-
 .menu-icon {
   cursor: pointer;
   display: flex;

@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { useMediaQuery } from "@uidotdev/usehooks";
 import { Button } from "@/lib/components/ui/button";
 import {
   Drawer,
@@ -8,19 +6,23 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "@/lib/components/ui/drawer";
-import { navLinks } from "@/utils/constants";
+import LanguageSelect from "@/components/common/LanguageSelect";
 import { useTranslations } from "@/i18n/utils";
+import { navLinks } from "@/utils/constants";
 import Logo from "@public/logo-dark.svg";
+import { useMediaQuery } from "@uidotdev/usehooks";
+import { useState } from "react";
 
 interface MenuDrawerProps {
   lang: "en" | "no";
+  route: string | undefined;
 }
 
-export default function MenuDrawer({ lang }: MenuDrawerProps) {
+export default function MenuDrawer({ lang, route }: MenuDrawerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations(lang);
 
-  const isDesktopDevice = useMediaQuery("only screen and (min-width: 960px)");
+  const isDesktopDevice = useMediaQuery("only screen and (min-width: 1090px)");
 
   if (isDesktopDevice) {
     return null;
@@ -55,7 +57,14 @@ export default function MenuDrawer({ lang }: MenuDrawerProps) {
               <a href={t(item.href)}>{t(item.title)}</a>
             </li>
           ))}
+          <a
+            href={t("/login/")}
+            className='py-[13px] px-12 mt-4 border border-white sm:flex hidden'
+          >
+            {t("nav.login")}
+          </a>
         </ul>
+        {!isDesktopDevice && <LanguageSelect lng={lang} route={route} />}
       </DrawerContent>
     </Drawer>
   );

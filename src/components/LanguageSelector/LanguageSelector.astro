@@ -1,8 +1,0 @@
----
-import { getLangFromUrl, getRouteFromUrl} from '@/i18n/utils';
-import LangSelect from "@/components/LanguageSelector/LangSelect";
-
-const lang = getLangFromUrl(Astro.url);
-const route = getRouteFromUrl(Astro.url);
----
-<LangSelect client:load lng={lang} route={route} />

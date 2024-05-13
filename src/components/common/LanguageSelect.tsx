@@ -1,4 +1,5 @@
-import * as React from "react";
+import { languages } from "@/i18n/ui";
+import { useTranslatedPath } from "@/i18n/utils";
 import {
   Select,
   SelectContent,
@@ -7,15 +8,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/lib/components/ui/select";
-import { languages } from "@/i18n/ui";
-import { useTranslatedPath } from "@/i18n/utils";
+import * as React from "react";
 
 interface SelectProps {
   lng: "en" | "no";
   route: string | undefined;
 }
 
-const LangSelect: React.FC<SelectProps> = ({ lng, route }) => {
+const LanguageSelect: React.FC<SelectProps> = ({ lng, route }) => {
   const translatePath = useTranslatedPath(lng);
 
   const handleChange = (value: string) => {
@@ -45,4 +45,4 @@ const LangSelect: React.FC<SelectProps> = ({ lng, route }) => {
   );
 };
 
-export default LangSelect;
+export default LanguageSelect;
