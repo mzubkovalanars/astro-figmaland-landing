@@ -5,5 +5,11 @@
   "nav.blog": "Blogg",
   "nav.contact": "Kontakt",
   "nav.login": "Logg inn",
-  "login.page": "Innloggingsside"
+  "login.page": "Innloggingsside",
+  "fingertipe": "Fingertipe",
+  "resources": "Ressurser",
+  "about": "Om",
+  "examples": "Eksempler",
+  "pricing": "Prising",
+  "updates": "Oppdateringer"
 }
