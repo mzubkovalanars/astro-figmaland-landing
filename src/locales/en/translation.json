@@ -5,5 +5,11 @@
   "nav.blog": "Blog",
   "nav.contact": "Contact",
   "nav.login": "Login",
-  "login.page": "Login page"
+  "login.page": "Login page",
+  "fingertipe": "Fingertipe",
+  "resources": "Resources",
+  "about": "About",
+  "examples": "Examples",
+  "pricing": "Pricing",
+  "updates": "Updates"
 }
