@@ -15,8 +15,8 @@ export default function FooterNav({ lang }: FooterNavProps) {
   const t = useTranslations(lang);
   return (
     <Accordion type='single' collapsible className='w-full sm:block hidden'>
-      {navLinksFooter.map((item) => (
-        <AccordionItem value={item.title}>
+      {navLinksFooter.map((item, i) => (
+        <AccordionItem key={item.title + i} value={item.title}>
           <AccordionTrigger className='text-xl font-medium hover:no-underline'>
             {t(item.title)}
           </AccordionTrigger>

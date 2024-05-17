@@ -9,7 +9,7 @@ import {
 import LanguageSelect from "@/components/common/LanguageSelect";
 import { useTranslations } from "@/i18n/utils";
 import { navLinks } from "@/utils/constants";
-import Logo from "@public/logo-dark.svg";
+import Logo from "@public/icons/logo-dark.svg";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { useState } from "react";
 
@@ -53,13 +53,13 @@ export default function MenuDrawer({ lang, route }: MenuDrawerProps) {
         </DrawerHeader>
         <ul className='flex flex-col flex-1 items-center justify-center'>
           {navLinks.map((item) => (
-            <li className='p-[10px]' key={item.href}>
-              <a href={t(item.href)}>{t(item.title)}</a>
+            <li className='p-[10px] line-hover' key={item.href}>
+              <a href={item.href}>{t(item.title)}</a>
             </li>
           ))}
           <a
-            href={t("/login/")}
-            className='py-[13px] px-12 mt-4 border border-white sm:flex hidden'
+            href='/login'
+            className='py-[13px] px-12 mt-4 border border-white sm:flex hidden blue-hover'
           >
             {t("nav.login")}
           </a>

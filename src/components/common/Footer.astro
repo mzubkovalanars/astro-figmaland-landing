@@ -11,8 +11,8 @@ import {
   socialContactLinks,
 } from "@/utils/constants";
 import FooterNav from "@/components/common/FooterNav";
-import MapIcon from "@public/bx-map.svg";
-import MobileIcon from "@public/phone-android.svg";
+import MapIcon from "@public/icons/bx-map.svg";
+import MobileIcon from "@public/icons/phone-android.svg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -20,7 +20,7 @@ const translatePath = useTranslatedPath(lang);
 ---
 
 <footer
-  class='mx-auto py-4 px-6 sm:py-3 sm:px-4 md:py-5 md:px-[30px] bg-transparent max-w-[1098px]'
+  class='mx-auto py-[107px] px-6 sm:py-3 sm:px-4 md:py-5 md:px-[30px] bg-transparent max-w-[1078px]'
 >
   <div class='flex items-center justify-between flex-wrap gap-[75px]'>
     <ul class='flex sm:hidden items-center md:gap-6 gap-[75px]'>
@@ -28,7 +28,7 @@ const translatePath = useTranslatedPath(lang);
           <li class='flex flex-col pr-6'>
             <p class='text-xl font-medium mb-10'>{t(item.title)}</p>
             {item.links.map((link) => (
-              <a href={translatePath(link.href)} class='mb-[18px] last:mb-0'>
+              <a href={translatePath(link.href)} class='mb-[18px] last:mb-0 line-hover'>
                 {t(link.title)}
               </a>
             ))}
@@ -43,17 +43,12 @@ const translatePath = useTranslatedPath(lang);
       </div>
       <div class='flex items-center gap-2'>
         <img src={MobileIcon.src} alt='figma land' width='44' height='44' />
-        <a href={`tel:${PHONE_COMPANY}`}>{PHONE_COMPANY}</a>
+        <a href={`tel:${PHONE_COMPANY}`} class="line-hover">{PHONE_COMPANY}</a>
       </div>
       <div class='flex items-start gap-6 py-5'>
         {socialContactLinks.map((social) => (
             <a href={social.href} target='_blank'>
-              <img
-                src={social.img.src}
-                alt={social.alt}
-                width='40'
-                height='40'
-              />
+              <img src={social.src} alt={social.alt} width='40' height='40' />
             </a>
           ))}
       </div>
