@@ -1,0 +1,22 @@
+---
+import Section from "@/components/common/Section.astro";
+import ContentsCard from "@/components/Main/ContentsSection/ContentsCard.astro";
+import { contentCards } from "@/utils/constants";
+---
+
+<Section title='main.contents' description='main.contents.desc'>
+  <Fragment slot='content-section'>
+    <div class='flex flex-wrap items-center justify-center gap-[33px] w-full max-w-[985px] mt-11'>
+      {contentCards.map((card) => (
+          <ContentsCard
+            title={card.title}
+            description={card.description}
+            src={card.src}
+            btnText={card.btnText}
+            imgWidth={card.imgWidth}
+            imgHeight={card.imgHeight}
+          />
+        ))}
+    </div>
+  </Fragment>
+</Section>

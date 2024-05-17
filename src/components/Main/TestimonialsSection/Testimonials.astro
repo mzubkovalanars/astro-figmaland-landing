@@ -1,0 +1,31 @@
+---
+import Section from "@/components/common/Section.astro";
+import TestimonialCard from "@/components/Main/TestimonialsSection/TestimonialCard.astro";
+import { testimonialCards, COUNT_ITEM_IN_COLUMN } from "@/utils/constants";
+---
+
+<Section title='main.testimonials' description=''>
+  <Fragment slot='content-section'>
+    <div
+      class='flex flex-wrap items-start justify-center gap-x-[23px] md:gap-[23px] mt-11 md:mt-10'
+    >
+      {[0, 1].map((columnIndex) => (
+          <div class='flex flex-col flex-1 gap-5 md:gap-[23px] max-w-[430px] md:max-w-[352px]'>
+            {testimonialCards
+              .slice(
+                columnIndex * COUNT_ITEM_IN_COLUMN,
+                columnIndex * COUNT_ITEM_IN_COLUMN + COUNT_ITEM_IN_COLUMN
+              )
+              .map((card) => (
+                <TestimonialCard
+                  title={card.title}
+                  role={card.role}
+                  description={card.description}
+                  src={card.src}
+                />
+              ))}
+          </div>
+        ))}
+    </div>
+  </Fragment>
+</Section>

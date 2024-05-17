@@ -1,0 +1,35 @@
+---
+import { t } from "i18next";
+
+interface Props {
+  title: string;
+  role: string;
+  description: string;
+  src: string;
+}
+
+const { title, role, description, src } = Astro.props;
+---
+
+<div
+  class='flex flex-col flex-1 flex-grow items-center justify-between p-10 sm:py-10 sm:px-6 min-w-[348px] sm:min-w-[100%] border rounded-xl border-border-secondary text-second'
+>
+  <div class='flex flex-col items-start gap-[30px] w-full text-light'>
+    <div class='flex gap-[13px] w-full font-medium'>
+      <div class='h-[50px] w-[50px]'>
+        <img src={src} alt={title} class='h-auto max-w-full' />
+      </div>
+      <div class='flex flex-col items-start'>
+        <p class='text-xl text-lg'>
+          {t(title)}
+        </p>
+        <p class='text-start'>
+          {t(role)}
+        </p>
+      </div>
+    </div>
+    <p>
+      {t(description)}
+    </p>
+  </div>
+</div>
