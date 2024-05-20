@@ -1,43 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { Button } from "@/lib/components/ui/button";
-import i18next, { t, changeLanguage } from "i18next";
+import Main from "@/components/Main.astro";
+import { t, changeLanguage } from "i18next";
 import "@/styles/globals.css";
 
 changeLanguage("en");
-
-const lang = i18next.language;
-const base = lang === "en" ? "" : `/${lang}`;
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<a href={`${base}/`}>{ t('nav.home') }</a>
-        <a href={`${base}/blog`}>{ t('nav.blog') }</a>
-        <a href={`${base}/login`}>{ t('nav.login') }</a>
-		<h1>Welcome to <span>Astro</span></h1>
-		<Button>shadcn-ui button</Button>
-	</main>
+<Layout title={t("page.title")}>
+  <Main />
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	a {
-		color: #000;
-	}
-</style>

@@ -1,12 +1,12 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
-import Header from '@/components/common/Header.astro';
+import Header from "@/components/common/Header.astro";
 import Footer from "@/components/common/Footer.astro";
 
 changeLanguage("en");
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -14,17 +14,17 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang={i18next.language}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{t(title)}</title>
-	</head>
-	<body>
-		<Header />
-		<slot />
-		<Footer />
-	</body>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{t(title)}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
 </html>
