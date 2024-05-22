@@ -8,7 +8,6 @@ import {
   useTranslations,
 } from "@/i18n/utils";
 import { navLinks } from "@/utils/constants";
-import Logo from "@public/icons/logo-dark.svg";
 
 const lang = getLangFromUrl(Astro.url);
 const route = getRouteFromUrl(Astro.url);
@@ -17,11 +16,16 @@ const translatePath = useTranslatedPath(lang);
 ---
 
 <header
-  class='z-50 sticky top-0 left-0 right-0 my-0 mx-auto py-4 md:py-[14px] paddings-x max-w-[1098px] bg-background'
+  class='z-50 sticky top-0 left-0 right-0 my-0 mx-auto py-4 md:py-[14px] paddings-x max-w-[1098px] w-full bg-background'
 >
   <div class='flex items-center'>
     <a href='/'>
-      <img src={Logo.src} alt='figma land' width='206' height='76' />
+      <img
+        src='/icons/logo-dark.svg'
+        alt='figma land'
+        width='206'
+        height='76'
+      />
     </a>
     <ul class='items-center gap-8 ml-11 lg:hidden flex'>
       {
