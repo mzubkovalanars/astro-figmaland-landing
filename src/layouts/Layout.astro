@@ -1,5 +1,6 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
+import { ViewTransitions } from "astro:transitions";
 import Header from "@/components/common/Header.astro";
 import Footer from "@/components/common/Footer.astro";
 
@@ -21,8 +22,9 @@ const { title } = Astro.props;
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{t(title)}</title>
+    <ViewTransitions />
   </head>
-  <body>
+  <body class='grid grid-rows-1 min-h-lvh'>
     <Header />
     <slot />
     <Footer />
