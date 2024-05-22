@@ -52,5 +52,15 @@
   "main.testimonials.title4": "Ralph Fisher",
   "main.testimonials.role4": "Designer",
   "main.testimonials.desc4": "Slate helps you see how many more days you need to work to reach your financial goal for the month and year. Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
-  "main.prototyping": "OpenType features and Variable fonts"
+  "main.prototyping": "OpenType features and Variable fonts",
+  "login.title": "Login to Your Account",
+  "login.desc": "Login to your account using your email or mobile number, or sign in with Google or Facebook.",
+  "login.input1": "Email / Phone number",
+  "login.input2": "6 Digit Pin",
+  "login.register.text": "Don’t have an account yet?",
+  "login.register.btn": "Register now!",
+  "login.register.forgot": "Forgot Password?",
+  "privacy-policy": "Privacy Policy"
 }
+
+

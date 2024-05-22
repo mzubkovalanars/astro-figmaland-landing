@@ -52,5 +52,13 @@
   "main.testimonials.title4": "Ralph Fisher",
   "main.testimonials.role4": "Designer",
   "main.testimonials.desc4": "Slate hjelper deg med å se hvor mange flere dager du må jobbe for å nå det økonomiske målet ditt for måneden og året. Slate hjelper deg med å se hvor mange flere dager du må jobbe for å nå det økonomiske målet ditt for måneden og året.",
-  "main.prototyping": "OpenType-funksjoner og variable skrifter"
+  "main.prototyping": "OpenType-funksjoner og variable skrifter",
+  "login.title": "Logg inn på kontoen din",
+  "login.desc": "Logg inn på kontoen din ved hjelp av e-postadressen eller mobilnummeret ditt, eller logg inn med Google eller Facebook.",
+  "login.input1": "E-post / telefonnummer",
+  "login.input2": "6-sifret PIN-kode",
+  "login.register.text": "Har du ikke en konto ennå?",
+  "login.register.btn": "Registrer deg nå!",
+  "login.register.forgot": "Glemt passord?",
+  "privacy-policy": "Privacy Policy"
 }
