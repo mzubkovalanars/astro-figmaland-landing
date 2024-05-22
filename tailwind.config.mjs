@@ -32,9 +32,11 @@ export default {
         first: "rgb(var(--first-text))",
         second: "rgb(var(--second-text))",
         light: "rgb(var(--light-text))",
+        "gray-text": "rgb(var(--gray-text))",
         border: "rgb(var(--border))",
         "border-secondary": "rgb(var(--border-secondary))",
-        input: "rgb(var(--input) / 5%)",
+        "gradient-blue": "rgb(var(--gradient-blue))",
+        "gradient-yellow": "rgb(var(--gradient-yellow))",
       },
       borderRadius: {
         xl: "calc(var(--radius) + 2px)",
@@ -46,11 +48,23 @@ export default {
         67.1: "67.1%",
       },
       backgroundImage: {
-        "custom-gradient":
+        "img-gradient":
           "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0E0E0E 66.15%)",
+        "login-gradient":
+          "linear-gradient(90deg, rgb(var(--gradient-blue)) 0%, rgb(var(--gradient-yellow)) 100%)",
       },
       height: {
         gradient: "calc(100% - 180px)",
+      },
+      letterSpacing: {
+        tightest: "-.08em",
+        tighter: "-.05em",
+        tight: "-.025em",
+        normal: "0",
+        wide: ".025em",
+        wider: ".05em",
+        widest: ".1em",
+        widest: ".25em",
       },
     },
   },

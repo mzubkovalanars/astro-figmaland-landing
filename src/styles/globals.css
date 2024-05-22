@@ -16,10 +16,14 @@
     --first-text: 0 0 0;
     --second-text: 92 92 92;
     --light-text: 255 255 255;
+    --gray-text: 137 136 137;
 
     --border: 208 208 208;
     --border-secondary: 211 211 211;
     --input: 255 255 255;
+
+    --gradient-blue: 169, 165, 253;
+    --gradient-yellow: 235, 215, 93;
 
     --radius: 0.5rem;
   }
@@ -37,10 +41,14 @@
     --first-text: 0 0 0;
     --second-text: 92 92 92;
     --light-text: 255 255 255;
+    --gray-text: 137 136 137;
 
     --border: 208 208 208;
     --border-secondary: 211 211 211;
     --input: 255 255 255;
+
+    --gradient-blue: 169, 165, 253;
+    --gradient-yellow: 235, 215, 93;
 
     --radius: 0.5rem;
   }
@@ -162,7 +170,7 @@
 }
 
 .gradient-img {
-  @apply before:block before:absolute before:bottom-[-160px] before:left-0 before:right-0 before:bg-custom-gradient;
+  @apply before:block before:absolute before:bottom-[-160px] before:left-0 before:right-0 before:bg-img-gradient;
 }
 
 .paddings-x {
@@ -179,4 +187,8 @@
 
 .blue-hover {
   @apply hover:bg-primary transition ease-in-out duration-200;
+}
+
+.login-input {
+  @apply font-inter text-lg sm:text-sm text-gray-text w-full py-4 px-8 sm:px-5  rounded-sm bg-second placeholder:text-gray-text focus:outline-none focus:border-gradient-blue focus:ring-gradient-blue focus:ring-2;
 }

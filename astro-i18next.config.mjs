@@ -9,4 +9,9 @@ export default {
       loadPath: "./src/locales/{{lng}}/{{ns}}.json",
     },
   },
+  routes: {
+    no: {
+      login: "logg-inn",
+    },
+  },
 };
