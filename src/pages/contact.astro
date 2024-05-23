@@ -1,11 +1,11 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "@/layouts/Layout.astro";
-import LoginDialog from "@/components/LoginDialog";
+import ContactDialog from "@/components/ContactDialog";
 
-changeLanguage("no");
+changeLanguage("en");
 ---
 
 <Layout title='login page'>
-  <LoginDialog client:only='react' />
+  <ContactDialog client:only='react' />
 </Layout>
