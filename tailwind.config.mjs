@@ -7,6 +7,7 @@ export default {
   prefix: "",
   theme: {
     screens: {
+      xl: { max: "1280px" },
       lg: { max: "1090px" },
       md: { max: "767px" },
       sm: { max: "500px" },
@@ -37,6 +38,8 @@ export default {
         "border-secondary": "rgb(var(--border-secondary))",
         "gradient-blue": "rgb(var(--gradient-blue))",
         "gradient-yellow": "rgb(var(--gradient-yellow))",
+        "gradient-violet": "rgb(var(--gradient-violet))",
+        "gradient-violet-secondary": "rgb(var(--gradient-violet-secondary))",
       },
       borderRadius: {
         xl: "calc(var(--radius) + 2px)",
@@ -52,6 +55,8 @@ export default {
           "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0E0E0E 66.15%)",
         "login-gradient":
           "linear-gradient(90deg, rgb(var(--gradient-blue)) 0%, rgb(var(--gradient-yellow)) 100%)",
+        "contact-gradient":
+          "linear-gradient(90deg, rgb(var(--gradient-violet)) 0%, rgb(var(--gradient-violet-secondary)) 100%)",
       },
       height: {
         gradient: "calc(100% - 180px)",

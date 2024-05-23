@@ -60,5 +60,19 @@
   "login.register.text": "Har du ikke en konto ennå?",
   "login.register.btn": "Registrer deg nå!",
   "login.register.forgot": "Glemt passord?",
-  "privacy-policy": "Privacy Policy"
+  "privacy-policy": "Privacy Policy",
+  "contact.title": "Ta kontakt",
+  "contact.desc": "Ta kontakt, og la oss skape et univers av muligheter sammen!",
+  "contact.form.title": "La oss koble sammen konstellasjoner",
+  "contact.form.desc": "La oss justere konstellasjonene våre! Strekk ut en hånd og la samarbeidets magi lyse opp himmelen vår",
+  "contact.form.input1": "Etternavn",
+  "contact.form.input2": "First Name",
+  "contact.form.input3": "E-post",
+  "contact.form.input4": "Telefonnummer",
+  "contact.form.input5": "Melding",
+  "contact.form.send": "Send det til månen",
+  "contact.form.quote": "To måneder på månen avslørte jordens skjøre skjønnhet mot en enorm stillhet, og forandret mitt syn på vår plass i universet.",
+  "contact.form.quote.author": "Irinel Traista",
+  "contact.form.success": "Takk for meldingen! Vi vil kontakte\n deg innen kort tid.",
+  "contact.form.error": "Noe gikk galt da skjemaet ble sendt. Vennligst prøv igjen."
 }

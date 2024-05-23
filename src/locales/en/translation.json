@@ -60,7 +60,19 @@
   "login.register.text": "Don’t have an account yet?",
   "login.register.btn": "Register now!",
   "login.register.forgot": "Forgot Password?",
-  "privacy-policy": "Privacy Policy"
+  "privacy-policy": "Privacy Policy",
+  "contact.title": "Get in touch",
+  "contact.desc": "Reach out, and let's create a universe of possibilities together!",
+  "contact.form.title": "Let’s connect constellations",
+  "contact.form.desc": "Let's align our constellations! Reach out and let the magic of collaboration illuminate our skies.",
+  "contact.form.input1": "Last Name",
+  "contact.form.input2": "First Name",
+  "contact.form.input3": "Email",
+  "contact.form.input4": "Phone Number",
+  "contact.form.input5": "Message",
+  "contact.form.send": "Send it to the moon",
+  "contact.form.quote": "Two lunar months revealed Earth's fragile beauty against vast silence, transforming my view of our place in the universe.",
+  "contact.form.quote.author": "Irinel Traista",
+  "contact.form.success": "Thank you for your message! Our manager will\n contact you shortly.",
+  "contact.form.error": "Something went wrong with form sending. Please, try again."
 }
-
-

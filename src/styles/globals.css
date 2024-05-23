@@ -24,6 +24,8 @@
 
     --gradient-blue: 169, 165, 253;
     --gradient-yellow: 235, 215, 93;
+    --gradient-violet: 118, 58, 245;
+    --gradient-violet-secondary: 166, 4, 242;
 
     --radius: 0.5rem;
   }
@@ -49,6 +51,8 @@
 
     --gradient-blue: 169, 165, 253;
     --gradient-yellow: 235, 215, 93;
+    --gradient-violet: 118, 58, 245;
+    --gradient-violet-secondary: 166, 4, 242;
 
     --radius: 0.5rem;
   }
@@ -100,12 +104,17 @@
   body {
     @apply bg-background text-light;
   }
+
+  textarea {
+    resize: none;
+  }
 }
 
 @layer utilities {
   .filter-none {
     filter: none;
   }
+
   .filter-grayscale {
     filter: grayscale(100%);
   }
@@ -156,6 +165,7 @@
   &.small {
     @apply py-[14px] px-[72px];
   }
+
   &.small--secondary {
     @apply py-[14px] px-[50px];
   }
@@ -190,5 +200,9 @@
 }
 
 .login-input {
-  @apply font-inter text-lg sm:text-sm text-gray-text w-full py-4 px-8 sm:px-5  rounded-sm bg-second placeholder:text-gray-text focus:outline-none focus:border-gradient-blue focus:ring-gradient-blue focus:ring-2;
+  @apply font-inter text-lg sm:text-sm text-gray-text w-full py-4 px-8 sm:px-5 rounded-sm bg-second placeholder:text-gray-text focus:outline-none focus:border-gradient-blue focus:ring-gradient-blue focus:ring-2;
+}
+
+.contact-input {
+  @apply font-inter sm:text-sm text-white w-full py-3 px-4 rounded-[5px] border border-white/20 bg-white/5 placeholder:text-white focus:outline-none focus:border-gradient-violet focus:ring-gradient-violet focus:ring-1;
 }
