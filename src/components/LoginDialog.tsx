@@ -31,10 +31,8 @@ const LoginDialog: React.FC = () => {
         className='gap-0 sm:max-w-auto max-w-[1440px] pt-10 border-none'
       >
         <DialogTrigger asChild className='flex ml-auto w-max'>
-          <DialogClose>
-            <button aria-label='Close' onClick={handleClose}>
-              <X className='h-6 w-6' />
-            </button>
+          <DialogClose onClick={handleClose}>
+            <X className='h-6 w-6' />
           </DialogClose>
         </DialogTrigger>
         <DialogHeader className='gap-5 sm:pt-20'>
