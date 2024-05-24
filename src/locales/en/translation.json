@@ -53,6 +53,8 @@
   "main.testimonials.role4": "Designer",
   "main.testimonials.desc4": "Slate helps you see how many more days you need to work to reach your financial goal for the month and year. Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
   "main.prototyping": "OpenType features and Variable fonts",
+  "login.page.title": "FigmaLand | Login Page",
+  "login.page.description": "Login to Figma Land to access your design projects, collaborate with your team in real time, and bring your creative ideas to life with our powerful, cloud-based design platform.",
   "login.title": "Login to Your Account",
   "login.desc": "Login to your account using your email or mobile number, or sign in with Google or Facebook.",
   "login.input1": "Email / Phone number",
@@ -61,6 +63,8 @@
   "login.register.btn": "Register now!",
   "login.register.forgot": "Forgot Password?",
   "privacy-policy": "Privacy Policy",
+  "contact.page.title": "FigmaLand | Contact Page",
+  "contact.page.description": "Get in touch with the Figma Land team for support, inquiries, or feedback. We're here to help you make the most of our design platform and ensure your creative projects succeed.",
   "contact.title": "Get in touch",
   "contact.desc": "Reach out, and let's create a universe of possibilities together!",
   "contact.form.title": "Let’s connect constellations",
@@ -74,5 +78,7 @@
   "contact.form.quote": "Two lunar months revealed Earth's fragile beauty against vast silence, transforming my view of our place in the universe.",
   "contact.form.quote.author": "Irinel Traista",
   "contact.form.success": "Thank you for your message! Our manager will\n contact you shortly.",
-  "contact.form.error": "Something went wrong with form sending. Please, try again."
+  "contact.form.error": "Something went wrong with form sending. Please, try again.",
+  "blog.page.title": "FigmaLand | Blog",
+  "blog.page.description": "Discover the latest insights, tips, and tutorials on Figma Land's blog. Stay updated on design trends, explore new features, and learn how to maximize your creativity with our powerful design platform."
 }

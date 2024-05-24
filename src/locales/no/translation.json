@@ -53,6 +53,8 @@
   "main.testimonials.role4": "Designer",
   "main.testimonials.desc4": "Slate hjelper deg med å se hvor mange flere dager du må jobbe for å nå det økonomiske målet ditt for måneden og året. Slate hjelper deg med å se hvor mange flere dager du må jobbe for å nå det økonomiske målet ditt for måneden og året.",
   "main.prototyping": "OpenType-funksjoner og variable skrifter",
+  "login.page.title": "FigmaLand | Innloggingsside",
+  "login.page.description": "Logg inn på Figma Land for å få tilgang til designprosjektene dine, samarbeide med teamet ditt i sanntid og gi liv til de kreative ideene dine med vår kraftige, skybaserte designplattform.",
   "login.title": "Logg inn på kontoen din",
   "login.desc": "Logg inn på kontoen din ved hjelp av e-postadressen eller mobilnummeret ditt, eller logg inn med Google eller Facebook.",
   "login.input1": "E-post / telefonnummer",
@@ -61,6 +63,8 @@
   "login.register.btn": "Registrer deg nå!",
   "login.register.forgot": "Glemt passord?",
   "privacy-policy": "Privacy Policy",
+  "contact.page.title": "FigmaLand | Kontaktside",
+  "contact.page.description": "Ta kontakt med Figma Land-teamet for support, spørsmål eller tilbakemeldinger. Vi er her for å hjelpe deg med å få mest mulig ut av designplattformen vår og sikre at dine kreative prosjekter lykkes.",
   "contact.title": "Ta kontakt",
   "contact.desc": "Ta kontakt, og la oss skape et univers av muligheter sammen!",
   "contact.form.title": "La oss koble sammen konstellasjoner",
@@ -74,5 +78,7 @@
   "contact.form.quote": "To måneder på månen avslørte jordens skjøre skjønnhet mot en enorm stillhet, og forandret mitt syn på vår plass i universet.",
   "contact.form.quote.author": "Irinel Traista",
   "contact.form.success": "Takk for meldingen! Vi vil kontakte\n deg innen kort tid.",
-  "contact.form.error": "Noe gikk galt da skjemaet ble sendt. Vennligst prøv igjen."
+  "contact.form.error": "Noe gikk galt da skjemaet ble sendt. Vennligst prøv igjen.",
+  "blog.page.title": "FigmaLand | Blogg",
+  "blog.page.description": "Oppdag de nyeste innsiktene, tipsene og veiledningene på Figma Lands blogg. Hold deg oppdatert på designtrender, utforsk nye funksjoner og lær hvordan du kan maksimere kreativiteten din med vår kraftige designplattform."
 }
