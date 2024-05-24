@@ -28,7 +28,7 @@ const LanguageSelect: React.FC<SelectProps> = ({ lng, route }) => {
       <SelectTrigger className='w-16'>
         <SelectValue placeholder={lng} />
       </SelectTrigger>
-      <SelectContent className='min-w-9'>
+      <SelectContent className='min-w-9 z-50 bg-background'>
         <SelectGroup>
           {Object.entries(languages).map(([lang, label]) => (
             <SelectItem
