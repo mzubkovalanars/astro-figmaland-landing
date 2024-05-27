@@ -1,0 +1,11 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "@/layouts/Layout.astro";
+import LoginDialog from "@/components/LoginDialog";
+
+changeLanguage("no");
+---
+
+<Layout title='login.page' description='login.page.description'>
+  <LoginDialog client:only='react' />
+</Layout>

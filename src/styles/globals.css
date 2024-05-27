@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 24 24 24;
+    --foreground: 0 0 100 60%;
+
+    --primary: 68 82 254;
+    --primary-foreground: 52 52 52;
+
+    --secondary: 2 228 192;
+    --secondary-foreground: 30 30 30;
+
+    --first-text: 0 0 0;
+    --second-text: 92 92 92;
+    --light-text: 255 255 255;
+    --gray-text: 137 136 137;
+
+    --border: 208 208 208;
+    --border-secondary: 211 211 211;
+    --input: 255 255 255;
+
+    --gradient-blue: 169, 165, 253;
+    --gradient-yellow: 235, 215, 93;
+    --gradient-violet: 118, 58, 245;
+    --gradient-violet-secondary: 166, 4, 242;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 24 24 24;
+    --foreground: 0 0 100 60%;
+
+    --primary: 68 82 254;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 2 228 192;
+    --secondary-foreground: 17 45 87;
+
+    --first-text: 0 0 0;
+    --second-text: 92 92 92;
+    --light-text: 255 255 255;
+    --gray-text: 137 136 137;
+
+    --border: 208 208 208;
+    --border-secondary: 211 211 211;
+    --input: 255 255 255;
+
+    --gradient-blue: 169, 165, 253;
+    --gradient-yellow: 235, 215, 93;
+    --gradient-violet: 118, 58, 245;
+    --gradient-violet-secondary: 166, 4, 242;
+
+    --radius: 0.5rem;
+  }
+
+  @font-face {
+    font-family: "Graphik";
+    src:
+      url("/fonts/Graphik-Regular.woff") format("woff"),
+      url("/fonts/Graphik-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Graphik";
+    src:
+      url("/fonts/Graphik-Medium.woff") format("woff"),
+      url("/fonts/Graphik-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "SpaceGrotesk";
+    src: url("/fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  body {
+    @apply bg-background text-light;
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
+@layer utilities {
+  .filter-none {
+    filter: none;
+  }
+
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.menu-icon.burger {
+  width: 66px;
+  height: 52px;
+  padding: 12px 0;
+  background-image: url('data:image/svg+xml,<svg width="44" height="27" viewBox="0 0 44 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0.25H44V4.66667H0V0.25ZM11 11.2917H44V15.7083H11V11.2917ZM24.75 22.3333H44V26.75H24.75V22.3333Z" fill="white"/></svg>');
+  background-size: 44px 26px;
+}
+
+.menu-icon.close {
+  width: 48px;
+  padding: 0;
+  margin-left: auto;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none"><path stroke="%23F7FBFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.846" d="M12.715 12.686 1.286 1.258m11.429 0L1.286 12.686"></path></svg>');
+  background-size: 26px 26px;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  .drawer-content {
+    width: 100vw;
+    border: none;
+  }
+}
+
+.rounded-full {
+  display: none;
+}
+
+.btn {
+  @apply cursor-pointer rounded-none font-normal py-5 px-10 h-max text-white;
+}
+
+.btn-primary {
+  @apply py-5 px-10 text-white bg-primary hover:bg-secondary transition ease-in-out duration-200;
+
+  &.small {
+    @apply py-[14px] px-[72px];
+  }
+
+  &.small--secondary {
+    @apply py-[14px] px-[50px];
+  }
+}
+
+.btn-secondary {
+  @apply py-5 px-10 text-white border border-white hover:bg-primary hover:border-primary transition ease-in-out duration-200;
+
+  &.small {
+    @apply py-[14px];
+  }
+}
+
+.gradient-img {
+  @apply before:block before:absolute before:bottom-[-160px] before:left-0 before:right-0 before:bg-img-gradient;
+}
+
+.paddings-x {
+  @apply px-6 sm:px-4 md:px-[16px];
+}
+
+.section {
+  @apply flex flex-col items-center py-[50px] px-6 sm:px-4 md:px-[30px];
+}
+
+.line-hover {
+  @apply relative after:absolute after:bg-border after:bottom-0 after:left-0 after:h-[2px] after:w-full after:translate-y-1 after:opacity-0 hover:after:translate-y-0 hover:after:opacity-100 after:transition after:ease-in-out after:duration-200;
+}
+
+.blue-hover {
+  @apply hover:bg-primary transition ease-in-out duration-200;
+}
+
+.login-input {
+  @apply font-inter text-lg sm:text-sm text-gray-text w-full py-4 px-8 sm:px-5 rounded-sm bg-second placeholder:text-gray-text focus:outline-none focus:border-gradient-blue focus:ring-gradient-blue focus:ring-2;
+}
+
+.contact-input {
+  @apply font-inter sm:text-sm text-white w-full py-3 px-4 rounded-[5px] border border-white/20 bg-white/5 placeholder:text-white focus:outline-none focus:border-gradient-violet focus:ring-gradient-violet focus:ring-1;
+}
+
+.article-blog {
+  @apply font-grotesk;
+
+  ol {
+    @apply px-5 mt-5 list-decimal;
+  }
+
+  li {
+    @apply mb-7;
+  }
+
+  h2 {
+    @apply text-2xl text-center pb-2 mt-10;
+  }
+
+  h3 {
+    @apply text-xl my-3 first:mt-0;
+  }
+
+  h3 + p {
+    @apply mb-5;
+  }
+
+  p {
+    @apply font-inter;
+  }
+}
