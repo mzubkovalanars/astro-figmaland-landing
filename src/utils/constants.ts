@@ -147,3 +147,5 @@ export const testimonialCards = [
 ];
 
 export const COUNT_ITEM_IN_COLUMN = 2;
+
+export const API_PRODUCTS_LIST = "https://freetestapi.com/api/v1/products";
