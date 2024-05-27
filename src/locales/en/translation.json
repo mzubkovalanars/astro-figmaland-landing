@@ -80,5 +80,8 @@
   "contact.form.success": "Thank you for your message! Our manager will\n contact you shortly.",
   "contact.form.error": "Something went wrong with form sending. Please, try again.",
   "blog.page.title": "FigmaLand | Blog",
-  "blog.page.description": "Discover the latest insights, tips, and tutorials on Figma Land's blog. Stay updated on design trends, explore new features, and learn how to maximize your creativity with our powerful design platform."
+  "blog.page.description": "Discover the latest insights, tips, and tutorials on Figma Land's blog. Stay updated on design trends, explore new features, and learn how to maximize your creativity with our powerful design platform.",
+  "product.page.title": "FigmaLand | Product Page",
+  "product.price": "Price",
+  "product.buy": "Add to Cart"
 }
