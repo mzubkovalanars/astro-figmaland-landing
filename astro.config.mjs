@@ -7,9 +7,14 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind({
-    applyBaseStyles: false
-  }), astroI18next(), mdx()],
+  integrations: [
+    react(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    astroI18next(),
+    mdx(),
+  ],
   output: "server",
-  adapter: vercel()
+  adapter: vercel(),
 });
