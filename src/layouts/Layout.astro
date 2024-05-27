@@ -1,29 +1,21 @@
 ---
-import i18next, { t, changeLanguage } from "i18next";
-import { ViewTransitions } from "astro:transitions";
+import i18next, { changeLanguage } from "i18next";
+import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/common/Header.astro";
 import Footer from "@/components/common/Footer.astro";
-import "@/styles/globals.css";
-
-changeLanguage("en");
 
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={i18next.language}>
   <head>
-    <meta charset='UTF-8' />
-    <meta name='description' content='Astro description' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
-    <title>{t(title)}</title>
-    <ViewTransitions />
+    <BaseHead title={title} description={description} />
   </head>
   <body class='grid grid-rows-1 min-h-lvh'>
     <Header />

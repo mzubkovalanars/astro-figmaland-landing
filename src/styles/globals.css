@@ -206,3 +206,31 @@
 .contact-input {
   @apply font-inter sm:text-sm text-white w-full py-3 px-4 rounded-[5px] border border-white/20 bg-white/5 placeholder:text-white focus:outline-none focus:border-gradient-violet focus:ring-gradient-violet focus:ring-1;
 }
+
+.article-blog {
+  @apply font-grotesk;
+
+  ol {
+    @apply px-5 mt-5 list-decimal;
+  }
+
+  li {
+    @apply mb-7;
+  }
+
+  h2 {
+    @apply text-2xl text-center pb-2 mt-10;
+  }
+
+  h3 {
+    @apply text-xl my-3 first:mt-0;
+  }
+
+  h3 + p {
+    @apply mb-5;
+  }
+
+  p {
+    @apply font-inter;
+  }
+}

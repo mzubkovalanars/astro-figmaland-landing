@@ -1,11 +1,11 @@
 ---
-import { t, changeLanguage } from "i18next";
+import { changeLanguage } from "i18next";
 import Layout from "@/layouts/Layout.astro";
 import Main from "@/components/Main.astro";
 
 changeLanguage("en");
 ---
 
-<Layout title={t("page.title")}>
+<Layout title='page.title' description='page.description'>
   <Main />
 </Layout>

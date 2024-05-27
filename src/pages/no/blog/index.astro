@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import { changeLanguage } from "i18next";
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import FormattedDate from "@/components/Blog/FormattedDate.astro";
+import { getLangFromUrl } from "@/i18n/utils";
+
+changeLanguage("no");
+
+const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <BaseHead title='blog.page.title' description='blog.page.description' />
+  </head>
+  <body>
+    <Header />
+    <main class='font-grotesk w-[1020px] lg:w-full my-0 mx-auto'>
+      <section class='px-5 md:px-4 md:pb-16'>
+        <ul class='flex flex-wrap lg:justify-center gap-x-6 gap-y-10'>
+          {posts.map((post) => (
+              <li class='w-[calc(50%-1rem)] first:w-full lg:first:w-auto lg:w-auto text-center hover:scale-105 transition-transform ease-in-out duration-200 hover:shadow-lg hover:shadow-indigo-500/50'>
+                <a href={`/blog/${post.slug}/`}>
+                  <Image
+                    width={720}
+                    height={360}
+                    src={post.data.image}
+                    alt=''
+                    quality='max'
+                    class='mb-5 first:w-full'
+                  />
+                  <h4 class='text-3xl'>{post.data.title}</h4>
+                  <p class='date'>
+                    <FormattedDate date={post.data.pubDate} />
+                  </p>
+                </a>
+              </li>
+            ))}
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
