@@ -45,7 +45,7 @@ const ContactDialog: React.FC = () => {
   const t = useTranslations(i18next.language as "en" | "no");
 
   const handleClose = () => {
-    location.replace("/");
+    location.replace(i18next.language === "en" ? "/" : "/no");
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
