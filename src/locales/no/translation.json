@@ -82,6 +82,7 @@
   "blog.page.title": "FigmaLand | Blogg",
   "blog.page.description": "Oppdag de nyeste innsiktene, tipsene og veiledningene på Figma Lands blogg. Hold deg oppdatert på designtrender, utforsk nye funksjoner og lær hvordan du kan maksimere kreativiteten din med vår kraftige designplattform.",
   "product.page.title": "FigmaLand | Produktside",
-  "product.price": "Pris",
-  "product.buy": "Legg i handlekurven"
+  "product.price": "Pris:",
+  "product.buy": "Legg i handlekurven",
+  "product.ratings": "vurderinger"
 }
