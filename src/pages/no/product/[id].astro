@@ -5,7 +5,7 @@ import ProductSingle from "@/components/Products/ProductSingle.astro";
 import type { Product } from "@/utils/interfaces";
 import { API_PRODUCTS_LIST } from "@/utils/constants";
 
-changeLanguage("en");
+changeLanguage("no");
 
 const response = await fetch(API_PRODUCTS_LIST);
 const data: Product[] = await response.json();
