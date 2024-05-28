@@ -18,8 +18,8 @@ interface SelectProps {
 const LanguageSelect: React.FC<SelectProps> = ({ lng, route }) => {
   const translatePath = useTranslatedPath(lng);
 
-  const handleChange = (value: string) => {
-    const newPath = translatePath(`/${route ? route : ""}`, value);
+  const handleChange = (value: "en" | "no") => {
+    const newPath = translatePath(route ? route : "", value);
     location.replace(newPath);
   };
 

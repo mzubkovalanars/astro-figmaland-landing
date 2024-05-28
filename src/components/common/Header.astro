@@ -10,7 +10,6 @@ import {
 import { navLinks } from "@/utils/constants";
 
 const lang = getLangFromUrl(Astro.url);
-const route = getRouteFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
@@ -40,7 +39,7 @@ const translatePath = useTranslatedPath(lang);
     </ul>
     <div class='flex items-center gap-5 ml-auto'>
       <div class='lg:hidden'>
-        <LanguageSelect client:load lng={lang} route={route} />
+        <LanguageSelect client:load lng={lang} route={Astro.url.pathname} />
       </div>
       <a
         href={translatePath("/login/")}
@@ -49,6 +48,6 @@ const translatePath = useTranslatedPath(lang);
         {t("nav.login")}
       </a>
     </div>
-    <MenuDrawer client:only='react' lang={lang} route={route} />
+    <MenuDrawer client:only='react' lang={lang} route={Astro.url.pathname} />
   </div>
 </header>
