@@ -28,7 +28,10 @@ const translatePath = useTranslatedPath(lang);
           <li class='flex flex-col pr-6'>
             <p class='text-xl font-medium mb-10'>{t(item.title)}</p>
             {item.links.map((link) => (
-              <a href={translatePath(link.href)} class='mb-[18px] last:mb-0 line-hover'>
+              <a
+                href={translatePath(link.href)}
+                class='w-max mb-[18px] last:mb-0 line-hover'
+              >
                 {t(link.title)}
               </a>
             ))}
@@ -43,7 +46,7 @@ const translatePath = useTranslatedPath(lang);
       </div>
       <div class='flex items-center gap-2'>
         <img src={MobileIcon.src} alt='figma land' width='44' height='44' />
-        <a href={`tel:${PHONE_COMPANY}`} class="line-hover">{PHONE_COMPANY}</a>
+        <a href={`tel:${PHONE_COMPANY}`} class='line-hover'>{PHONE_COMPANY}</a>
       </div>
       <div class='flex items-start gap-6 py-5'>
         {socialContactLinks.map((social) => (
