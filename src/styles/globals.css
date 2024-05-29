@@ -200,7 +200,7 @@
 }
 
 .login-input {
-  @apply font-inter text-lg sm:text-sm text-gray-text w-full py-4 px-8 sm:px-5 rounded-sm bg-second placeholder:text-gray-text focus:outline-none focus:border-gradient-blue focus:ring-gradient-blue focus:ring-2;
+  @apply font-inter text-lg sm:text-sm text-white w-full py-4 px-8 sm:px-5 rounded-sm bg-second placeholder:text-white focus:outline-none focus:border-gradient-blue focus:ring-gradient-blue focus:ring-2;
 }
 
 .contact-input {

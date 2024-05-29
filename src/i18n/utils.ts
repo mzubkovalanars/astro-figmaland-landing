@@ -2,7 +2,7 @@
  * * i18n features for Astro
  **/
 
-import { ui, defaultLang, routes, languages } from "./ui";
+import { ui, defaultLang, routes } from "./ui";
 
 const showDefaultLang = false;
 
