@@ -25,7 +25,7 @@ const LanguageSelect: React.FC<SelectProps> = ({ lng, route }) => {
 
   return (
     <Select onValueChange={handleChange}>
-      <SelectTrigger className='w-16'>
+      <SelectTrigger className='w-16' aria-label={lng}>
         <SelectValue placeholder={lng} />
       </SelectTrigger>
       <SelectContent className='min-w-9 z-50 bg-background'>

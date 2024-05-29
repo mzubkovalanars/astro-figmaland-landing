@@ -72,7 +72,7 @@ const ContactDialog: React.FC = () => {
         className='flex flex-col items-center justify-center gap-0 sm:max-w-auto max-w-[1440px] w-full p-10 sm:py-5 sm:px-4 border-none bg-background'
       >
         <DialogTrigger asChild className='flex ml-auto w-max'>
-          <DialogClose onClick={handleClose}>
+          <DialogClose onClick={handleClose} aria-label='close dialog'>
             <X className='h-6 w-6' />
           </DialogClose>
         </DialogTrigger>
@@ -165,7 +165,7 @@ const ContactDialog: React.FC = () => {
                 </div>
               </form>
               <div className='flex md:hidden flex-col flex-1 justify-center w-full min-w-[288px]'>
-                <div className="flex flex-col justify-end px-5 pb-12 text-[16px] bg-[url('/images/astronaut.png')] bg-center bg-no-repeat max-w-[516px] h-[536px] w-full">
+                <div className="flex flex-col justify-end px-5 pb-12 text-[16px] bg-[url('/images/astronaut.webp')] bg-center bg-no-repeat max-w-[516px] h-[536px] w-full">
                   <blockquote>"{t("contact.form.quote")}"</blockquote>
                   <p className='font-medium'>
                     {t("contact.form.quote.author")}

@@ -31,7 +31,7 @@ const LoginDialog: React.FC = () => {
         className='gap-0 sm:max-w-auto max-w-[1440px] pt-10 border-none'
       >
         <DialogTrigger asChild className='flex ml-auto w-max'>
-          <DialogClose onClick={handleClose}>
+          <DialogClose onClick={handleClose} aria-label='close dialog'>
             <X className='h-6 w-6' />
           </DialogClose>
         </DialogTrigger>
@@ -67,7 +67,12 @@ const LoginDialog: React.FC = () => {
                 className='text-lg sm:text-sm leading-6 justify-between h-full py-5 px-8 sm:px-5 bg-login-gradient'
               >
                 <p className='py-1 px-4'>{t("login.title")}</p>
-                <img src='/icons/arrow-right.svg' alt='icon' />
+                <img
+                  src='/icons/arrow-right.svg'
+                  alt='arrow icon'
+                  width='28'
+                  height='22'
+                />
               </Button>
             </form>
             <div className='flex gap-1 items-center text-xs mt-1'>
