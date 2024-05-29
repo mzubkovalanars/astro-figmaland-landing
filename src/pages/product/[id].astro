@@ -1,0 +1,27 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "@/layouts/Layout.astro";
+import ProductSingle from "@/components/Products/ProductSingle.astro";
+import type { Product } from "@/utils/interfaces";
+import { API_PRODUCTS_LIST } from "@/utils/constants";
+
+changeLanguage("en");
+
+const response = await fetch(API_PRODUCTS_LIST);
+const data: Product[] = await response.json();
+const { id } = Astro.params;
+const page = data.find((page) => page.id.toString() === id);
+if (!page)
+    return Astro.redirect("/404");
+const { name, price, brand, rating, image } = page;
+---
+
+<Layout title={name} description={name + brand}>
+  <ProductSingle
+    name={name}
+    price={price}
+    brand={brand}
+    rating={rating}
+    image={image}
+  />
+</Layout>

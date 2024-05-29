@@ -1,0 +1,12 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "@/layouts/Layout.astro";
+
+changeLanguage("en");
+
+export const prerender = true;
+---
+
+<Layout title='' description=''>
+  About page
+</Layout>

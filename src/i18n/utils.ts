@@ -19,17 +19,27 @@ export function useTranslations(lang: keyof typeof ui) {
 }
 
 export function useTranslatedPath(lang: keyof typeof ui) {
-  return function translatePath(path: string, l: string = lang) {
-    const pathName = path.replaceAll("/", "");
-    const hasTranslation =
-      defaultLang !== l &&
-      routes[l] !== undefined &&
-      routes[l][pathName] !== undefined;
-    const translatedPath = hasTranslation ? "/" + routes[l][pathName] : path;
+  return function translatePath(
+    path: string,
+    newLang: keyof typeof ui = lang
+  ): string {
+    const segments = path.replace(/^\/|\/$/g, "").split("/");
+    const hasCurrentLanguage = segments[0] === lang;
+    const adjustedSegments = hasCurrentLanguage ? segments.slice(1) : segments;
+    const pathName = adjustedSegments.join("/");
 
-    return !showDefaultLang && l === defaultLang
-      ? translatedPath
-      : `/${l}${translatedPath}`;
+    const hasTranslation =
+      defaultLang !== newLang && routes[newLang]?.[pathName] !== undefined;
+
+    const translatedPath = hasTranslation
+      ? routes[newLang][pathName]
+      : pathName;
+
+    if (!showDefaultLang && newLang === defaultLang) {
+      return `/${translatedPath}`;
+    } else {
+      return `/${newLang}/${translatedPath}`;
+    }
   };
 }
 

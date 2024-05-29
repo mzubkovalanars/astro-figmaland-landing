@@ -4,6 +4,8 @@ import Layout from "@/layouts/Layout.astro";
 import LoginDialog from "@/components/LoginDialog";
 
 changeLanguage("en");
+
+export const prerender = true;
 ---
 
 <Layout title='login.page' description='login.page.description'>

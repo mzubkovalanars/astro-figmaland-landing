@@ -1,6 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { t } from "i18next";
-import ScreensImg from "@public/images/screens.png";
+import ScreensImg from "@public/images/screens.webp";
 ---
 
 <section
@@ -29,6 +30,12 @@ import ScreensImg from "@public/images/screens.png";
   <div
     class='gradient-img relative inline-block mt-[35px] mb-[160px] md:mb-0 sm:mt-[57px] md:h-[453px] before:top-67.1 before:max-h-full before:h-gradient'
   >
-    <img src={ScreensImg.src} alt='graphics' width='1553' height='841' />
+    <Image
+      src={ScreensImg}
+      quality='max'
+      alt='graphics'
+      widths={[240, 540, 720, ScreensImg.width]}
+      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, ${ScreensImg.width}px`}
+    />
   </div>
 </section>
