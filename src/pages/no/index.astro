@@ -4,6 +4,8 @@ import Layout from "@/layouts/Layout.astro";
 import Main from "@/components/Main.astro";
 
 changeLanguage("no");
+
+export const prerender = true;
 ---
 
 <Layout title='page.title' description='page.description'>

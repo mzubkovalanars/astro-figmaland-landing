@@ -4,6 +4,8 @@ import Layout from "@/layouts/Layout.astro";
 import ContactDialog from "@/components/ContactDialog";
 
 changeLanguage("en");
+
+export const prerender = true;
 ---
 
 <Layout title='contact.page' description='contact.page.description'>

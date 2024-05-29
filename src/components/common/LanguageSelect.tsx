@@ -18,14 +18,14 @@ interface SelectProps {
 const LanguageSelect: React.FC<SelectProps> = ({ lng, route }) => {
   const translatePath = useTranslatedPath(lng);
 
-  const handleChange = (value: string) => {
-    const newPath = translatePath(`/${route ? route : ""}`, value);
+  const handleChange = (value: "en" | "no") => {
+    const newPath = translatePath(route ? route : "", value);
     location.replace(newPath);
   };
 
   return (
     <Select onValueChange={handleChange}>
-      <SelectTrigger className='w-16'>
+      <SelectTrigger className='w-16' aria-label={lng}>
         <SelectValue placeholder={lng} />
       </SelectTrigger>
       <SelectContent className='min-w-9 z-50 bg-background'>

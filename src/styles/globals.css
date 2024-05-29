@@ -200,11 +200,15 @@
 }
 
 .login-input {
-  @apply font-inter text-lg sm:text-sm text-gray-text w-full py-4 px-8 sm:px-5 rounded-sm bg-second placeholder:text-gray-text focus:outline-none focus:border-gradient-blue focus:ring-gradient-blue focus:ring-2;
+  @apply font-inter text-lg sm:text-sm text-white w-full py-4 px-8 sm:px-5 rounded-sm bg-second placeholder:text-white focus:outline-none focus:border-gradient-blue focus:ring-gradient-blue focus:ring-2;
 }
 
 .contact-input {
   @apply font-inter sm:text-sm text-white w-full py-3 px-4 rounded-[5px] border border-white/20 bg-white/5 placeholder:text-white focus:outline-none focus:border-gradient-violet focus:ring-gradient-violet focus:ring-1;
+}
+
+.card-tilt {
+  @apply absolute -inset-0.5 bg-gradient-to-r from-pink-400 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-700 animate-tilt;
 }
 
 .article-blog {

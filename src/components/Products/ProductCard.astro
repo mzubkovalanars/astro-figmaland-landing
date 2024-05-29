@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import { t } from "i18next";
+
+interface Props {
+  id: number;
+  name: string;
+  price: number;
+  image?: string;
+  description: string;
+}
+
+const {
+  id,
+  name,
+  price,
+  description,
+  image = "/images/default.png",
+} = Astro.props;
+---
+
+<div class='relative group sm:border sm:border-purple-600 sm:rounded-lg'>
+  <div class='card-tilt sm:hidden'></div>
+  <div
+    class='flex flex-col gap-4 p-10 max-w-[380px] min-h-[620px] sm:min-h-full h-full relative bg-background rounded-lg'
+  >
+    <Image width={500} height={500} src={image} alt={name} />
+    <p class='text-xl h-[72px] sm:h-full'>{name}</p>
+    <div class='flex flex-col items-start gap-2 mt-auto sm:mt-5'>
+      <p>{description}</p>
+      <span class='text-sm'>$ {price}</span>
+    </div>
+    <a
+      href={"product/" + id}
+      class='bg-purple-600 py-2 mt-auto sm:mt-8 text-center rounded-lg hover:bg-pink-400'
+    >
+      {t("product.full")}
+    </a>
+  </div>
+</div>

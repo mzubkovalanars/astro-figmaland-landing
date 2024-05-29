@@ -3,6 +3,7 @@ export default {
   defaultLocale: "en",
   locales: ["en", "no"],
   load: ["server", "client"],
+  resourcesBasePath: "/src/locales/",
   i18nextServer: {
     backend: {
       debug: true,
