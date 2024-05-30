@@ -5,6 +5,13 @@ import astroI18next from "astro-i18next";
 import mdx from "@astrojs/mdx";
 import vercel from "@astrojs/vercel/serverless";
 import node from "@astrojs/node";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+// Determine the adapter based on the environment
+const isDevelopment = process.env.PUBLIC_MODE === "development";
+const adapter = isDevelopment ? node({ mode: "standalone" }) : vercel();
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,10 +24,5 @@ export default defineConfig({
     mdx(),
   ],
   output: "server",
-  adapter:
-    import.meta.env.PUBLIC_MODE === "development"
-      ? node({
-          mode: "standalone",
-        })
-      : vercel(),
+  adapter,
 });
