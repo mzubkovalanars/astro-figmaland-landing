@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import astroI18next from "astro-i18next";
 import mdx from "@astrojs/mdx";
 import vercel from "@astrojs/vercel/serverless";
+import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,5 +17,10 @@ export default defineConfig({
     mdx(),
   ],
   output: "server",
-  adapter: vercel(),
+  adapter:
+    import.meta.env.MODE === "development"
+      ? node({
+          mode: "standalone",
+        })
+      : vercel(),
 });
