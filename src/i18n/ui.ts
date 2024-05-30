@@ -1,5 +1,5 @@
-import en from "@/locales/en/translation.json";
-import no from "@/locales/no/translation.json";
+import en from "@public/locales/en/translation.json";
+import no from "@public/locales/no/translation.json";
 
 export const languages = {
   en: "En",
