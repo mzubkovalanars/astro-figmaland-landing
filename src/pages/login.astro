@@ -2,12 +2,14 @@
 import { changeLanguage } from "i18next";
 import Layout from "@/layouts/Layout.astro";
 import LoginDialog from "@/components/LoginDialog";
+import { getLangFromUrl } from "@/i18n/utils";
 
 changeLanguage("en");
 
 export const prerender = true;
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <Layout title='login.page' description='login.page.description'>
-  <LoginDialog client:only='react' />
+  <LoginDialog client:only='react' lang={lang} />
 </Layout>

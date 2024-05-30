@@ -15,6 +15,10 @@ import Spinner from "@/components/common/Spinner";
 import StatusInfo from "@/components/common/StatusInfo";
 import { useTranslations } from "@/i18n/utils";
 
+interface ContactDialogProps {
+  lang: "en" | "no";
+}
+
 const initialState = {
   lastName: "",
   firstName: "",
@@ -28,7 +32,7 @@ const initialState = {
   isErrorDialog: false,
 };
 
-const ContactDialog: React.FC = () => {
+const ContactDialog: React.FC<ContactDialogProps> = ({ lang }) => {
   const [state, setState] = useState<typeof initialState>(initialState);
   const {
     lastName,
@@ -42,10 +46,10 @@ const ContactDialog: React.FC = () => {
     isSuccessDialog,
     isErrorDialog,
   } = state;
-  const t = useTranslations(i18next.language as "en" | "no");
+  const t = useTranslations(lang);
 
   const handleClose = () => {
-    location.replace(i18next.language === "en" ? "/" : "/no");
+    location.replace(lang === "en" ? "/" : "/no");
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
