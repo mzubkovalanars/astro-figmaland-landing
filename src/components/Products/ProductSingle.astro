@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { t } from "i18next";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 interface Props {
   name: string;
@@ -17,6 +17,9 @@ const {
   rating,
   image = "/images/default.png",
 } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class='px-14 py-12 sm:px-4 sm:py-6'>
