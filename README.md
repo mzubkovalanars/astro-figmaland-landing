@@ -20,6 +20,11 @@
 │   ├── fonts/
 │   ├── icons/
 │   ├── images/
+│   ├── locales/
+│   │   ├── en/
+│   │   │   └── translation.json
+│   │   └── no/
+│   │       └── translation.json
 │   └── favicon.svg
 │   └── robots.txt
 ├── src/
@@ -42,11 +47,6 @@
 │   │   │   └── ...
 │   │   ├── utils/
 │   │   │   └── utils.ts
-│   ├── locales/
-│   │   ├── en/
-│   │   │   └── translation.json
-│   │   └── no/
-│   │       └── translation.json
 │   ├── pages/
 │   │     ├── index.astro
 │   │     │   └── ...
