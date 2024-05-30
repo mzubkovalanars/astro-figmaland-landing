@@ -18,7 +18,7 @@ export default defineConfig({
   ],
   output: "server",
   adapter:
-    import.meta.env.MODE === "development"
+    import.meta.env.PUBLIC_MODE === "development"
       ? node({
           mode: "standalone",
         })
