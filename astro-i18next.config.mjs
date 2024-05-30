@@ -9,7 +9,6 @@ export default {
     no: {
       login: "logg-inn",
       contact: "kontakt",
-      about: "om-oss",
     },
   },
 };
