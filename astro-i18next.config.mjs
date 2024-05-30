@@ -8,6 +8,7 @@ export default {
   routes: {
     no: {
       login: "logg-inn",
+      contact: "kontakt",
     },
   },
 };

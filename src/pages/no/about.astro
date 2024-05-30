@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import Layout from "@/layouts/Layout.astro";
 
 changeLanguage("no");
@@ -7,6 +7,8 @@ changeLanguage("no");
 export const prerender = true;
 ---
 
-<Layout title='' description=''>
-  About page
+<Layout title='about.page.title' description='about.page.description'>
+  <main class='flex items-center justify-center'>
+    {t("no-content")}
+  </main>
 </Layout>

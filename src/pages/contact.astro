@@ -2,12 +2,14 @@
 import { changeLanguage } from "i18next";
 import Layout from "@/layouts/Layout.astro";
 import ContactDialog from "@/components/ContactDialog";
+import { getLangFromUrl } from "@/i18n/utils";
 
 changeLanguage("en");
 
 export const prerender = true;
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <Layout title='contact.page' description='contact.page.description'>
-  <ContactDialog client:only='react' />
+  <ContactDialog client:only='react' lang={lang} />
 </Layout>

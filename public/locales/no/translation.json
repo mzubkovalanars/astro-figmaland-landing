@@ -86,5 +86,8 @@
   "product.price": "Pris:",
   "product.buy": "Legg i handlekurven",
   "product.ratings": "vurderinger",
-  "product.full": "Fullstendig informasjon"
+  "product.full": "Fullstendig informasjon",
+  "about.page.title": "FigmaLand | Om-siden",
+  "about.page.description": "Beskrivelse av om-siden",
+  "no-content": "Hold deg oppdatert! Spennende innhold er på vei."
 }

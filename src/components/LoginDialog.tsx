@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import i18next from "i18next";
 import { Button } from "@/lib/components/ui/button";
 import {
   Dialog,
@@ -14,14 +13,18 @@ import {
 import { X } from "lucide-react";
 import { useTranslations } from "@/i18n/utils";
 
-const LoginDialog: React.FC = () => {
+interface LoginDialogProps {
+  lang: "en" | "no";
+}
+
+const LoginDialog: React.FC<LoginDialogProps> = ({ lang }) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const t = useTranslations(i18next.language as "en" | "no");
+  const t = useTranslations(lang);
 
   const handleClose = () => {
-    location.replace(i18next.language === "en" ? "/" : "/no");
+    location.replace(lang === "en" ? "/" : "/no");
   };
 
   return (

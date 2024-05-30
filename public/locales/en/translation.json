@@ -82,9 +82,12 @@
   "blog.page.title": "FigmaLand | Blog",
   "blog.page.description": "Discover the latest insights, tips, and tutorials on Figma Land's blog. Stay updated on design trends, explore new features, and learn how to maximize your creativity with our powerful design platform.",
   "product.page.title": "FigmaLand | Product Page",
-  "product.page.description": "Beskrivelse av produktsiden",
+  "product.page.description": "Product Page description",
   "product.price": "Price:",
   "product.buy": "Add to Cart",
   "product.ratings": "ratings",
-  "product.full": "Full information"
+  "product.full": "Full information",
+  "about.page.title": "FigmaLand | About Page",
+  "about.page.description": "About Page description",
+  "no-content": "Stay tuned! Exciting content is on its way."
 }
