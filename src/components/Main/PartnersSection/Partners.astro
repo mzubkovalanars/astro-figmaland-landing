@@ -8,6 +8,6 @@ const lang = getLangFromUrl(Astro.url);
 
 <Section title='main.partners' description='main.partners.desc'>
   <Fragment slot='content-section'>
-    <PartnersLogo client:only='react' lang={lang} />
+    <PartnersLogo client:visible lang={lang} />
   </Fragment>
 </Section>
