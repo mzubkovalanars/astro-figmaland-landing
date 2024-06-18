@@ -25,6 +25,7 @@ const PartnersLogo: React.FC<PartnersLogoProps> = ({ lang }) => {
               alt={image.alt}
               width={image.width}
               height={image.height}
+              loading='lazy'
               className='h-auto max-h-[60px] sm:max-h-[50px] max-w-full rounded-[12px]'
             />
           </div>
