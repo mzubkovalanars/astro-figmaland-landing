@@ -180,7 +180,7 @@
 }
 
 .gradient-img {
-  @apply before:block before:absolute before:bottom-[-160px] before:left-0 before:right-0 before:bg-img-gradient;
+  @apply before:block md:before:hidden before:absolute before:bottom-[-160px] before:left-0 before:right-0 before:bg-img-gradient;
 }
 
 .paddings-x {
