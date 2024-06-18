@@ -27,7 +27,7 @@ const t = useTranslations(lang);
     class='flex items-center justify-center max-w-[1260px] mx-auto my-0 sm:px-4 sm:py-6'
   >
     <div class='flex flex-wrap justify-center lg:items-center gap-10 md:gap-16'>
-      <Image width={500} height={500} src={image} alt={name} />
+      <Image width={500} height={500} src={image} alt={name || ""} />
       <div
         class='flex flex-col flex-1 items-start gap-4 lg:gap-6 min-w-[422px] lg:min-w-full'
       >

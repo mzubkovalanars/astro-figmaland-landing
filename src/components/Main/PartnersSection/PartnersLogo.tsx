@@ -22,7 +22,7 @@ const PartnersLogo: React.FC<PartnersLogoProps> = ({ lang }) => {
           >
             <img
               src={image.src}
-              alt={image.alt}
+              alt={image.alt || ""}
               width={image.width}
               height={image.height}
               loading='lazy'

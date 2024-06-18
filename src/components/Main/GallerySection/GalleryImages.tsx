@@ -35,7 +35,7 @@ const GalleryImages: React.FC<GalleryImagesProps> = ({ lang }) => {
             key={image.src + i}
             src={image.src}
             srcSet={`${image.src} 1x, ${image.src2x} 2x`}
-            alt={image.alt}
+            alt={image.alt || ""}
             loading='lazy'
             width={image.width}
             height={image.height}
