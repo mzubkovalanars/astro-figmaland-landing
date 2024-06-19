@@ -35,7 +35,7 @@ export default function MenuDrawer({ lang, route }: MenuDrawerProps) {
       onOpenChange={setIsOpen}
     >
       <DrawerTrigger asChild>
-        <div className='menu-icon burger'></div>
+        <button className='menu-icon burger' aria-label="burger icon"></button>
       </DrawerTrigger>
       <DrawerContent className='h-lvh w-80 p-4 right-0 left-auto items-center border-primary rounded-none drawer-content'>
         <DrawerHeader className='place-items-center text-center p-0 w-full'>

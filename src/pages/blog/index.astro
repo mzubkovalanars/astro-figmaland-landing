@@ -32,7 +32,7 @@ const lang = getLangFromUrl(Astro.url);
                     width={720}
                     height={360}
                     src={post.data.image}
-                    alt=''
+                    alt={post.data.title || ""}
                     quality='max'
                     class='mb-5 first:w-full'
                   />

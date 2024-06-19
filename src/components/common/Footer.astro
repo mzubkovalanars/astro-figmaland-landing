@@ -51,7 +51,7 @@ const translatePath = useTranslatedPath(lang);
       <div class='flex items-start gap-6 py-5'>
         {socialContactLinks.map((social) => (
             <a href={social.href} target='_blank'>
-              <img src={social.src} alt={social.alt} width='40' height='40' />
+              <img src={social.src} alt={social.alt || ""} width='40' height='40' />
             </a>
           ))}
       </div>

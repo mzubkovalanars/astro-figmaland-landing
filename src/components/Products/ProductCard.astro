@@ -27,7 +27,7 @@ const t = useTranslations(lang);
   <div
     class='flex flex-col gap-4 p-10 max-w-[380px] min-h-[620px] sm:min-h-full h-full relative bg-background rounded-lg'
   >
-    <Image width={500} height={500} src={image} alt={name} />
+    <Image width={500} height={500} src={image} alt={name || ""} />
     <p class='text-xl h-[72px] sm:h-full'>{name}</p>
     <div class='flex flex-col items-start gap-2 mt-auto sm:mt-5'>
       <p>{description}</p>

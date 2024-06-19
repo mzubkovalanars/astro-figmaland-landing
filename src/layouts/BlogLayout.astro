@@ -23,7 +23,7 @@ const { title, description, pubDate, updatedDate, image } = Astro.props;
         <div class='w-full'>
           <Image
             src={image}
-            alt={title}
+            alt={title || ""}
             width='1024'
             height={1024 / 1.5}
             quality='max'
