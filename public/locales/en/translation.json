@@ -89,5 +89,8 @@
   "product.full": "Full information",
   "about.page.title": "FigmaLand | About Page",
   "about.page.description": "About Page description",
-  "no-content": "Stay tuned! Exciting content is on its way."
+  "no-content": "Stay tuned! Exciting content is on its way.",
+  "error.page.title": "FigmaLand | Error",
+  "error.page.404": "Page not found",
+  "error.page.500": "Something went wrong :("
 }
