@@ -91,6 +91,6 @@
   "about.page.description": "Beskrivelse av om-siden",
   "no-content": "Hold deg oppdatert! Spennende innhold er på vei.",
   "error.page.title": "FigmaLand | Feil",
-  "error.page.400": "Siden ble ikke funnet",
+  "error.page.404": "Siden ble ikke funnet",
   "error.page.500": "Noe gikk galt :("
 }
