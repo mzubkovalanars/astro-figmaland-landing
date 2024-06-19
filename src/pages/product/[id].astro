@@ -11,8 +11,9 @@ const response = await fetch(API_PRODUCTS_LIST);
 const data: Product[] = await response.json();
 const { id } = Astro.params;
 const page = data.find((page) => page.id.toString() === id);
-if (!page)
+if (!page) {
     return Astro.redirect("/404");
+}
 const { name, price, brand, rating, image } = page;
 ---
 

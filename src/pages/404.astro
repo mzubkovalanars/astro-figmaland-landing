@@ -1,0 +1,10 @@
+---
+import ErrorLayout from "@/layouts/ErrorLayout.astro";
+import ErrorItem from "@/components/common/ErrorItem.astro";
+
+export const prerender = true;
+---
+
+<ErrorLayout title='error.page.title' description='error.page.404'>
+  <ErrorItem status='404' text='error.page.404' />
+</ErrorLayout>

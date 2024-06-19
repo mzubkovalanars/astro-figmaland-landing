@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import i18next from "i18next";
 import { Button } from "@/lib/components/ui/button";
 import {
   Dialog,

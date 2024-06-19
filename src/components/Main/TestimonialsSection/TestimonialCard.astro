@@ -21,7 +21,7 @@ const { title, role, description, src } = Astro.props;
         <Image
           src={src}
           quality='max'
-          alt={title}
+          alt={title || ""}
           width='50'
           height='50'
         />
