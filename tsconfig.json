@@ -8,5 +8,7 @@
       "@/*": ["./src/*"],
       "@public/*": ["./public/*"]
     }
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
