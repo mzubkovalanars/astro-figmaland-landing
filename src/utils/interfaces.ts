@@ -1,45 +1,65 @@
+import type {ImageAsset, Slug} from '@sanity/types'
+
+export interface IImage extends ImageAsset {
+  caption: string
+}
+
 export interface Product {
-  id: number;
+  _type: 'product';
+  _id: number;
+  _createdAt: string;
+  slug: Slug;
   name: string;
   description: string;
   price: number;
-  image: string;
+  image: IImage;
   rating: number;
   brand: string;
   color?: string;
-  connectivity?: string;
-  wireless?: boolean;
-  compatibility?: string;
-  weight?: string;
-  resolution?: string;
-  sensor?: string;
-  screen_size?: string;
-  storage?: string;
-  ram?: string;
-  display?: string;
-  heart_rate_monitor?: boolean;
-  waterproof?: boolean;
+  tech_specs: {
+    connectivity?: string;
+    wireless?: boolean;
+    compatibility?: string;
+    resolution?: string;
+    sensor?: string;
+    storage?: string;
+    storage_capacity?: string;
+    ram?: string;
+  };
+  physical_specs: {
+    weight?: string;
+    material?: string;
+    thickness?: string;
+    adjustable_height?: boolean;
+    adjustable_length?: boolean;
+    screen_size?: string;
+  };
+  performance_specs: {
+    battery_life?: string;
+    power?: string;
+    output_power?: string;
+    suction_power?: string;
+    range?: string;
+  };
+  features_specs: {
+    waterproof?: boolean;
+    voice_control?: boolean;
+    foldable?: boolean;
+    heart_rate_monitor?: boolean;
+    wireless_charging_standard?: string;
+  };
+  display?: string; //TODO
   games_included?: number;
-  output_power?: string;
-  suction_power?: string;
-  battery_life?: string;
   mapping_technology?: boolean;
-  storage_capacity?: string;
   interface?: string;
   max_speed?: string;
-  range?: string;
   weight_capacity?: string;
-  power?: string;
   speeds?: string;
   dpi_range?: string;
   buttons?: number;
   incline_levels?: number;
-  foldable?: boolean;
-  voice_control?: boolean;
   capacity?: string;
   solar_panel_power?: string;
-  material?: string;
-  thickness?: string;
   brushing_modes?: string[];
   timer?: boolean;
   plants_included?: string[];
@@ -47,7 +67,6 @@ export interface Product {
   pot_color?: string;
   video_resolution?: string;
   field_of_view?: string;
-  adjustable_height?: boolean;
   max_height?: string;
   cooking_modes?: string[];
   number_of_cameras?: number;
@@ -63,10 +82,8 @@ export interface Product {
   pen_pressure_levels?: number;
   brightness?: string;
   attachments?: string[];
-  adjustable_length?: boolean;
   compatible_devices?: string[];
   color_options?: string[];
-  wireless_charging_standard?: string;
   components_included?: string[];
   activities_tracked?: string[];
 }
