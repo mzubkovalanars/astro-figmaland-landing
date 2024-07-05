@@ -3,8 +3,11 @@
   "trailingComma": "es5",
   "proseWrap": "always",
   "endOfLine": "crlf",
-  "semi": false,
+  "semi": true,
   "printWidth": 100,
-  "bracketSpacing": false,
-  "singleQuote": true
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "singleQuote": true,
+  "tabWidth": 2
 }
