@@ -7,7 +7,7 @@ interface DisplayProps {
 
 const DisplaySpecs = ({ lang, data }: DisplayProps) => {
   const t = useTranslations(lang);
-  console.log("🚀 ~ DisplaySpecs ~ data:", data, lang)
+
   if (!data) {
     return null;
   }
