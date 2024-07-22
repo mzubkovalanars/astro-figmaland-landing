@@ -1,31 +1,33 @@
 ---
-import { changeLanguage } from "i18next";
-import Layout from "@/layouts/Layout.astro";
-import ProductCard from "@/components/Products/ProductCard.astro";
-import type { Product } from "@/utils/interfaces";
-import { getProducts } from "@/sanity/client";
+import { changeLanguage } from 'i18next';
+import Layout from '@/layouts/Layout.astro';
+import ProductCard from '@/components/Products/ProductCard.astro';
+import type { Product } from '@/utils/interfaces';
+import { getProducts } from '@/sanity/client';
 
-changeLanguage("no");
+changeLanguage('no');
 
+export const prerender = false;
 let data: Product[] = [];
 let error = null;
 try {
-    const products = await getProducts();
-    if (!products) {
-        throw new Error("No products found");
-    }
-    data = products;
-}
-catch (err) {
-    error = err;
+  const products = await getProducts();
+  if (!products) {
+    throw new Error('No products found');
+  }
+  data = products;
+} catch (err) {
+  error = err;
 }
 if (error) {
-    return Astro.redirect("/500");
+  return Astro.redirect('/500');
 }
 ---
 
 <Layout title='products.page.title' description='products.page.description'>
-  <section class='flex flex-wrap items-center justify-start gap-8 max-w-[1328px] px-14 py-12 sm:px-4 sm:py-6 mx-auto'>
+  <section
+    class='flex flex-wrap items-center justify-start gap-8 max-w-[1328px] px-14 py-12 sm:px-4 sm:py-6 mx-auto'
+  >
     {data.map((product) => <ProductCard product={product} />)}
   </section>
 </Layout>
