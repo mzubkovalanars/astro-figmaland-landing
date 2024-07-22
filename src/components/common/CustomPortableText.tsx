@@ -1,14 +1,14 @@
 import { PortableText } from '@portabletext/react';
 import type { PortableTextComponents } from '@portabletext/react';
 import { urlFor } from '@/sanity/client';
-import type { PortableTextValue } from '@/utils/interfaces'
+import type { PortableTextValue } from '@/utils/interfaces';
 
 const components: PortableTextComponents = {
   types: {
     image: ({ value }) => (
       <img
-        width="200"
-        height="200"
+        width='200'
+        height='200'
         loading='lazy'
         alt={value.alt || ''}
         src={urlFor(value).format('webp').quality(100).url()}

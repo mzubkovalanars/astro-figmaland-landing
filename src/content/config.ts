@@ -1,7 +1,7 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
-  type: "content",
+  type: 'content',
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -9,7 +9,7 @@ const blog = defineCollection({
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
       image: image().refine((img) => img.width >= 500, {
-        message: "Cover image must be at least 500 pixels wide!",
+        message: 'Cover image must be at least 500 pixels wide!',
       }),
     }),
 });

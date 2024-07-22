@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Button } from "@/lib/components/ui/button";
+import React, { useState } from 'react';
+import { Button } from '@/lib/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -9,22 +9,22 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from "@/lib/components/ui/dialog";
-import { X } from "lucide-react";
-import { useTranslations } from "@/i18n/utils";
+} from '@/lib/components/ui/dialog';
+import { X } from 'lucide-react';
+import { useTranslations } from '@/i18n/utils';
 
 interface LoginDialogProps {
-  lang: "en" | "no";
+  lang: 'en' | 'no';
 }
 
 const LoginDialog: React.FC<LoginDialogProps> = ({ lang }) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const t = useTranslations(lang);
 
   const handleClose = () => {
-    location.replace(lang === "en" ? "/" : "/no");
+    location.replace(lang === 'en' ? '/' : '/no');
   };
 
   return (
@@ -40,10 +40,10 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ lang }) => {
         </DialogTrigger>
         <DialogHeader className='gap-5 sm:pt-20'>
           <DialogTitle className='font-grotesk text-[54px] sm:text-3xl tracking-tightest'>
-            {t("login.title")}
+            {t('login.title')}
           </DialogTitle>
           <DialogDescription className='font-inter text-[22px] sm:text-lg text-gray-text tracking-tightest'>
-            {t("login.desc")}
+            {t('login.desc')}
           </DialogDescription>
         </DialogHeader>
         <div className='flex justify-center mt-20 sm:mt-7 font-inter'>
@@ -53,7 +53,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ lang }) => {
                 id='email'
                 type='text'
                 value={email}
-                placeholder={t("login.input1")}
+                placeholder={t('login.input1')}
                 onChange={(e) => setEmail(e.target.value)}
                 className='login-input'
               />
@@ -61,7 +61,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ lang }) => {
                 id='password'
                 type='text'
                 value={password}
-                placeholder={t("login.input2")}
+                placeholder={t('login.input2')}
                 onChange={(e) => setPassword(e.target.value)}
                 className='login-input'
               />
@@ -69,29 +69,21 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ lang }) => {
                 type='submit'
                 className='text-lg sm:text-sm leading-6 justify-between h-full py-5 px-8 sm:px-5 bg-login-gradient'
               >
-                <p className='py-1 px-4'>{t("login.title")}</p>
-                <img
-                  src='/icons/arrow-right.svg'
-                  alt='arrow icon'
-                  width='28'
-                  height='22'
-                />
+                <p className='py-1 px-4'>{t('login.title')}</p>
+                <img src='/icons/arrow-right.svg' alt='arrow icon' width='28' height='22' />
               </Button>
             </form>
             <div className='flex gap-1 items-center text-xs mt-1'>
-              <p className='text-gray-text'>{t("login.register.text")}</p>
+              <p className='text-gray-text'>{t('login.register.text')}</p>
               <a href='/signup' className='cursor-pointer'>
-                {t("login.register.btn")}
+                {t('login.register.btn')}
               </a>
             </div>
           </div>
         </div>
         <DialogFooter className='justify-center sm:justify-center items-center pt-[60px] pb-10'>
-          <a
-            href='/forgot-password'
-            className='font-inter text-lg underline cursor-pointer'
-          >
-            {t("login.register.forgot")}
+          <a href='/forgot-password' className='font-inter text-lg underline cursor-pointer'>
+            {t('login.register.forgot')}
           </a>
         </DialogFooter>
       </DialogContent>

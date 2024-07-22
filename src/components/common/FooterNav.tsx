@@ -3,12 +3,12 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/lib/components/ui/accordion";
-import { useTranslations } from "@/i18n/utils";
-import { navLinksFooter } from "@/utils/constants";
+} from '@/lib/components/ui/accordion';
+import { useTranslations } from '@/i18n/utils';
+import { navLinksFooter } from '@/utils/constants';
 
 interface FooterNavProps {
-  lang: "en" | "no";
+  lang: 'en' | 'no';
 }
 
 export default function FooterNav({ lang }: FooterNavProps) {
