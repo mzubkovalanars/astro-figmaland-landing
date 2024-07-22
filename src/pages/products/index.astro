@@ -1,27 +1,27 @@
 ---
-import { changeLanguage } from "i18next";
-import Layout from "@/layouts/Layout.astro";
-import ProductCard from "@/components/Products/ProductCard.astro";
-import type { Product } from "@/utils/interfaces";
-import { getProducts } from "@/sanity/client";
+import { changeLanguage } from 'i18next';
+import Layout from '@/layouts/Layout.astro';
+import ProductCard from '@/components/Products/ProductCard.astro';
+import type { Product } from '@/utils/interfaces';
+import { getProducts } from '@/sanity/client';
 
-changeLanguage("en");
+changeLanguage('en');
+export const prerender = false;
 
 let data: Product[] = [];
 
 let error = null;
 try {
-    const products = await getProducts();
-    if (!products) {
-        throw new Error("No products found");
-    }
-    data = products;
-}
-catch (err) {
-    error = err;
+  const products = await getProducts();
+  if (!products) {
+    throw new Error('No products found');
+  }
+  data = products;
+} catch (err) {
+  error = err;
 }
 if (error) {
-    return Astro.redirect("/500");
+  return Astro.redirect('/500');
 }
 ---
 

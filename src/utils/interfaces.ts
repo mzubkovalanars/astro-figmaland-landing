@@ -1,8 +1,13 @@
-import type {ImageAsset, Slug} from '@sanity/types'
+import type { ImageAsset, Slug } from '@sanity/types';
+import type { TypedObject, PortableTextBlock, ArbitraryTypedObject } from '@portabletext/types';
 
 export interface IImage extends ImageAsset {
-  caption: string
+  caption: string;
 }
+
+export type PortableTextValue<
+  Value extends TypedObject = PortableTextBlock | ArbitraryTypedObject,
+> = Value;
 
 export interface Product {
   _type: 'product';
@@ -16,6 +21,7 @@ export interface Product {
   rating: number;
   brand: string;
   color?: string;
+  overview: PortableTextValue | PortableTextValue[];
   tech_specs: {
     connectivity?: string;
     wireless?: boolean;
