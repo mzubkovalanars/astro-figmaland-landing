@@ -9,7 +9,7 @@ changeLanguage("en");
 
 export const prerender = false;
 const { slug } = Astro.params;
-const data: Product = await getProduct(slug!);
+const data: Product = await getProduct(slug!, 'en');
 ---
 
 <Layout title={data.name} description={data.name + data.brand}>

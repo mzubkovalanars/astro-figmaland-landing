@@ -11,7 +11,7 @@ export const prerender = false;
 let data: Product[] = [];
 let error = null;
 try {
-  const products = await getProducts();
+  const products = await getProducts('no');
   if (!products) {
     throw new Error('No products found');
   }

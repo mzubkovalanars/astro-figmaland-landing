@@ -3,6 +3,7 @@ import { structureTool } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './src/schemaTypes';
 import { colorInput } from '@sanity/color-input';
+import { documentInternationalization } from '@sanity/document-internationalization';
 
 const projectId =
   import.meta.env.PUBLIC_SANITY_STUDIO_PROJECT_ID! || import.meta.env.SANITY_STUDIO_PROJECT_ID!;
@@ -24,7 +25,18 @@ export default defineConfig({
   title: 'Astro-figmaland-sanity',
   projectId,
   dataset,
-  plugins: [structureTool(), visionTool(), colorInput()],
+  plugins: [
+    structureTool(),
+    visionTool(),
+    colorInput(),
+    documentInternationalization({
+      supportedLanguages: [
+        { id: 'no', title: 'Norwegian' },
+        { id: 'en', title: 'English' },
+      ],
+      schemaTypes: ['product'],
+    }),
+  ],
   schema: {
     types: schemaTypes,
   },

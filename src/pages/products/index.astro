@@ -12,7 +12,7 @@ let data: Product[] = [];
 
 let error = null;
 try {
-  const products = await getProducts();
+  const products = await getProducts('en');
   if (!products) {
     throw new Error('No products found');
   }
