@@ -1,13 +1,13 @@
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './src/schemaTypes'
-import {colorInput} from '@sanity/color-input'
+import { defineConfig } from 'sanity';
+import { structureTool } from 'sanity/structure';
+import { visionTool } from '@sanity/vision';
+import { schemaTypes } from './src/schemaTypes';
+import { colorInput } from '@sanity/color-input';
 
 const projectId =
-  import.meta.env.PUBLIC_SANITY_STUDIO_PROJECT_ID! || import.meta.env.SANITY_STUDIO_PROJECT_ID!
+  import.meta.env.PUBLIC_SANITY_STUDIO_PROJECT_ID! || import.meta.env.SANITY_STUDIO_PROJECT_ID!;
 const dataset =
-  import.meta.env.PUBLIC_SANITY_STUDIO_DATASET! || import.meta.env.SANITY_STUDIO_DATASET!
+  import.meta.env.PUBLIC_SANITY_STUDIO_DATASET! || import.meta.env.SANITY_STUDIO_DATASET!;
 
 if (!projectId || !dataset) {
   throw new Error(
@@ -16,7 +16,7 @@ if (!projectId || !dataset) {
       null,
       2
     )}`
-  )
+  );
 }
 
 export default defineConfig({
@@ -28,4 +28,5 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
-})
+  studioBasePath: '/admin',
+});
