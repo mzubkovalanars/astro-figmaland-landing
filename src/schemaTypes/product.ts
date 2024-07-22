@@ -47,6 +47,11 @@ export default defineType({
       validation: (rule) => rule.required().error('Required field'),
     }),
     defineField({
+      name: 'overview',
+      title: 'Overview',
+      type: 'blockContent',
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'string',
@@ -109,6 +114,7 @@ export default defineType({
         { name: 'storage', title: 'Storage', type: 'string' },
         { name: 'storage_capacity', title: 'Storage Capacity', type: 'string' },
         { name: 'ram', title: 'RAM', type: 'string' },
+        { name: 'display', title: 'Display', type: 'string' },
       ],
       group: 'technical',
     },
@@ -149,6 +155,7 @@ export default defineType({
         { name: 'foldable', title: 'Foldable', type: 'boolean' },
         { name: 'heart_rate_monitor', title: 'Heart Rate Monitor', type: 'boolean' },
         { name: 'wireless_charging_standard', title: 'Wireless Charging Standard', type: 'string' },
+        { name: 'games_included', title: 'Games included', type: 'number', initialValue: 1 },
       ],
       group: 'features',
     },
