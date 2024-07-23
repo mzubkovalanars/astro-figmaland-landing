@@ -1,5 +1,4 @@
-import { PortableText } from '@portabletext/react';
-import type { PortableTextComponents } from '@portabletext/react';
+import { PortableText, type PortableTextComponents } from '@portabletext/react';
 import { urlFor } from '@/sanity/client';
 import type { PortableTextValue } from '@/utils/interfaces';
 
