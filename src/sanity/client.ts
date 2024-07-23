@@ -1,4 +1,5 @@
 import { sanityClient } from 'sanity:client';
+import { type SlugValidationContext } from 'sanity';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import imageUrlBuilder from '@sanity/image-url';
 import type { Product } from '@/utils/interfaces';
@@ -37,3 +38,21 @@ export const imageBuilder = imageUrlBuilder(sanityClient);
 export const urlFor = (source: SanityImageSource) => {
   return imageBuilder.image(source);
 };
+
+export async function isUniqueOtherThanLanguage(slug: string, context: SlugValidationContext) {
+  const { document, getClient } = context;
+  if (!document?.language) {
+    return true;
+  }
+  const client = getClient({ apiVersion: '2024-07-23' });
+  const id = document._id.replace(/^drafts\./, '');
+  const params = {
+    draft: `drafts.${id}`,
+    published: id,
+    language: document.language,
+    slug,
+  };
+  const query = `!defined(*[!(_id in [$draft, $published]) && slug.current == $slug && language == $language][0]._id)`;
+  const result = await client.fetch(query, params);
+  return result;
+}

@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity';
+import { isUniqueOtherThanLanguage } from '@/sanity/client';
 
 export default defineType({
   name: 'product',
@@ -48,6 +49,7 @@ export default defineType({
       options: {
         source: 'name',
         maxLength: 100,
+        isUnique: isUniqueOtherThanLanguage,
       },
       hidden: ({ document }) => !document?.name,
       validation: (rule) => rule.required().error('Required field'),
