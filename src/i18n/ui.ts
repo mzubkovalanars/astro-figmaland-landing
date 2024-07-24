@@ -1,9 +1,9 @@
-import en from "@public/locales/en/translation.json";
-import no from "@public/locales/no/translation.json";
+import en from '@public/locales/en/translation.json';
+import no from '@public/locales/no/translation.json';
 
 export const languages = {
-  en: "En",
-  no: "No",
+  en: 'En',
+  no: 'No',
 };
 
 export const ui = {
@@ -13,9 +13,9 @@ export const ui = {
 
 export const routes: Record<string, Record<string, string>> = {
   no: {
-    login: "logg-inn",
-    contact: "kontakt",
+    login: 'logg-inn',
+    contact: 'kontakt',
   },
 };
 
-export const defaultLang = "en";
+export const defaultLang = 'en';

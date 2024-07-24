@@ -1,56 +1,63 @@
 ---
-import { Image } from "astro:assets";
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import type { Product } from '@/utils/interfaces';
+import { urlFor } from '@/sanity/client';
+import DisplaySpecs from '@/components/common/DisplaySpecs';
+import CustomPortableText from '@/components/common/CustomPortableText';
+import Rating from './Rating';
 
 interface Props {
-  name: string;
-  price: number;
-  brand: string;
-  rating: number;
-  image?: string;
+  product: Product;
 }
 
+const { product } = Astro.props as Props;
 const {
   name,
   price,
   brand,
   rating,
-  image = "/images/default.png",
-} = Astro.props;
+  image,
+  overview,
+  tech_specs,
+  physical_specs,
+  performance_specs,
+  features_specs,
+} = product;
+
+const specs = { ...tech_specs, ...physical_specs, ...performance_specs, ...features_specs };
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class='px-14 py-12 sm:px-4 sm:py-6'>
-  <div
-    class='flex items-center justify-center max-w-[1260px] mx-auto my-0 sm:px-4 sm:py-6'
-  >
-    <div class='flex flex-wrap justify-center lg:items-center gap-10 md:gap-16'>
-      <Image width={500} height={500} src={image} alt={name || ""} />
-      <div
-        class='flex flex-col flex-1 items-start gap-4 lg:gap-6 min-w-[422px] lg:min-w-full'
-      >
-        <div class='flex items-center justify-between gap-6 w-full'>
+<section class='font-graphik px-14 py-12 sm:px-4 sm:py-6'>
+  <div class='flex items-center justify-center max-w-[1260px] mx-auto my-0 sm:px-4 sm:py-6'>
+    <div class='flex flex-wrap justify-center items-start lg:items-center gap-10 md:gap-16 w-full'>
+      <img
+        width='500'
+        height='500'
+        loading='lazy'
+        alt={image?.caption || ''}
+        src={image
+          ? urlFor(image).width(500).height(500).format('webp').quality(100).url()
+          : '/images/default-img.webp'}
+      />
+      <div class='flex flex-col flex-1 items-start gap-4 lg:gap-6 min-w-[422px] lg:min-w-full'>
+        <div class='flex items-center justify-between gap-6 w-full mb-10'>
           <p class='text-lg sm:text-sm'>{brand}</p>
-          <Image
-            width={152}
-            height={24}
-            src='/icons/ratings.svg'
-            alt='rating'
-          />
-          <p class='text-sm'>{rating} {t("product.ratings")}</p>
+          {rating && <Rating rating={rating} />}
+          <p class='text-sm'>{rating} {t('products.ratings')}</p>
         </div>
-        <p class='flex flex-1 text-5xl sm:text-2xl'>{name}</p>
-        <div
-          class='flex flex-col items-end justify-between gap-4 w-full lg:mt-20'
-        >
+        <h2 class='font-grotesk text-5xl sm:text-2xl'>{name}</h2>
+        <div class='flex flex-col flex-1 items-start gap-5 mt-10 mb-10'>
+          <CustomPortableText value={overview} client:load />
+        </div>
+        <DisplaySpecs data={specs} lang={lang} />
+        <div class='flex flex-col items-end justify-between gap-4 w-full mt-auto sm:mt-0'>
           <div class='flex items-center justify-between w-full'>
-            {t("product.price")}<span class='text-2xl sm:text-lg'
-              >$ {price}</span
-            >
+            {t('products.price')}<span class='text-2xl sm:text-lg'>$ {price}</span>
           </div>
-          <a href='#' class='btn btn-primary'>{t("product.buy")}</a>
+          <a href='/' class='btn btn-primary'>{t('products.buy')}</a>
         </div>
       </div>
     </div>

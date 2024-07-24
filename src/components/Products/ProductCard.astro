@@ -1,43 +1,41 @@
 ---
-import { Image } from "astro:assets";
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
-
+import { urlFor } from '@/sanity/client';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import type { Product } from '@/utils/interfaces';
 interface Props {
-  id: number;
-  name: string;
-  price: number;
-  image?: string;
-  description: string;
+  product: Product;
 }
 
-const {
-  id,
-  name,
-  price,
-  description,
-  image = "/images/default.png",
-} = Astro.props;
+const { product } = Astro.props as Props;
+const { slug, name, price, image, description } = product;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class='relative group sm:border sm:border-purple-600 sm:rounded-lg'>
+<div class='relative font-grotesk group sm:border sm:border-purple-600 sm:rounded-lg'>
   <div class='card-tilt sm:hidden'></div>
   <div
     class='flex flex-col gap-4 p-10 max-w-[380px] min-h-[620px] sm:min-h-full h-full relative bg-background rounded-lg'
   >
-    <Image width={500} height={500} src={image} alt={name || ""} />
-    <p class='text-xl h-[72px] sm:h-full'>{name}</p>
+    <img
+      width='500'
+      height='500'
+      alt={image?.caption || ''}
+      src={image
+        ? urlFor(image).width(500).height(500).format('webp').quality(100).url()
+        : '/images/default-img.webp'}
+    />
+    <h2 class='text-2xl h-[72px] sm:h-full'>{name}</h2>
     <div class='flex flex-col items-start gap-2 mt-auto sm:mt-5'>
-      <p>{description}</p>
+      <p class='font-grotesk text-lg'>{description}</p>
       <span class='text-sm'>$ {price}</span>
     </div>
     <a
-      href={"product/" + id}
+      href={'products/' + slug.current}
       class='bg-purple-600 py-2 mt-auto sm:mt-8 text-center rounded-lg hover:bg-pink-400'
     >
-      {t("product.full")}
+      {t('products.full')}
     </a>
   </div>
 </div>
