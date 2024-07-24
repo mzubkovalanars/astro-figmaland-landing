@@ -1,5 +1,5 @@
-import { languages } from "@/i18n/ui";
-import { useTranslatedPath } from "@/i18n/utils";
+import { languages } from '@/i18n/ui';
+import { useTranslatedPath } from '@/i18n/utils';
 import {
   Select,
   SelectContent,
@@ -7,19 +7,19 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/lib/components/ui/select";
-import * as React from "react";
+} from '@/lib/components/ui/select';
+import * as React from 'react';
 
 interface SelectProps {
-  lng: "en" | "no";
+  lng: 'en' | 'no';
   route: string | undefined;
 }
 
 const LanguageSelect: React.FC<SelectProps> = ({ lng, route }) => {
   const translatePath = useTranslatedPath(lng);
 
-  const handleChange = (value: "en" | "no") => {
-    const newPath = translatePath(route ? route : "", value);
+  const handleChange = (value: 'en' | 'no') => {
+    const newPath = translatePath(route ? route : '', value);
     location.replace(newPath);
   };
 
@@ -31,11 +31,7 @@ const LanguageSelect: React.FC<SelectProps> = ({ lng, route }) => {
       <SelectContent className='min-w-9 z-50 bg-background'>
         <SelectGroup>
           {Object.entries(languages).map(([lang, label]) => (
-            <SelectItem
-              value={lang}
-              key={lang}
-              className='text-center px-3 py-2'
-            >
+            <SelectItem value={lang} key={lang} className='text-center px-3 py-2'>
               {label}
             </SelectItem>
           ))}
