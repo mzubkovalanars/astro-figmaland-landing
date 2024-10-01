@@ -1,5 +1,5 @@
 import { PortableText, type PortableTextComponents } from '@portabletext/react';
-import { urlFor } from '@sanity/client';
+import { urlFor } from '@sanityClient/client';
 import type { PortableTextValue } from '@utils/interfaces';
 
 const components: PortableTextComponents = {

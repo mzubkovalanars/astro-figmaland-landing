@@ -1,4 +1,4 @@
-import type { Product } from '@/utils/interfaces';
+import type { Product } from '@utils/interfaces';
 import { type SlugValidationContext } from 'sanity';
 import { sanityClient } from 'sanity:client';
 import imageUrlBuilder from '@sanity/image-url';

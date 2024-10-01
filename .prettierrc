@@ -21,7 +21,7 @@
     "react",
     "astro",
     "<THIRD_PARTY_MODULES>",
-    "^@(assets|components|content|lib|i18n|pages|sanity|schemaTypes|styles|utils|public)/?(.*)$",
+    "^@(assets|components|content|lib|i18n|pages|sanityClient|schemaTypes|styles|utils|public)/?(.*)$",
     "^[./]"
   ]
 }

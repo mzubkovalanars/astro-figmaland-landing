@@ -23,7 +23,7 @@
       "@layouts/*": ["./src/layouts/*"],
       "@lib/*": ["./src/lib/*"],
       "@pages/*": ["./src/pages/*"],
-      "@sanity/*": ["./src/sanity/*"],
+      "@sanityClient/*": ["./src/sanity/*"],
       "@schemaTypes/*": ["./src/schemaTypes/*"],
       "@styles/*": ["./src/styles/*"],
       "@utils/*": ["./src/utils/*"]

@@ -1,4 +1,4 @@
-import { isUniqueOtherThanLanguage } from '@/sanity/client';
+import { isUniqueOtherThanLanguage } from '@sanityClient/client';
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
