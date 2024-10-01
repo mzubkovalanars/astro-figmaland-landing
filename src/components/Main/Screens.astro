@@ -1,34 +1,26 @@
 ---
-import { Image } from "astro:assets";
-import { t } from "i18next";
-import ScreensImg from "@public/images/screens.webp";
+import { Image } from 'astro:assets';
+import { t } from 'i18next';
+import ScreensImg from '@public/images/screens.webp';
 ---
 
-<section
-  class='flex flex-col items-center pt-[85px] md:pt-[57px] pb-[50px] bg-background'
->
+<section class='flex flex-col items-center bg-background pb-[50px] pt-[85px] md:pt-[57px]'>
   <div
-    class='flex flex-col items-center px-6 sm:px-4 md:px-[30px] text-center max-w-[760px] md:max-w-[370px]'
+    class='flex max-w-[760px] flex-col items-center px-6 text-center md:max-w-[370px] md:px-[30px] sm:px-4'
   >
     <h1
-      class='text-[80px] md:text-[52px] leading-[88px] md:leading-[66px] mb-[17px] p-[10px] md:p-0'
+      class='mb-[17px] p-[10px] text-[80px] leading-[88px] md:p-0 md:text-[52px] md:leading-[66px]'
     >
-      {t("main.screens")}
+      {t('main.screens')}
     </h1>
-    <p class='text-xl sm:text-xl'>{t("main.screens.desc")}</p>
+    <p class='text-xl sm:text-xl'>{t('main.screens.desc')}</p>
+  </div>
+  <div class='mt-[85px] flex items-center gap-[35px] text-center md:flex-col sm:mt-[57px] sm:gap-5'>
+    <a href='#' target='_blank' class='btn btn-primary'>{t('btn-try-for-free')}</a>
+    <a href='#' target='_blank' class='btn btn-secondary'>{t('btn-learn-more')}</a>
   </div>
   <div
-    class='flex md:flex-col items-center gap-[35px] sm:gap-5 text-center mt-[85px] sm:mt-[57px]'
-  >
-    <a href='#' target='_blank' class='btn btn-primary'
-      >{t("btn-try-for-free")}</a
-    >
-    <a href='#' target='_blank' class='btn btn-secondary'
-      >{t("btn-learn-more")}</a
-    >
-  </div>
-  <div
-    class='gradient-img relative inline-block mt-[35px] mb-[160px] md:mb-0 sm:mt-[57px] before:top-67.1 before:max-h-full before:h-gradient'
+    class='gradient-img before:top-67.1 relative mb-[160px] mt-[35px] inline-block before:h-gradient before:max-h-full md:mb-0 sm:mt-[57px]'
   >
     <Image
       src={ScreensImg}

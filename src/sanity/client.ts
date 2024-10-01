@@ -1,8 +1,8 @@
-import { sanityClient } from 'sanity:client';
-import { type SlugValidationContext } from 'sanity';
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import imageUrlBuilder from '@sanity/image-url';
 import type { Product } from '@/utils/interfaces';
+import { type SlugValidationContext } from 'sanity';
+import { sanityClient } from 'sanity:client';
+import imageUrlBuilder from '@sanity/image-url';
+import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 export async function getProducts(language: string): Promise<Product[]> {
   try {

@@ -1,6 +1,6 @@
 ---
-import { Image } from "astro:assets";
-import { t } from "i18next";
+import { Image } from 'astro:assets';
+import { t } from 'i18next';
 
 interface Props {
   title: string;
@@ -11,31 +11,28 @@ interface Props {
   imgHeight: number;
 }
 
-const { title, description, src, imgWidth, imgHeight, btnText } =
-  Astro.props;
+const { title, description, src, imgWidth, imgHeight, btnText } = Astro.props;
 ---
 
 <div
-  class='flex flex-col flex-1 flex-grow items-center justify-between gap-[30px] md:gap-[57px] p-10 sm:py-10 md:px-8 sm:px-6 min-h-[624px] md:min-h-full md:h-auto min-w-[348px] md:max-w-[348px] md:min-w-auto border rounded-xl border-border-secondary bg-white text-second'
+  class='md:min-w-auto flex min-h-[624px] min-w-[348px] flex-1 flex-grow flex-col items-center justify-between gap-[30px] rounded-xl border border-border-secondary bg-white p-10 text-second md:h-auto md:min-h-full md:max-w-[348px] md:gap-[57px] md:px-8 sm:px-6 sm:py-10'
 >
   <div class='flex flex-col items-center gap-[10px]'>
-    <h3 class='text-xl font-medium text-black md:p-[10px] p-[10px]'>
+    <h3 class='p-[10px] text-xl font-medium text-black md:p-[10px]'>
       {t(title)}
     </h3>
-    <p class='text-center p-[10px] max-w-[268px]'>
+    <p class='max-w-[268px] p-[10px] text-center'>
       {t(description)}
     </p>
   </div>
-  <a href='/login' target='_blank' class='btn btn-primary small--secondary'
-    >{t(btnText)}</a
-  >
+  <a href='/login' target='_blank' class='btn btn-primary small--secondary'>{t(btnText)}</a>
   <Image
     src={src}
-    alt={title || ""}
+    alt={title || ''}
     quality='max'
     width={imgWidth}
     height={imgHeight}
     densities={[1.5, 2]}
-    class='mt-auto md:h-[204px] w-auto'
+    class='mt-auto w-auto md:h-[204px]'
   />
 </div>

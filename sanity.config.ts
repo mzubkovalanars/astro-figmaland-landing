@@ -1,9 +1,9 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
-import { visionTool } from '@sanity/vision';
-import { schemaTypes } from './src/schemaTypes';
 import { colorInput } from '@sanity/color-input';
 import { documentInternationalization } from '@sanity/document-internationalization';
+import { visionTool } from '@sanity/vision';
+import { schemaTypes } from './src/schemaTypes';
 
 const projectId =
   import.meta.env.PUBLIC_SANITY_STUDIO_PROJECT_ID! || import.meta.env.SANITY_STUDIO_PROJECT_ID!;

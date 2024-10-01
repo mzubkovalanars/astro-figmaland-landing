@@ -1,9 +1,9 @@
 ---
 import { changeLanguage } from 'i18next';
-import Layout from '@/layouts/Layout.astro';
-import ProductCard from '@/components/Products/ProductCard.astro';
-import type { Product } from '@/utils/interfaces';
-import { getProducts } from '@/sanity/client';
+import Layout from '@layouts/Layout.astro';
+import ProductCard from '@components/Products/ProductCard.astro';
+import type { Product } from '@utils/interfaces';
+import { getProducts } from '@sanity/client';
 
 changeLanguage('en');
 export const prerender = false;
@@ -26,7 +26,9 @@ if (error) {
 ---
 
 <Layout title='products.page.title' description='products.page.description'>
-  <section class='flex flex-wrap items-center justify-start gap-8 max-w-[1328px] px-14 py-12 sm:px-4 sm:py-6 mx-auto'>
+  <section
+    class='mx-auto flex max-w-[1328px] flex-wrap items-center justify-start gap-8 px-14 py-12 sm:px-4 sm:py-6'
+  >
     {data.map((product) => <ProductCard product={product} />)}
   </section>
 </Layout>

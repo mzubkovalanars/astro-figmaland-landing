@@ -1,17 +1,17 @@
+import { X } from 'lucide-react';
 import React, { useState } from 'react';
-import { Button } from '@/lib/components/ui/button';
+import { useTranslations } from '@i18n/utils';
+import { Button } from '@lib/components/ui/button';
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
-} from '@/lib/components/ui/dialog';
-import { X } from 'lucide-react';
-import { useTranslations } from '@/i18n/utils';
+} from '@lib/components/ui/dialog';
 
 interface LoginDialogProps {
   lang: 'en' | 'no';

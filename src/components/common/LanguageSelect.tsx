@@ -1,5 +1,6 @@
-import { languages } from '@/i18n/ui';
-import { useTranslatedPath } from '@/i18n/utils';
+import * as React from 'react';
+import { languages } from '@i18n/ui';
+import { useTranslatedPath } from '@i18n/utils';
 import {
   Select,
   SelectContent,
@@ -7,8 +8,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/lib/components/ui/select';
-import * as React from 'react';
+} from '@lib/components/ui/select';
 
 interface SelectProps {
   lng: 'en' | 'no';

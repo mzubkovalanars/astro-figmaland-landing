@@ -1,16 +1,16 @@
-import { Button } from '@/lib/components/ui/button';
+import { useState } from 'react';
+import { useMediaQuery } from '@uidotdev/usehooks';
+import LanguageSelect from '@components/common/LanguageSelect';
+import { useTranslations } from '@i18n/utils';
+import { Button } from '@lib/components/ui/button';
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerHeader,
   DrawerTrigger,
-} from '@/lib/components/ui/drawer';
-import LanguageSelect from '@/components/common/LanguageSelect';
-import { useTranslations } from '@/i18n/utils';
-import { navLinks } from '@/utils/constants';
-import { useMediaQuery } from '@uidotdev/usehooks';
-import { useState } from 'react';
+} from '@lib/components/ui/drawer';
+import { navLinks } from '@utils/constants';
 
 interface MenuDrawerProps {
   lang: 'en' | 'no';

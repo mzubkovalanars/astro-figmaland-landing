@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useTranslations } from '@/i18n/utils';
 import { useMediaQuery } from '@uidotdev/usehooks';
+import { useTranslations } from '@i18n/utils';
 import {
-  galleryImages,
-  galleryImagesMob,
   DISPLAY_IMAGES,
   DISPLAY_IMAGES_MOB,
-} from '@/utils/constants';
+  galleryImages,
+  galleryImagesMob,
+} from '@utils/constants';
 
 interface GalleryImagesProps {
   lang: 'en' | 'no';
