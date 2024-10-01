@@ -1,9 +1,9 @@
 ---
-import { changeLanguage } from 'i18next';
-import Layout from '@layouts/Layout.astro';
 import ProductSingle from '@components/Products/ProductSingle.astro';
+import Layout from '@layouts/Layout.astro';
+import { getProduct } from '@sanityClient/client';
 import type { Product } from '@utils/interfaces';
-import { getProduct } from '@sanity/client';
+import { changeLanguage } from 'i18next';
 
 changeLanguage('en');
 
