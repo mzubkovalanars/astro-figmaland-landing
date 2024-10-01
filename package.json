@@ -9,11 +9,11 @@
     "preview": "astro preview",
     "astro": "astro",
     "sanity": "sanity dev",
-    "build-sanity": "sanity build",
-    "deploy-sanity": "sanity deploy",
+    "build:sanity": "sanity build",
+    "deploy:sanity": "sanity deploy",
     "i18n": "npx astro-i18next generate",
-    "prettier-check": "npx prettier . --check",
-    "prettier-fix": "npx prettier . --write"
+    "prettier:check": "npx prettier . --check",
+    "prettier:fix": "npx prettier . --write"
   },
   "keywords": [
     "sanity"
@@ -38,7 +38,7 @@
     "@sanity/visual-editing": "^2.1.6",
     "@types/react-dom": "^18.3.0",
     "@uidotdev/usehooks": "^2.4.1",
-    "astro": "^4.8.3",
+    "astro": "^4.15.9",
     "astro-i18next": "^1.0.0-beta.21",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -56,9 +56,12 @@
     "vaul": "^0.9.0"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/react": "^18.3.3",
     "eslint": "^8.6.0",
-    "prettier": "3.2.5"
+    "prettier": "3.2.5",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.8"
   },
   "engines": {
     "node": ">= 16.12"
