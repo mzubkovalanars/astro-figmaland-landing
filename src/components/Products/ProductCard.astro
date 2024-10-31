@@ -1,7 +1,8 @@
 ---
-import { urlFor } from '@/sanity/client';
-import { getLangFromUrl, useTranslations } from '@/i18n/utils';
-import type { Product } from '@/utils/interfaces';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { urlFor } from '@sanityClient/client';
+import type { Product } from '@utils/interfaces';
+
 interface Props {
   product: Product;
 }
@@ -13,10 +14,10 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class='relative font-grotesk group sm:border sm:border-purple-600 sm:rounded-lg'>
+<div class='group relative font-grotesk sm:rounded-lg sm:border sm:border-purple-600'>
   <div class='card-tilt sm:hidden'></div>
   <div
-    class='flex flex-col gap-4 p-10 max-w-[380px] min-h-[620px] sm:min-h-full h-full relative bg-background rounded-lg'
+    class='relative flex h-full min-h-[620px] max-w-[380px] flex-col gap-4 rounded-lg bg-background p-10 sm:min-h-full'
   >
     <img
       width='500'
@@ -26,14 +27,14 @@ const t = useTranslations(lang);
         ? urlFor(image).width(500).height(500).format('webp').quality(100).url()
         : '/images/default-img.webp'}
     />
-    <h2 class='text-2xl h-[72px] sm:h-full'>{name}</h2>
-    <div class='flex flex-col items-start gap-2 mt-auto sm:mt-5'>
+    <h2 class='h-[72px] text-2xl sm:h-full'>{name}</h2>
+    <div class='mt-auto flex flex-col items-start gap-2 sm:mt-5'>
       <p class='font-grotesk text-lg'>{description}</p>
       <span class='text-sm'>$ {price}</span>
     </div>
     <a
       href={'products/' + slug.current}
-      class='bg-purple-600 py-2 mt-auto sm:mt-8 text-center rounded-lg hover:bg-pink-400'
+      class='mt-auto rounded-lg bg-purple-600 py-2 text-center hover:bg-pink-400 sm:mt-8'
     >
       {t('products.full')}
     </a>

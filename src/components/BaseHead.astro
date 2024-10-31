@@ -1,8 +1,7 @@
 ---
-// all pages through the use of the <BaseHead /> component.
-import { ViewTransitions } from "astro:transitions";
-import { t } from "i18next";
-import "@/styles/globals.css";
+import { ViewTransitions } from 'astro:transitions';
+import { t } from 'i18next';
+import '@styles/globals.css';
 
 interface Props {
   title: string;
@@ -12,7 +11,7 @@ interface Props {
 
 const canonicalURL = `https://figmaland${Astro.url.pathname}`;
 
-const { title, description, image = "/images/astronaut.png" } = Astro.props;
+const { title, description, image = '/images/astronaut.png' } = Astro.props;
 ---
 
 <meta charset='utf-8' />

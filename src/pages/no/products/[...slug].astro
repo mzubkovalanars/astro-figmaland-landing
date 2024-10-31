@@ -1,15 +1,15 @@
 ---
+import ProductSingle from '@components/Products/ProductSingle.astro';
+import Layout from '@layouts/Layout.astro';
+import { getProduct } from '@sanityClient/client';
+import type { Product } from '@utils/interfaces';
 import { changeLanguage } from 'i18next';
-import Layout from '@/layouts/Layout.astro';
-import ProductSingle from '@/components/Products/ProductSingle.astro';
-import type { Product } from '@/utils/interfaces';
-import { getProduct } from '@/sanity/client';
 
 changeLanguage('no');
 
 export const prerender = false;
 const { slug } = Astro.params;
-const data: Product = await getProduct(slug!, 'no');
+const data: Product = await getProduct(slug!, 'en');
 ---
 
 <Layout title={data.name} description={data.name + data.brand}>

@@ -1,50 +1,39 @@
 ---
-import LanguageSelect from "@/components/common/LanguageSelect";
-import MenuDrawer from "@/components/common/MenuDrawer";
-import {
-  getLangFromUrl,
-  useTranslatedPath,
-  useTranslations,
-} from "@/i18n/utils";
-import { navLinks } from "@/utils/constants";
+import LanguageSelect from '@components/common/LanguageSelect';
+import MenuDrawer from '@components/common/MenuDrawer';
+import { getLangFromUrl, useTranslatedPath, useTranslations } from '@i18n/utils';
+import { navLinks } from '@utils/constants';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<header
-  class='z-50 sticky top-0 left-0 right-0 w-full paddings-x bg-background'
->
-  <div
-    class='flex items-center max-w-[1098px] w-full my-0 mx-auto py-4 md:py-[14px]'
-  >
-    <a href={translatePath("/")}>
-      <img
-        src='/icons/logo-dark.svg'
-        alt='figma land'
-        width='206'
-        height='76'
-      />
+<header class='paddings-x sticky left-0 right-0 top-0 z-50 w-full bg-background'>
+  <div class='mx-auto my-0 flex w-full max-w-[1098px] items-center py-4 md:py-[14px]'>
+    <a href={translatePath('/')}>
+      <img src='/icons/logo-dark.svg' alt='figma land' width='206' height='76' />
     </a>
-    <ul class='items-center gap-8 ml-11 lg:hidden flex'>
-      {navLinks.map((item) => (
+    <ul class='ml-11 flex items-center gap-8 lg:hidden'>
+      {
+        navLinks.map((item) => (
           <li class='p-[10px]'>
-            <a href={translatePath(item.href)} class='pb-1 line-hover'>
+            <a href={translatePath(item.href)} class='line-hover pb-1'>
               {t(item.title)}
             </a>
           </li>
-        ))}
+        ))
+      }
     </ul>
-    <div class='flex items-center gap-5 ml-auto'>
+    <div class='ml-auto flex items-center gap-5'>
       <div class='lg:hidden'>
         <LanguageSelect client:load lng={lang} route={Astro.url.pathname} />
       </div>
       <a
-        href={translatePath("/login/")}
-        class='sm:hidden py-[13px] px-12 border border-white blue-hover'
+        href={translatePath('/login/')}
+        class='blue-hover border border-white px-12 py-[13px] sm:hidden'
       >
-        {t("nav.login")}
+        {t('nav.login')}
       </a>
     </div>
     <MenuDrawer client:only='react' lang={lang} route={Astro.url.pathname} />

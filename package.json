@@ -8,16 +8,10 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "sanity": "sanity dev",
-    "build-sanity": "sanity build",
-    "deploy-sanity": "sanity deploy",
     "i18n": "npx astro-i18next generate",
-    "prettier-check": "npx prettier . --check",
-    "prettier-fix": "npx prettier . --write"
+    "prettier:check": "npx prettier . --check",
+    "prettier:fix": "npx prettier . --write"
   },
-  "keywords": [
-    "sanity"
-  ],
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/mdx": "^3.0.1",
@@ -31,14 +25,9 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@sanity/astro": "^3.1.4",
-    "@sanity/client": "^6.20.1",
-    "@sanity/color-input": "^3.1.1",
-    "@sanity/document-internationalization": "^3.0.0",
-    "@sanity/vision": "^3.49.0",
-    "@sanity/visual-editing": "^2.1.6",
     "@types/react-dom": "^18.3.0",
     "@uidotdev/usehooks": "^2.4.1",
-    "astro": "^4.8.3",
+    "astro": "^4.15.9",
     "astro-i18next": "^1.0.0-beta.21",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -47,8 +36,6 @@
     "lucide-react": "^0.376.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sanity": "^3.49.0",
-    "styled-components": "^6.1.11",
     "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.7",
@@ -56,11 +43,15 @@
     "vaul": "^0.9.0"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/react": "^18.3.3",
     "eslint": "^8.6.0",
-    "prettier": "3.2.5"
+    "prettier": "3.2.5",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.8"
   },
   "engines": {
-    "node": ">= 16.12"
+    "node": ">=16.17.1 <=20.17.0",
+    "npm": ">=8.15.0 <=10.8.2"
   }
 }

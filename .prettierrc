@@ -9,5 +9,19 @@
   "bracketSameLine": false,
   "arrowParens": "always",
   "singleQuote": true,
-  "tabWidth": 2
+  "tabWidth": 2,
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": true,
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-tailwindcss",
+    "@trivago/prettier-plugin-sort-imports"
+  ],
+  "importOrder": [
+    "react",
+    "astro",
+    "<THIRD_PARTY_MODULES>",
+    "^@(assets|components|content|lib|i18n|pages|sanityClient|schemaTypes|styles|utils|public)/?(.*)$",
+    "^[./]"
+  ]
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useTranslations } from '@/i18n/utils';
-import { partnersImages } from '@/utils/constants';
+import { useTranslations } from '@i18n/utils';
+import { partnersImages } from '@utils/constants';
 
 interface PartnersLogoProps {
   lang: 'en' | 'no';
