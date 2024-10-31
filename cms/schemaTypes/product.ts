@@ -1,5 +1,5 @@
-import { isUniqueOtherThanLanguage } from '@sanityClient/client';
-import { defineField, defineType } from 'sanity';
+import {defineField, defineType} from 'sanity'
+import {isUniqueOtherThanLanguage} from '../utils/helpers'
 
 export default defineType({
   name: 'product',
@@ -51,7 +51,7 @@ export default defineType({
         maxLength: 100,
         isUnique: isUniqueOtherThanLanguage,
       },
-      hidden: ({ document }) => !document?.name,
+      hidden: ({document}) => !document?.name,
       validation: (rule) => rule.required().error('Required field'),
     }),
     defineField({
@@ -114,15 +114,15 @@ export default defineType({
       title: 'Specifications',
       type: 'object',
       fields: [
-        { name: 'connectivity', title: 'Connectivity', type: 'string' },
-        { name: 'wireless', title: 'Wireless', type: 'boolean' },
-        { name: 'compatibility', title: 'Compatibility', type: 'string' },
-        { name: 'resolution', title: 'Resolution', type: 'string' },
-        { name: 'sensor', title: 'Sensor', type: 'string' },
-        { name: 'storage', title: 'Storage', type: 'string' },
-        { name: 'storage_capacity', title: 'Storage Capacity', type: 'string' },
-        { name: 'ram', title: 'RAM', type: 'string' },
-        { name: 'display', title: 'Display', type: 'string' },
+        {name: 'connectivity', title: 'Connectivity', type: 'string'},
+        {name: 'wireless', title: 'Wireless', type: 'boolean'},
+        {name: 'compatibility', title: 'Compatibility', type: 'string'},
+        {name: 'resolution', title: 'Resolution', type: 'string'},
+        {name: 'sensor', title: 'Sensor', type: 'string'},
+        {name: 'storage', title: 'Storage', type: 'string'},
+        {name: 'storage_capacity', title: 'Storage Capacity', type: 'string'},
+        {name: 'ram', title: 'RAM', type: 'string'},
+        {name: 'display', title: 'Display', type: 'string'},
       ],
       group: 'technical',
     },
@@ -131,12 +131,12 @@ export default defineType({
       title: 'Specifications',
       type: 'object',
       fields: [
-        { name: 'weight', title: 'Weight', type: 'string' },
-        { name: 'material', title: 'Material', type: 'string' },
-        { name: 'thickness', title: 'Thickness', type: 'string' },
-        { name: 'adjustable_height', title: 'adjustable_height', type: 'boolean' },
-        { name: 'adjustable_length', title: 'Adjustable Length', type: 'boolean' },
-        { name: 'screen_size', title: 'Screen Size', type: 'string' },
+        {name: 'weight', title: 'Weight', type: 'string'},
+        {name: 'material', title: 'Material', type: 'string'},
+        {name: 'thickness', title: 'Thickness', type: 'string'},
+        {name: 'adjustable_height', title: 'adjustable_height', type: 'boolean'},
+        {name: 'adjustable_length', title: 'Adjustable Length', type: 'boolean'},
+        {name: 'screen_size', title: 'Screen Size', type: 'string'},
       ],
       group: 'physical',
     },
@@ -145,11 +145,11 @@ export default defineType({
       title: 'Specifications',
       type: 'object',
       fields: [
-        { name: 'battery_life', title: 'Battery Life', type: 'string' },
-        { name: 'power', title: 'Power', type: 'string' },
-        { name: 'output_power', title: 'Output Power', type: 'string' },
-        { name: 'suction_power', title: 'Suction Power', type: 'string' },
-        { name: 'range', title: 'Range', type: 'string' },
+        {name: 'battery_life', title: 'Battery Life', type: 'string'},
+        {name: 'power', title: 'Power', type: 'string'},
+        {name: 'output_power', title: 'Output Power', type: 'string'},
+        {name: 'suction_power', title: 'Suction Power', type: 'string'},
+        {name: 'range', title: 'Range', type: 'string'},
       ],
       group: 'performance',
     },
@@ -158,17 +158,17 @@ export default defineType({
       title: 'Specifications',
       type: 'object',
       fields: [
-        { name: 'waterproof', title: 'Waterproof', type: 'boolean' },
-        { name: 'voice_control', title: 'Voice Control', type: 'boolean' },
-        { name: 'foldable', title: 'Foldable', type: 'boolean' },
-        { name: 'heart_rate_monitor', title: 'Heart Rate Monitor', type: 'boolean' },
-        { name: 'wireless_charging_standard', title: 'Wireless Charging Standard', type: 'string' },
-        { name: 'games_included', title: 'Games included', type: 'number', initialValue: 1 },
+        {name: 'waterproof', title: 'Waterproof', type: 'boolean'},
+        {name: 'voice_control', title: 'Voice Control', type: 'boolean'},
+        {name: 'foldable', title: 'Foldable', type: 'boolean'},
+        {name: 'heart_rate_monitor', title: 'Heart Rate Monitor', type: 'boolean'},
+        {name: 'wireless_charging_standard', title: 'Wireless Charging Standard', type: 'string'},
+        {name: 'games_included', title: 'Games included', type: 'number', initialValue: 1},
       ],
       group: 'features',
     },
   ],
   preview: {
-    select: { title: 'name', media: 'image' },
+    select: {title: 'name', media: 'image'},
   },
-});
+})

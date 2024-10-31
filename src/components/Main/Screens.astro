@@ -4,7 +4,7 @@ import { t } from 'i18next';
 import ScreensImg from '@public/images/screens.webp';
 ---
 
-<section class='flex flex-col items-center bg-background pb-[50px] pt-[85px] md:pt-[57px]'>
+<section class='flex flex-col items-center pt-[85px] md:pt-[57px] pb-[50px] bg-background'>
   <div
     class='flex max-w-[760px] flex-col items-center px-6 text-center md:max-w-[370px] md:px-[30px] sm:px-4'
   >
@@ -15,17 +15,18 @@ import ScreensImg from '@public/images/screens.webp';
     </h1>
     <p class='text-xl sm:text-xl'>{t('main.screens.desc')}</p>
   </div>
-  <div class='mt-[85px] flex items-center gap-[35px] text-center md:flex-col sm:mt-[57px] sm:gap-5'>
+  <div class='flex md:flex-col items-center gap-[35px] sm:gap-5 text-center mt-[85px] sm:mt-[57px]'>
     <a href='#' target='_blank' class='btn btn-primary'>{t('btn-try-for-free')}</a>
     <a href='#' target='_blank' class='btn btn-secondary'>{t('btn-learn-more')}</a>
   </div>
   <div
-    class='gradient-img before:top-67.1 relative mb-[160px] mt-[35px] inline-block before:h-gradient before:max-h-full md:mb-0 sm:mt-[57px]'
+    class='gradient-img relative inline-block mt-[35px] mb-[160px] md:mb-0 sm:mt-[57px] before:top-67.1 before:max-h-full before:h-gradient'
   >
     <Image
       src={ScreensImg}
       quality='max'
       alt='graphics'
+      loading='eager'
       widths={[240, 540, 720, ScreensImg.width]}
       sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, ${ScreensImg.width}px`}
     />
