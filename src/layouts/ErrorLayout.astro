@@ -1,6 +1,6 @@
 ---
-import i18next from "i18next";
-import BaseHead from "@/components/BaseHead.astro";
+import i18next from 'i18next';
+import BaseHead from '@components/BaseHead.astro';
 
 interface Props {
   title: string;
@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body class='flex flex-col items-center justify-center min-h-lvh'>
+  <body class='flex min-h-lvh flex-col items-center justify-center'>
     <slot />
   </body>
 </html>

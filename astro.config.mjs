@@ -1,13 +1,14 @@
-import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
-import astroI18next from 'astro-i18next';
 import mdx from '@astrojs/mdx';
-import vercel from '@astrojs/vercel/serverless';
 import node from '@astrojs/node';
+import tailwind from '@astrojs/tailwind';
+import vercel from '@astrojs/vercel/serverless';
 import sanity from '@sanity/astro';
-import { loadEnv } from 'vite';
+import astroI18next from 'astro-i18next';
+import { defineConfig } from 'astro/config';
 import dotenv from 'dotenv';
+import { loadEnv } from 'vite';
+
 dotenv.config();
 
 const {

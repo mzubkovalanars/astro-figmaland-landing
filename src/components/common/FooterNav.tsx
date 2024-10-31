@@ -1,11 +1,11 @@
+import { useTranslations } from '@i18n/utils';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/lib/components/ui/accordion';
-import { useTranslations } from '@/i18n/utils';
-import { navLinksFooter } from '@/utils/constants';
+} from '@lib/components/ui/accordion';
+import { navLinksFooter } from '@utils/constants';
 
 interface FooterNavProps {
   lang: 'en' | 'no';

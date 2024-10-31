@@ -1,18 +1,18 @@
+import { X } from 'lucide-react';
 import React, { useState } from 'react';
-import { Button } from '@/lib/components/ui/button';
+import Spinner from '@components/common/Spinner';
+import StatusInfo from '@components/common/StatusInfo';
+import { useTranslations } from '@i18n/utils';
+import { Button } from '@lib/components/ui/button';
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
-} from '@/lib/components/ui/dialog';
-import { X } from 'lucide-react';
-import Spinner from '@/components/common/Spinner';
-import StatusInfo from '@/components/common/StatusInfo';
-import { useTranslations } from '@/i18n/utils';
+} from '@lib/components/ui/dialog';
 
 interface ContactDialogProps {
   lang: 'en' | 'no';

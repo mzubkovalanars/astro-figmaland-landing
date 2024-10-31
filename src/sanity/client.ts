@@ -1,8 +1,7 @@
 import { sanityClient } from 'sanity:client';
-
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import type { Product } from '@utils/interfaces';
 import imageUrlBuilder from '@sanity/image-url';
-import type { Product } from '@/utils/interfaces';
 
 export async function getProducts(language: string): Promise<Product[]> {
   try {

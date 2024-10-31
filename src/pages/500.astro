@@ -1,7 +1,9 @@
 ---
-import ErrorLayout from "@/layouts/ErrorLayout.astro";
-import ErrorItem from "@/components/common/ErrorItem.astro";
+import { changeLanguage } from 'i18next';
+import ErrorLayout from '@layouts/ErrorLayout.astro';
+import ErrorItem from '@components/common/ErrorItem.astro';
 
+changeLanguage('en');
 ---
 
 <ErrorLayout title='error.page.title' description='error.page.500'>

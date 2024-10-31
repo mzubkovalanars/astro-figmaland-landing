@@ -1,5 +1,5 @@
+import type { ArbitraryTypedObject, PortableTextBlock, TypedObject } from '@portabletext/types';
 import type { ImageAsset, Slug } from '@sanity/types';
-import type { TypedObject, PortableTextBlock, ArbitraryTypedObject } from '@portabletext/types';
 
 export interface IImage extends ImageAsset {
   caption: string;
