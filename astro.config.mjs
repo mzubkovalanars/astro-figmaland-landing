@@ -42,7 +42,6 @@ export default defineConfig({
     sanity({
       projectId,
       dataset,
-      studioBasePath: '/admin',
       useCdn: true,
       apiVersion: '2024-07-04',
     }),

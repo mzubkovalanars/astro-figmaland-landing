@@ -57,16 +57,25 @@ Explore the live demo: [astro-figmaland.vercel.app](https://astro-figmaland.verc
 │   │         └── ...
 │   ├── sanity/
 │   │   └── client.ts
-│   ├── schemaTypes/
-│   │   ├── product.ts
-│   │   ├── index.ts
-│   │   └── ...
 │   ├── styles/
 │   │   └── globals.css
 │   ├── utils/
 │   │   ├── constants.ts
 │   │   └── interfaces.ts
 │   └── env.d.ts
+├── cms/
+│   ├── schemaTypes/
+│   │   ├── product.ts
+│   │   ├── index.ts
+│   │   └── ...
+│   ├── static/
+│   ├── node_modules
+│   ├── sanity.cli.ts
+│   ├── sanity.config.ts
+│   ├── .eslintrc
+│   ├── package.json
+│   ├── package-lock.json
+│   └── tsconfig.json
 ├── node_modules
 ├── .eslintrc
 ├── .prettierrc
@@ -76,7 +85,6 @@ Explore the live demo: [astro-figmaland.vercel.app](https://astro-figmaland.verc
 ├── components.json
 ├── package.json
 ├── package-lock.json
-├── sanity.config.ts
 ├── tailwind.config.mjs
 └── tsconfig.json
 ```
@@ -97,7 +105,4 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`   | Preview your build locally, before deploying (also works for SSR builds if you use an adapter that supports it. Currently, only the Node adapter supports astro preview)     |
 | `npm run astro ...` | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help`     | Get help using the Astro CLI                     |
-| `npm run i18n`      | Create localized pages to `./pages/`             |
-| `npm run sanity`    | Starts Sanity local dev server at `localhost:3333` or `http://localhost:4321/admin`             |
-| `npm run build-sanity`    | Build your Sanity Studio             |
-| `npm run deploy-sanity`   | Deploy your Sanity Studio            |
+| `npm run i18n`      | Create localized pages to `./pages/`             |          
