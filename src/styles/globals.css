@@ -103,7 +103,7 @@
 
   html,
   body {
-    @apply h-full;
+    @apply min-h-lvh;
   }
 
   body {
@@ -117,7 +117,7 @@
 
 @layer components {
   .custom-md-content h3 {
-    @apply text-red-500;
+    @apply text-purple-500;
   }
 
   .btn {
@@ -153,7 +153,7 @@
   }
 
   .section {
-    @apply flex flex-col items-center px-6 py-[50px] md:px-[30px] sm:px-4;
+    @apply flex flex-col items-center px-6 md:px-[30px] sm:px-4;
   }
 
   .line-hover {
