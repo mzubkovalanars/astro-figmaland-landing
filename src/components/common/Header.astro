@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import LanguageSelect from '@components/common/LanguageSelect';
 import MenuDrawer from '@components/common/MenuDrawer';
+import LogoIcon from '@assets/icons/logo.svg';
 import { getLangFromUrl, useTranslatedPath, useTranslations } from '@i18n/utils';
 import { navLinks } from '@utils/constants';
 
@@ -10,9 +12,14 @@ const translatePath = useTranslatedPath(lang);
 ---
 
 <header class='paddings-x sticky left-0 right-0 top-0 z-50 w-full bg-background'>
-  <div class='mx-auto my-0 flex w-full max-w-[1098px] items-center py-4 md:py-[14px]'>
-    <a href={translatePath('/')}>
-      <img src='/icons/logo-dark.svg' alt='figma land' width='206' height='76' />
+  <div class='mx-auto my-0 flex w-full max-w-[1098px] items-center py-5 md:py-[14px]'>
+    <a href={translatePath('/')} class="py-[10px]">
+      <Image
+        src={LogoIcon}
+        quality='max'
+        alt='figma land'
+        loading='eager'
+      />
     </a>
     <ul class='ml-11 flex items-center gap-8 lg:hidden'>
       {
