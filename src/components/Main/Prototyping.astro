@@ -1,5 +1,8 @@
 ---
 import { t } from 'i18next';
+import { Image } from 'astro:assets';
+import PrototypingImg from '@assets/images/prototyping.png';
+import PrototypingImgMobile from '@assets/images/prototyping-mob.png';
 ---
 
 <section class='pb-[120px] pt-[50px] md:pb-[100px]'>
@@ -14,9 +17,18 @@ import { t } from 'i18next';
       </h2>
       <a href='#' target='_blank' class='btn btn-primary small'>{t('btn-try-for-free')}</a>
     </div>
-    <div
-      class="h-[365px] w-full max-w-[585px] bg-[url('/images/prototyping.webp')] bg-center bg-no-repeat md:h-[384px] md:bg-[url('/images/prototyping-mob.webp')] sm:max-w-[541px]"
-    >
+    <div class='flex w-full max-w-[585px] items-start justify-start md:h-[384px]'>
+      <picture>
+        <source srcset={PrototypingImgMobile.src} media='(max-width: 768px)' />
+        <Image
+          src={PrototypingImg}
+          alt='prototyping panel'
+          width={752}
+          height={759}
+          quality='max'
+          densities={[1, 1.5, 2]}
+        />
+      </picture>
     </div>
   </div>
 </section>
