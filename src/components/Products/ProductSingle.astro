@@ -5,6 +5,7 @@ import { urlFor } from '@sanityClient/client';
 import DisplaySpecs from '@components/common/DisplaySpecs';
 import CustomPortableText from '@components/common/CustomPortableText';
 import Rating from './Rating';
+import DefaultImg from '@assets/images/default-img.webp';
 
 interface Props {
   product: Product;
@@ -40,7 +41,7 @@ const t = useTranslations(lang);
         alt={image?.caption || ''}
         src={image
           ? urlFor(image).width(500).height(500).format('webp').quality(100).url()
-          : '/images/default-img.webp'}
+          : DefaultImg.src}
       />
       <div class='flex min-w-[422px] flex-1 flex-col items-start gap-4 lg:min-w-full lg:gap-6'>
         <div class='mb-10 flex w-full items-center justify-between gap-6'>
