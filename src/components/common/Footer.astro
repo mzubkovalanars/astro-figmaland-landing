@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getLangFromUrl, useTranslatedPath, useTranslations } from '@i18n/utils';
 import {
   ADDRESS_COMPANY,
@@ -7,8 +8,8 @@ import {
   socialContactLinks,
 } from '@utils/constants';
 import FooterNav from '@components/common/FooterNav';
-import MapIcon from '@public/icons/bx-map.svg';
-import MobileIcon from '@public/icons/phone-android.svg';
+import MapIcon from '@assets/icons/bx-map.svg';
+import MobileIcon from '@assets/icons/phone-android.svg';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -36,18 +37,24 @@ const translatePath = useTranslatedPath(lang);
     <FooterNav client:only='react' lang={lang} />
     <div class='flex flex-col items-start gap-[10px] tracking-[.015em]'>
       <div class='flex items-center gap-2'>
-        <img src={MapIcon.src} alt='figma land' width='44' height='44' />
+        <Image src={MapIcon} alt='figma land' class='h-11 w-11' />
         <p>{ADDRESS_COMPANY}</p>
       </div>
       <div class='flex items-center gap-2'>
-        <img src={MobileIcon.src} alt='figma land' width='44' height='44' />
+        <Image src={MobileIcon} alt='figma land' class='h-11 w-11' />
         <a href={`tel:${PHONE_COMPANY}`} class='line-hover'>{PHONE_COMPANY}</a>
       </div>
       <div class='flex items-start gap-6 py-5'>
         {
           socialContactLinks.map((social) => (
             <a href={social.href} target='_blank'>
-              <img src={social.src} alt={social.alt || ''} width='40' height='40' />
+              <Image
+                src={social.src}
+                alt={social.alt || ''}
+                width='40'
+                height='40'
+                class='h-10'
+              />
             </a>
           ))
         }
