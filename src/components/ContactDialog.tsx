@@ -1,5 +1,7 @@
 import { X } from 'lucide-react';
 import React, { useState } from 'react';
+import AstronautImgX2 from '@assets/images/astronaut-x2.webp';
+import AstronautImg from '@assets/images/astronaut.webp';
 import Spinner from '@components/common/Spinner';
 import StatusInfo from '@components/common/StatusInfo';
 import { useTranslations } from '@i18n/utils';
@@ -59,7 +61,7 @@ const ContactDialog: React.FC<ContactDialogProps> = ({ lang }) => {
       setState({
         ...state,
         isLoading: false,
-        isSuccessDialog: true,
+        isErrorDialog: true,
         isFormDialog: false,
       });
     }, 3000);
@@ -151,19 +153,29 @@ const ContactDialog: React.FC<ContactDialogProps> = ({ lang }) => {
                 </div>
               </form>
               <div className='flex md:hidden flex-col flex-1 justify-center w-full min-w-[288px]'>
-                <div className="flex flex-col justify-end px-5 pb-12 text-[16px] bg-[url('/images/astronaut.webp')] bg-center bg-no-repeat max-w-[516px] h-[536px] w-full">
-                  <blockquote>"{t('contact.form.quote')}"</blockquote>
+                <div className='flex flex-col justify-end gap-2 px-5 pb-12 text-[16px]'>
+                  <img
+                    src={AstronautImg.src}
+                    srcSet={`${AstronautImg.src} 1x, ${AstronautImgX2.src} 2x`}
+                    alt='astronaut'
+                    loading='lazy'
+                    width={516}
+                    height={536}
+                    className='max-w-[416px]'
+                  />
+                  <blockquote className='mt-4'>"{t('contact.form.quote')}"</blockquote>
                   <p className='font-medium'>{t('contact.form.quote.author')}</p>
                 </div>
               </div>
             </div>
           </>
         )}
-        {isSuccessDialog && <StatusInfo text={t('contact.form.success')} />}
-        {isErrorDialog && <StatusInfo text={t('contact.form.error')} />}
+        {isSuccessDialog && <StatusInfo status='success' text={t('contact.form.success')} />}
+        {isErrorDialog && <StatusInfo status='error' text={t('contact.form.error')} />}
       </DialogContent>
     </Dialog>
   );
 };
 
 export default ContactDialog;
+
