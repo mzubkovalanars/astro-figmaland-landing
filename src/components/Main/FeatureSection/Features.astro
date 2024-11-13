@@ -2,28 +2,30 @@
 import { Image } from 'astro:assets';
 import Section from '@components/common/Section.astro';
 import FeatureCard from '@components/Main/FeatureSection/FeatureCard.astro';
-import FeaturesImg from '@public/images/features.webp';
+import FeaturesImg from '@assets/images/features.png';
 import { featureCards } from '@utils/constants';
 ---
 
 <Section title='main.features' description='main.features.desc' isSecondarySection>
   <Fragment slot='content-section'>
     <div
-      class='mt-[80px] flex flex-wrap items-center justify-center gap-[35px] text-center md:mt-[27px] md:gap-[27px]'
+      class='mt-[80px] flex flex-nowrap items-center justify-center gap-[35px] max-w-[1088px] text-center lg:flex-wrap md:mt-[27px] md:gap-[27px]'
     >
       <Image
         src={FeaturesImg}
         alt='control panel'
-        width='784'
-        height='759'
+        width={752}
+        height={759}
         quality='max'
-        densities={[1.5, 2]}
+        densities={[1, 1.5, 2]}
       />
-      {
-        featureCards.map((card) => (
-          <FeatureCard title={card.title} description={card.description} src={card.src} />
-        ))
-      }
+      <div class="flex flex-col p-5 gap-6">
+        {
+          featureCards.map((card) => (
+            <FeatureCard title={card.title} description={card.description} src={card.src} />
+          ))
+        }
+      </div>
     </div>
   </Fragment>
 </Section>

@@ -1,21 +1,21 @@
 ---
 import { Image } from 'astro:assets';
 import { t } from 'i18next';
-import ScreensImg from '@public/images/screens.webp';
+import ScreensImg from '@assets/images/screens.png';
 ---
 
-<section class='flex flex-col items-center pt-[85px] md:pt-[57px] pb-[50px] bg-background'>
+<section class='flex flex-col items-center bg-background'>
   <div
-    class='flex max-w-[760px] flex-col items-center px-6 text-center md:max-w-[370px] md:px-[30px] sm:px-4'
+    class='flex max-w-[760px] flex-col items-center px-6 pt-[85px] pb-[50px] text-center md:max-w-[370px] md:px-[30px] sm:px-4 md:py-[57px]'
   >
     <h1
-      class='mb-[17px] p-[10px] text-[80px] leading-[88px] md:p-0 md:text-[52px] md:leading-[66px]'
+      class='mb-[17px] p-[10px] text-[80px] leading-[88px] md:p-0 md:text-[52px] md:leading-[66px] sm:text-[38px]'
     >
       {t('main.screens')}
     </h1>
     <p class='text-xl sm:text-xl'>{t('main.screens.desc')}</p>
   </div>
-  <div class='flex md:flex-col items-center gap-[35px] sm:gap-5 text-center mt-[85px] sm:mt-[57px]'>
+  <div class='flex md:flex-col items-center gap-[35px] sm:gap-5 text-center mt-[35px] sm:mt-[57px]'>
     <a href='#' target='_blank' class='btn btn-primary'>{t('btn-try-for-free')}</a>
     <a href='#' target='_blank' class='btn btn-secondary'>{t('btn-learn-more')}</a>
   </div>

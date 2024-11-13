@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useMediaQuery } from '@uidotdev/usehooks';
+import LogoIcon from '@assets/icons/logo.svg';
 import LanguageSelect from '@components/common/LanguageSelect';
 import { useTranslations } from '@i18n/utils';
 import { Button } from '@lib/components/ui/button';
@@ -42,7 +43,7 @@ export default function MenuDrawer({ lang, route }: MenuDrawerProps) {
             ></Button>
           </DrawerClose>
           <a href='/'>
-            <img src='/icons/logo-dark.svg' alt='figma land' width='206' height='76' />
+            <img src={LogoIcon.src} alt='figma land' width='206' height='76' />
           </a>
         </DrawerHeader>
         <ul className='flex flex-col flex-1 items-center justify-center'>
