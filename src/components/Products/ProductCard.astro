@@ -2,6 +2,7 @@
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import { urlFor } from '@sanityClient/client';
 import type { Product } from '@utils/interfaces';
+import DefaultImg from '@assets/images/default-img.webp';
 
 interface Props {
   product: Product;
@@ -25,7 +26,7 @@ const t = useTranslations(lang);
       alt={image?.caption || ''}
       src={image
         ? urlFor(image).width(500).height(500).format('webp').quality(100).url()
-        : '/images/default-img.webp'}
+        : DefaultImg.src}
     />
     <h2 class='h-[72px] text-2xl sm:h-full'>{name}</h2>
     <div class='mt-auto flex flex-col items-start gap-2 sm:mt-5'>
