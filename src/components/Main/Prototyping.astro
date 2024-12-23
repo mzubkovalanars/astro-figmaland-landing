@@ -1,11 +1,8 @@
 ---
+import { t } from 'i18next';
 import { Image } from 'astro:assets';
 import PrototypingImg from '@assets/images/prototyping.png';
 import PrototypingImgMobile from '@assets/images/prototyping-mob.png';
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
 <section>
