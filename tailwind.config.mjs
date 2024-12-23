@@ -7,14 +7,22 @@ export default {
   prefix: '',
   theme: {
     screens: {
-      xl: { max: '1280px' },
-      lg: { max: '1090px' },
-      md: { max: '767px' },
-      sm: { max: '500px' },
+      xl: {
+        max: '1280px',
+      },
+      lg: {
+        max: '1090px',
+      },
+      md: {
+        max: '767px',
+      },
+      sm: {
+        max: '500px',
+      },
     },
     extend: {
       fontFamily: {
-        sans: ['"Graphik"', ...defaultTheme.fontFamily.sans],
+        sans: ['Graphik"', ...defaultTheme.fontFamily.sans],
         inter: ['Inter', 'sans-serif'],
         grotesk: ['SpaceGrotesk', 'sans-serif'],
         graphik: ['Graphik', 'sans-serif'],
@@ -67,18 +75,41 @@ export default {
         normal: '0',
         wide: '.025em',
         wider: '.05em',
-        widest: '.1em',
         widest: '.25em',
       },
       keyframes: {
         tilt: {
-          '0%, 50%, 100%': { transform: 'rotate(0deg)' },
-          '25%': { transform: 'rotate(0.5deg)' },
-          '75%': { transform: 'rotate(-0.5deg)' },
+          '0%, 50%, 100%': {
+            transform: 'rotate(0deg)',
+          },
+          '25%': {
+            transform: 'rotate(0.5deg)',
+          },
+          '75%': {
+            transform: 'rotate(-0.5deg)',
+          },
+        },
+        'accordion-down': {
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
         },
       },
       animation: {
         tilt: 'tilt 10s infinite linear',
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },

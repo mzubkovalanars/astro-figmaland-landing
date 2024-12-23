@@ -6,20 +6,20 @@ import FeaturesImg from '@assets/images/features.png';
 import { featureCards } from '@utils/constants';
 ---
 
-<Section title='main.features' description='main.features.desc' isSecondarySection>
-  <Fragment slot='content-section'>
+<Section title="main.features" description="main.features.desc" isSecondarySection>
+  <Fragment slot="content-section">
     <div
-      class='mt-[80px] flex flex-nowrap items-center justify-center gap-[35px] max-w-[1088px] text-center lg:flex-wrap md:mt-[27px] md:gap-[27px]'
+      class="mt-[80px] flex max-w-[1088px] flex-nowrap items-center justify-center gap-[35px] text-center lg:flex-wrap md:mt-[27px] md:gap-[27px]"
     >
       <Image
         src={FeaturesImg}
-        alt='control panel'
+        alt="control panel"
         width={752}
         height={759}
-        quality='max'
+        quality="max"
         densities={[1, 1.5, 2]}
       />
-      <div class="flex flex-col p-5 gap-6">
+      <div class="flex flex-col gap-6 p-5">
         {
           featureCards.map((card) => (
             <FeatureCard title={card.title} description={card.description} src={card.src} />

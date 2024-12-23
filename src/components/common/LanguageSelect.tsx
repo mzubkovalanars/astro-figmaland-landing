@@ -28,10 +28,14 @@ const LanguageSelect: React.FC<SelectProps> = ({ lng, route }) => {
       <SelectTrigger className='w-16' aria-label={lng}>
         <SelectValue placeholder={lng} />
       </SelectTrigger>
-      <SelectContent className='min-w-9 z-50 bg-background'>
+      <SelectContent className='z-50 min-w-9 bg-background'>
         <SelectGroup>
           {Object.entries(languages).map(([lang, label]) => (
-            <SelectItem value={lang} key={lang} className='text-center px-3 py-2'>
+            <SelectItem
+              value={lang}
+              key={lang}
+              className='cursor-pointer px-3 py-2 text-center hover:bg-primary-foreground'
+            >
               {label}
             </SelectItem>
           ))}

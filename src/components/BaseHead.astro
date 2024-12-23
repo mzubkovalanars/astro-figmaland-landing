@@ -1,5 +1,6 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
+import { HeadHrefLangs } from 'astro-i18next/components';
 import { t } from 'i18next';
 import '@styles/globals.css';
 
@@ -14,27 +15,28 @@ const canonicalURL = `https://figmaland${Astro.url.pathname}`;
 const { title, description, image = '/images/astronaut.png' } = Astro.props;
 ---
 
-<meta charset='utf-8' />
-<meta name='viewport' content='width=device-width,initial-scale=1' />
-<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-<meta name='generator' content={Astro.generator} />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<HeadHrefLangs />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
 
-<link rel='canonical' href={canonicalURL} />
+<link rel="canonical" href={canonicalURL} />
 
 <title>{t(title)}</title>
-<meta name='title' content={t(title)} />
-<meta name='description' content={t(description)} />
+<meta name="title" content={t(title)} />
+<meta name="description" content={t(description)} />
 
-<meta property='og:type' content='website' />
-<meta property='og:url' content={Astro.url} />
-<meta property='og:title' content={t(title)} />
-<meta property='og:description' content={t(description)} />
-<meta property='og:image' content={new URL(image, Astro.url)} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={t(title)} />
+<meta property="og:description" content={t(description)} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
 
-<meta property='twitter:card' content='summary_large_image' />
-<meta property='twitter:url' content={Astro.url} />
-<meta property='twitter:title' content={t(title)} />
-<meta property='twitter:description' content={t(description)} />
-<meta property='twitter:image' content={new URL(image, Astro.url)} />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={t(title)} />
+<meta property="twitter:description" content={t(description)} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<ViewTransitions />
+<ClientRouter />

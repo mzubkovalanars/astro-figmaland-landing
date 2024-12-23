@@ -12,7 +12,7 @@ const Rating = ({ rating }: { rating: number }) => {
       {[...Array(fullStars)].map((_, index) => (
         <svg
           key={`full-${index}`}
-          className='w-6 h-6 text-primary fill-current'
+          className='h-6 w-6 fill-current text-primary'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 24 24'
         >
@@ -22,7 +22,7 @@ const Rating = ({ rating }: { rating: number }) => {
       {hasHalfStar && (
         <svg
           key={`half-${fullStars}`}
-          className='w-6 h-6 text-primary fill-current'
+          className='h-6 w-6 fill-current text-primary'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 24 24'
         >
@@ -38,7 +38,7 @@ const Rating = ({ rating }: { rating: number }) => {
       {[...Array(emptyStars)].map((_, index) => (
         <svg
           key={`empty-${index}`}
-          className='w-6 h-6 text-gray-400 fill-current'
+          className='h-6 w-6 fill-current text-gray-400'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 24 24'
         >

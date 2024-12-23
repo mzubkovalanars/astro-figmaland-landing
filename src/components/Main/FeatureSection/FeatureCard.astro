@@ -11,19 +11,13 @@ interface Props {
 const { title, description, src } = Astro.props;
 ---
 
-<div class='flex flex-col gap-[25px]'>
-  <div class='flex flex-col items-start pb-10'>
-    <div class='flex items-center gap-[10px]'>
-      <Image
-        src={src}
-        alt='graphics'
-        width={32}
-        height={32}
-        quality='max'
-      />
-      <p class='max-w-[158px] text-start text-xl font-medium'>{t(title)}</p>
+<div class="flex flex-col gap-[25px]">
+  <div class="flex flex-col items-start pb-10">
+    <div class="flex items-center gap-[10px]">
+      <Image src={src} alt="graphics" width={32} height={32} quality="max" />
+      <p class="max-w-[158px] text-start text-xl font-medium">{t(title)}</p>
     </div>
-    <p class='p-[10px] text-start'>
+    <p class="p-[10px] text-start">
       {t(description)}
     </p>
   </div>

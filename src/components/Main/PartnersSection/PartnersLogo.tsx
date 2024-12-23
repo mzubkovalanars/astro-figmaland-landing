@@ -13,23 +13,23 @@ const PartnersLogo: React.FC<PartnersLogoProps> = ({ lang }) => {
   const displayedImages = showAll ? partnersImages : partnersImages.slice(0, 6);
 
   return (
-    <div className='animate-in fade-in zoom-in delay-1000 flex flex-col items-center max-w-4xl'>
-      <div className='flex flex-wrap items-center justify-center gap-[74px] sm:gap-5 md:gap-[50px] max-w-[1097px] md:max-w-[386px] my-[50px]'>
+    <div className='flex max-w-4xl flex-col items-center delay-1000 animate-in fade-in zoom-in'>
+      <div className='my-[50px] flex max-w-[1097px] flex-wrap items-center justify-center gap-[74px] md:max-w-[386px] md:gap-[50px] sm:gap-5'>
         {displayedImages.map((image, i) => (
           <div key={image.src + i} className='flex transition duration-1000 ease-out'>
             <img
               src={image.src}
-              alt={image.alt || ''}
+              alt=''
               width={image.width}
               height={image.height}
               loading='lazy'
-              className='h-auto max-h-[60px] sm:max-h-[50px] max-w-full rounded-[12px]'
+              className='h-auto max-h-[60px] max-w-full rounded-[12px] sm:max-h-[50px]'
             />
           </div>
         ))}
       </div>
       {showAll ? null : (
-        <button onClick={() => setShowAll(!showAll)} className='px-4 py-2 btn btn-secondary small'>
+        <button onClick={() => setShowAll(!showAll)} className='btn btn-secondary small px-4 py-2'>
           {t('main.partners.btn')}
         </button>
       )}

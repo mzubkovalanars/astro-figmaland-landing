@@ -1,9 +1,10 @@
 ---
-import { getLangFromUrl, useTranslatedPath } from '@i18n/utils';
-import { t } from 'i18next';
+import { t, changeLanguage } from 'i18next';
+import { localizePath } from 'astro-i18next';
+import { getLangFromUrl } from '@i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
-const translatePath = useTranslatedPath(lang);
+changeLanguage(lang);
 
 interface Props {
   status: string;
@@ -13,10 +14,9 @@ interface Props {
 const { status, text } = Astro.props;
 ---
 
-<div class='flex flex-col items-center gap-5 font-grotesk'>
-  <h1 class='text-8xl'>{status}</h1>
-  <p class='text-2xl'>{t(text)}</p>
-  <a href={translatePath('/')} class='btn-primary w-40 rounded-[32px] text-center'
-    >{t('nav.home')}</a
+<div class="flex flex-col items-center gap-5 font-grotesk">
+  <h1 class="text-8xl">{status}</h1>
+  <p class="text-2xl">{t(text)}</p>
+  <a href={localizePath('/')} class="btn-primary w-40 rounded-[32px] text-center">{t('nav.home')}</a
   >
 </div>

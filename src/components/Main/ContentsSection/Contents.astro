@@ -4,9 +4,9 @@ import ContentsCard from '@components/Main/ContentsSection/ContentsCard.astro';
 import { contentCards } from '@utils/constants';
 ---
 
-<Section title='main.contents' description='main.contents.desc'>
-  <Fragment slot='content-section'>
-    <div class='mt-11 flex w-full max-w-[985px] flex-wrap items-center justify-center gap-[33px]'>
+<Section title="main.contents" description="main.contents.desc">
+  <Fragment slot="content-section">
+    <div class="mt-11 flex w-full max-w-[985px] flex-wrap items-center justify-center gap-[33px]">
       {
         contentCards.map((card) => (
           <ContentsCard

@@ -12,10 +12,9 @@ const StatusInfo: React.FC<StatusInfoProps> = ({ text, status }) => {
   return (
     <div className='flex flex-col items-center justify-center gap-5 p-16 sm:p-5'>
       <img src={statusImg.src} width={128} height={128} alt={status} />
-      <p className='text-3xl text-center'>{text}</p>
+      <p className='text-center text-3xl'>{text}</p>
     </div>
   );
 };
 
 export default StatusInfo;
-

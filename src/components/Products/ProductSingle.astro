@@ -31,34 +31,34 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class='px-14 py-12 font-graphik sm:px-4 sm:py-6'>
-  <div class='mx-auto my-0 flex max-w-[1260px] items-center justify-center sm:px-4 sm:py-6'>
-    <div class='flex w-full flex-wrap items-start justify-center gap-10 lg:items-center md:gap-16'>
+<section class="px-14 py-12 font-graphik sm:px-4 sm:py-6">
+  <div class="mx-auto my-0 flex max-w-[1260px] items-center justify-center sm:px-4 sm:py-6">
+    <div class="flex w-full flex-wrap items-start justify-center gap-10 lg:items-center md:gap-16">
       <img
-        width='500'
-        height='500'
-        loading='lazy'
+        width="500"
+        height="500"
+        loading="lazy"
         alt={image?.caption || ''}
         src={image
           ? urlFor(image).width(500).height(500).format('webp').quality(100).url()
           : DefaultImg.src}
       />
-      <div class='flex min-w-[422px] flex-1 flex-col items-start gap-4 lg:min-w-full lg:gap-6'>
-        <div class='mb-10 flex w-full items-center justify-between gap-6'>
-          <p class='text-lg sm:text-sm'>{brand}</p>
+      <div class="flex min-w-[422px] flex-1 flex-col items-start gap-4 lg:min-w-full lg:gap-6">
+        <div class="mb-10 flex w-full items-center justify-between gap-6">
+          <p class="text-lg sm:text-sm">{brand}</p>
           {rating && <Rating rating={rating} />}
-          <p class='text-sm'>{rating} {t('products.ratings')}</p>
+          <p class="text-sm">{rating} {t('products.ratings')}</p>
         </div>
-        <h2 class='font-grotesk text-5xl sm:text-2xl'>{name}</h2>
-        <div class='mb-10 mt-10 flex flex-1 flex-col items-start gap-5'>
+        <h2 class="font-grotesk text-5xl sm:text-2xl">{name}</h2>
+        <div class="mb-10 mt-10 flex flex-1 flex-col items-start gap-5">
           <CustomPortableText value={overview} client:load />
         </div>
         <DisplaySpecs data={specs} lang={lang} />
-        <div class='mt-auto flex w-full flex-col items-end justify-between gap-4 sm:mt-0'>
-          <div class='flex w-full items-center justify-between'>
-            {t('products.price')}<span class='text-2xl sm:text-lg'>$ {price}</span>
+        <div class="mt-auto flex w-full flex-col items-end justify-between gap-4 sm:mt-0">
+          <div class="flex w-full items-center justify-between">
+            {t('products.price')}<span class="text-2xl sm:text-lg">$ {price}</span>
           </div>
-          <a href='/' class='btn btn-primary'>{t('products.buy')}</a>
+          <a href="/" class="btn btn-primary">{t('products.buy')}</a>
         </div>
       </div>
     </div>

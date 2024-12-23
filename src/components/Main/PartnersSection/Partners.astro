@@ -6,8 +6,8 @@ import PartnersLogo from './PartnersLogo';
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<Section title='main.partners' description='main.partners.desc'>
-  <Fragment slot='content-section'>
+<Section title="main.partners" description="main.partners.desc">
+  <Fragment slot="content-section">
     <PartnersLogo client:visible lang={lang} />
   </Fragment>
 </Section>

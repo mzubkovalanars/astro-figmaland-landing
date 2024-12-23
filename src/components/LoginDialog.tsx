@@ -32,23 +32,23 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ lang }) => {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent
         hideCloseButton
-        className='gap-0 sm:max-w-auto max-w-[1440px] pt-10 border-none'
+        className='sm:max-w-auto max-w-[1440px] gap-0 border-none pt-10'
       >
-        <DialogTrigger asChild className='flex ml-auto w-max'>
+        <DialogTrigger asChild className='ml-auto flex w-max'>
           <DialogClose onClick={handleClose} aria-label='close dialog'>
             <X className='h-6 w-6' />
           </DialogClose>
         </DialogTrigger>
         <DialogHeader className='gap-5 sm:pt-20'>
-          <DialogTitle className='font-grotesk text-[54px] sm:text-3xl tracking-tightest'>
+          <DialogTitle className='font-grotesk text-[54px] tracking-tightest sm:text-3xl'>
             {t('login.title')}
           </DialogTitle>
-          <DialogDescription className='font-inter text-[22px] sm:text-lg text-gray-text tracking-tightest'>
+          <DialogDescription className='font-inter text-[22px] tracking-tightest text-gray-text sm:text-lg'>
             {t('login.desc')}
           </DialogDescription>
         </DialogHeader>
-        <div className='flex justify-center mt-20 sm:mt-7 font-inter'>
-          <div className='flex flex-col flex-1 max-w-[440px] min-w-[272px]'>
+        <div className='mt-20 flex justify-center font-inter sm:mt-7'>
+          <div className='flex min-w-[272px] max-w-[440px] flex-1 flex-col'>
             <form className='flex flex-col gap-4'>
               <input
                 id='email'
@@ -68,13 +68,13 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ lang }) => {
               />
               <Button
                 type='submit'
-                className='text-lg sm:text-sm leading-6 justify-between h-full py-5 px-8 sm:px-5 bg-login-gradient'
+                className='h-full justify-between bg-login-gradient px-8 py-5 text-lg leading-6 sm:px-5 sm:text-sm'
               >
-                <p className='py-1 px-4'>{t('login.title')}</p>
+                <p className='px-4 py-1'>{t('login.title')}</p>
                 <img src={ArrowIcon.src} alt='arrow icon' width='28' height='22' />
               </Button>
             </form>
-            <div className='flex gap-1 items-center text-xs mt-1'>
+            <div className='mt-1 flex items-center gap-1 text-xs'>
               <p className='text-gray-text'>{t('login.register.text')}</p>
               <a href='/signup' className='cursor-pointer'>
                 {t('login.register.btn')}
@@ -82,8 +82,8 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ lang }) => {
             </div>
           </div>
         </div>
-        <DialogFooter className='justify-center sm:justify-center items-center pt-[60px] pb-10'>
-          <a href='/forgot-password' className='font-inter text-lg underline cursor-pointer'>
+        <DialogFooter className='items-center justify-center pb-10 pt-[60px] sm:justify-center'>
+          <a href='/forgot-password' className='cursor-pointer font-inter text-lg underline'>
             {t('login.register.forgot')}
           </a>
         </DialogFooter>

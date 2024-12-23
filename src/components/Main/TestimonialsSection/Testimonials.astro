@@ -4,14 +4,14 @@ import TestimonialCard from '@components/Main/TestimonialsSection/TestimonialCar
 import { testimonialCards, COUNT_ITEM_IN_COLUMN } from '@utils/constants';
 ---
 
-<Section title='main.testimonials' description=''>
-  <Fragment slot='content-section'>
+<Section title="main.testimonials" description="">
+  <Fragment slot="content-section">
     <div
-      class='mt-11 flex flex-wrap items-start justify-center gap-x-[23px] md:mt-10 md:gap-[23px]'
+      class="mt-11 flex flex-wrap items-start justify-center gap-x-[23px] md:mt-10 md:gap-[23px]"
     >
       {
         [0, 1].map((columnIndex) => (
-          <div class='flex max-w-[430px] flex-1 flex-col gap-5 md:max-w-[352px] md:gap-[23px]'>
+          <div class="flex max-w-[430px] flex-1 flex-col gap-5 md:max-w-[352px] md:gap-[23px]">
             {testimonialCards
               .slice(
                 columnIndex * COUNT_ITEM_IN_COLUMN,
