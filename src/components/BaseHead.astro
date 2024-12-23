@@ -1,5 +1,6 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
+import { HeadHrefLangs } from "astro-i18next/components";
 import { t } from 'i18next';
 import '@styles/globals.css';
 
@@ -16,6 +17,7 @@ const { title, description, image = '/images/astronaut.png' } = Astro.props;
 
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width,initial-scale=1' />
+<HeadHrefLangs />
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 <meta name='generator' content={Astro.generator} />
 
@@ -37,4 +39,4 @@ const { title, description, image = '/images/astronaut.png' } = Astro.props;
 <meta property='twitter:description' content={t(description)} />
 <meta property='twitter:image' content={new URL(image, Astro.url)} />
 
-<ViewTransitions />
+<ClientRouter />
