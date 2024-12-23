@@ -4,7 +4,7 @@ description:
   'Figma Land is at the forefront of transforming the design workflow, offering a seamless and
   integrated platform'
 pubDate: 'Jul 02 2022'
-image: './images/blog-placeholder-3.jpg'
+cover: '/images/blog-placeholder-3.jpg'
 ---
 
 In today's fast-paced digital world, efficiency and collaboration are key to successful design

@@ -2,7 +2,7 @@
 title: 'The Future of Design with Figma Land'
 description: 'Figma Land is at the cutting edge of this evolution, offering a platform'
 pubDate: 'Jul 02 2022'
-image: './images/blog-placeholder-4.jpg'
+cover: '/images/blog-placeholder-4.jpg'
 ---
 
 As technology continues to evolve, so too does the world of design. Figma Land is at the cutting
