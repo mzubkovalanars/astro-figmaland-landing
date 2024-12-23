@@ -4,10 +4,9 @@ import { render } from 'astro:content';
 import BlogLayout from '@layouts/BlogLayout.astro';
 import { changeLanguage } from 'i18next';
 
-export const prerender = true;
-
 changeLanguage('en');
 
+export const prerender = true;
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
