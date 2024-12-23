@@ -1,6 +1,10 @@
 ---
-import { t } from 'i18next';
+import { t, changeLanguage } from 'i18next';
 import { localizePath } from 'astro-i18next';
+import { getLangFromUrl } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+changeLanguage(lang);
 
 interface Props {
   status: string;
