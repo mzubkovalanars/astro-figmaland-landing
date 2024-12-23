@@ -10,6 +10,6 @@ export const prerender = true;
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<Layout title='login.page' description='login.page.description'>
-  <LoginDialog client:only='react' lang={lang} />
+<Layout title="login.page" description="login.page.description">
+  <LoginDialog client:only="react" lang={lang} />
 </Layout>

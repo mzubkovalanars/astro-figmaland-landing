@@ -8,9 +8,7 @@ import { changeLanguage } from 'i18next';
 changeLanguage('en');
 
 export const prerender = false;
-
 let data: Product[] = [];
-
 let error = null;
 try {
   const products = await getProducts('en');
@@ -26,9 +24,9 @@ if (error) {
 }
 ---
 
-<Layout title='products.page.title' description='products.page.description'>
+<Layout title="products.page.title" description="products.page.description">
   <section
-    class='mx-auto flex max-w-[1328px] flex-wrap items-center justify-start gap-8 px-14 py-12 sm:px-4 sm:py-6'
+    class="mx-auto flex max-w-[1328px] flex-wrap items-center justify-start gap-8 px-14 py-12 sm:px-4 sm:py-6"
   >
     {data.map((product) => <ProductCard product={product} />)}
   </section>

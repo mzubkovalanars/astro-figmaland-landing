@@ -3,11 +3,9 @@ import { changeLanguage } from 'i18next';
 import ErrorLayout from '@layouts/ErrorLayout.astro';
 import ErrorItem from '@components/common/ErrorItem.astro';
 
-changeLanguage('en');
-
-export const prerender = true;
+changeLanguage('no');
 ---
 
-<ErrorLayout title="error.page.title" description="error.page.404">
-  <ErrorItem status="404" text="error.page.404" />
+<ErrorLayout title="error.page.title" description="error.page.500">
+  <ErrorItem status="500" text="error.page.500" />
 </ErrorLayout>
