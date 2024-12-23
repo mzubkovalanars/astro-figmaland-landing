@@ -6,7 +6,7 @@ export default {
     debug: true,
     backend: {
       loadPath: './src/assets/locales/{{lng}}/{{ns}}.json',
-    }
+    },
   },
   routes: {
     no: {

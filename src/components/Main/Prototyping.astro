@@ -7,25 +7,25 @@ import PrototypingImgMobile from '@assets/images/prototyping-mob.png';
 
 <section>
   <div
-    class='mx-auto my-0 my-20 flex max-w-[1220px] items-center justify-between gap-[86px] overflow-hidden rounded-[33px] bg-primary-foreground lg:flex-col lg:gap-0 lg:rounded-none lg:bg-secondary-foreground sm:px-4 sm:my-0'
+    class="mx-auto my-20 flex max-w-[1220px] items-center justify-between gap-[86px] overflow-hidden rounded-[33px] bg-primary-foreground lg:flex-col lg:gap-0 lg:rounded-none lg:bg-secondary-foreground sm:my-0 sm:px-4"
   >
     <div
-      class='ml-[86px] flex min-w-[200px] max-w-[500px] flex-1 flex-col items-start justify-start py-[62px] lg:ml-0 lg:items-center md:py-[104px]'
+      class="ml-[86px] flex min-w-[200px] max-w-[500px] flex-1 flex-col items-start justify-start py-[62px] lg:ml-0 lg:items-center md:py-[104px]"
     >
-      <h2 class='mb-[37px] text-[52px] leading-[62px] lg:text-center md:max-w-[340px] sm:text-3xl'>
+      <h2 class="mb-[37px] text-[52px] leading-[62px] lg:text-center md:max-w-[340px] sm:text-3xl">
         {t('main.prototyping')}
       </h2>
-      <a href='#' target='_blank' class='btn btn-primary small'>{t('btn-try-for-free')}</a>
+      <a href="#" target="_blank" class="btn btn-primary small">{t('btn-try-for-free')}</a>
     </div>
-    <div class='flex w-full max-w-[585px] items-start justify-start md:h-auto'>
+    <div class="flex w-full max-w-[585px] items-start justify-start md:h-auto">
       <picture>
-        <source srcset={PrototypingImgMobile.src} media='(max-width: 768px)' />
+        <source srcset={PrototypingImgMobile.src} media="(max-width: 768px)" />
         <Image
           src={PrototypingImg}
-          alt='prototyping panel'
+          alt="prototyping panel"
           width={752}
           height={759}
-          quality='max'
+          quality="max"
           densities={[1, 1.5, 2]}
         />
       </picture>

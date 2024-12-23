@@ -33,8 +33,8 @@ export default function MenuDrawer({ lang, route }: MenuDrawerProps) {
       <DrawerTrigger asChild>
         <button className='menu-icon burger' aria-label='burger icon'></button>
       </DrawerTrigger>
-      <DrawerContent className='h-lvh w-80 p-4 right-0 left-auto items-center border-primary rounded-none drawer-content'>
-        <DrawerHeader className='place-items-center text-center p-0 w-full'>
+      <DrawerContent className='drawer-content left-auto right-0 h-lvh w-80 items-center rounded-none border-primary p-4'>
+        <DrawerHeader className='w-full place-items-center p-0 text-center'>
           <DrawerClose asChild>
             <Button
               variant='outline'
@@ -46,15 +46,15 @@ export default function MenuDrawer({ lang, route }: MenuDrawerProps) {
             <img src={LogoIcon.src} alt='figma land' width='206' height='76' />
           </a>
         </DrawerHeader>
-        <ul className='flex flex-col flex-1 items-center justify-center'>
+        <ul className='flex flex-1 flex-col items-center justify-center'>
           {navLinks.map((item) => (
-            <li className='p-[10px] line-hover' key={item.href}>
+            <li className='line-hover p-[10px]' key={item.href}>
               <a href={item.href}>{t(item.title)}</a>
             </li>
           ))}
           <a
             href='/login'
-            className='py-[13px] px-12 mt-4 border border-white sm:flex hidden blue-hover'
+            className='blue-hover mt-4 hidden border border-white px-12 py-[13px] sm:flex'
           >
             {t('nav.login')}
           </a>

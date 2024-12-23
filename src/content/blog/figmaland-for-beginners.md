@@ -1,7 +1,8 @@
 ---
 title: 'Figma Land for Beginners: Getting Started'
 description:
-  'Figma Land is an incredibly user-friendly platform that makes it easy for beginners to dive into the world of design.'
+  'Figma Land is an incredibly user-friendly platform that makes it easy for beginners to dive into
+  the world of design.'
 pubDate: 'Jul 02 2022'
 cover: '/images/blog-placeholder-2.jpg'
 ---

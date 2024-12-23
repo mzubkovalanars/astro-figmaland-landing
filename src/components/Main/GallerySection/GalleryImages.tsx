@@ -25,7 +25,7 @@ const GalleryImages: React.FC<GalleryImagesProps> = ({ lang }) => {
 
   return (
     <>
-      <div className='flex flex-wrap items-center justify-center gap-[33px] max-w-[1097px] my-11'>
+      <div className='my-11 flex max-w-[1097px] flex-wrap items-center justify-center gap-[33px]'>
         {displayedImages.map((image, i) => (
           <img
             key={image.src + i}
@@ -40,7 +40,7 @@ const GalleryImages: React.FC<GalleryImagesProps> = ({ lang }) => {
         ))}
       </div>
       {showAll ? null : (
-        <button onClick={() => setShowAll(!showAll)} className='px-4 py-2 btn btn-secondary small'>
+        <button onClick={() => setShowAll(!showAll)} className='btn btn-secondary small px-4 py-2'>
           {t('btn-more')}
         </button>
       )}
