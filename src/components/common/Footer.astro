@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { localizePath } from 'astro-i18next';
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { getLangFromUrl, useTranslatedPath, useTranslations } from '@i18n/utils';
 import {
   ADDRESS_COMPANY,
   PHONE_COMPANY,
@@ -14,19 +13,20 @@ import MobileIcon from '@assets/icons/phone-android.svg';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <footer
-  class="mx-auto max-w-[1078px] bg-transparent px-6 py-[107px] md:px-[30px] md:py-5 sm:px-4 sm:py-3"
+  class='mx-auto max-w-[1078px] bg-transparent px-6 py-[107px] md:px-[30px] md:py-5 sm:px-4 sm:py-3'
 >
-  <div class="flex flex-wrap items-center justify-between gap-[75px]">
-    <ul class="flex items-center gap-[75px] md:gap-6 sm:hidden">
+  <div class='flex flex-wrap items-center justify-between gap-[75px]'>
+    <ul class='flex items-center gap-[75px] md:gap-6 sm:hidden'>
       {
         navLinksFooter.map((item) => (
-          <li class="flex flex-col pr-6">
-            <p class="mb-10 text-xl font-medium">{t(item.title)}</p>
+          <li class='flex flex-col pr-6'>
+            <p class='mb-10 text-xl font-medium'>{t(item.title)}</p>
             {item.links.map((link) => (
-              <a href={localizePath(link.href)} class="line-hover mb-[18px] w-max last:mb-0">
+              <a href={translatePath(link.href)} class='line-hover mb-[18px] w-max last:mb-0'>
                 {t(link.title)}
               </a>
             ))}
@@ -34,21 +34,27 @@ const t = useTranslations(lang);
         ))
       }
     </ul>
-    <FooterNav client:only="react" lang={lang} />
-    <div class="flex flex-col items-start gap-[10px] tracking-[.015em]">
-      <div class="flex items-center gap-2">
-        <Image src={MapIcon} alt="figma land" class="h-11 w-11" />
+    <FooterNav client:only='react' lang={lang} />
+    <div class='flex flex-col items-start gap-[10px] tracking-[.015em]'>
+      <div class='flex items-center gap-2'>
+        <Image src={MapIcon} alt='figma land' class='h-11 w-11' />
         <p>{ADDRESS_COMPANY}</p>
       </div>
-      <div class="flex items-center gap-2">
-        <Image src={MobileIcon} alt="figma land" class="h-11 w-11" />
-        <a href={`tel:${PHONE_COMPANY}`} class="line-hover">{PHONE_COMPANY}</a>
+      <div class='flex items-center gap-2'>
+        <Image src={MobileIcon} alt='figma land' class='h-11 w-11' />
+        <a href={`tel:${PHONE_COMPANY}`} class='line-hover'>{PHONE_COMPANY}</a>
       </div>
-      <div class="flex items-start gap-6 py-5">
+      <div class='flex items-start gap-6 py-5'>
         {
           socialContactLinks.map((social) => (
-            <a href={social.href} target="_blank">
-              <Image src={social.src} alt={social.alt || ''} width="40" height="40" class="h-10" />
+            <a href={social.href} target='_blank'>
+              <Image
+                src={social.src}
+                alt={social.alt || ''}
+                width='40'
+                height='40'
+                class='h-10'
+              />
             </a>
           ))
         }

@@ -2,6 +2,7 @@
 export default {
   defaultLocale: 'en',
   locales: ['en', 'no'],
+  load: ['server'],
   i18nextServer: {
     debug: true,
     backend: {
