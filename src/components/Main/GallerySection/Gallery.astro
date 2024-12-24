@@ -6,8 +6,8 @@ import GalleryImages from './GalleryImages';
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<Section title='main.gallery' description='main.gallery.desc'>
-  <Fragment slot='content-section'>
-    <GalleryImages client:only='react' lang={lang} />
+<Section title="main.gallery" description="main.gallery.desc">
+  <Fragment slot="content-section">
+    <GalleryImages client:only="react" lang={lang} />
   </Fragment>
 </Section>

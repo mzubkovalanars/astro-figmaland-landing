@@ -1,11 +1,12 @@
-import react from '@astrojs/react';
-import mdx from '@astrojs/mdx';
-import node from '@astrojs/node';
-import tailwind from '@astrojs/tailwind';
-import vercel from '@astrojs/vercel/serverless';
-import sanity from '@sanity/astro';
-import astroI18next from 'astro-i18next';
+// @ts-check
 import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
+import tailwind from '@astrojs/tailwind';
+import node from '@astrojs/node';
+import vercel from '@astrojs/vercel';
+import mdx from '@astrojs/mdx';
+import astroI18next from 'astro-i18next';
+import sanity from '@sanity/astro';
 import dotenv from 'dotenv';
 import { loadEnv } from 'vite';
 
@@ -47,6 +48,5 @@ export default defineConfig({
       apiVersion: '2024-07-04',
     }),
   ],
-  output: 'hybrid',
   adapter,
 });

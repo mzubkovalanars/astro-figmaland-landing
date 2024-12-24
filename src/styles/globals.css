@@ -58,44 +58,44 @@
   }
 
   @font-face {
-    font-family: "Graphik";
+    font-family: 'Graphik';
     src:
-      url("/fonts/Graphik-Regular.woff") format("woff"),
-      url("/fonts/Graphik-Regular.woff2") format("woff2");
+      url('/fonts/Graphik-Regular.woff') format('woff'),
+      url('/fonts/Graphik-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Graphik";
+    font-family: 'Graphik';
     src:
-      url("/fonts/Graphik-Medium.woff") format("woff"),
-      url("/fonts/Graphik-Medium.woff2") format("woff2");
+      url('/fonts/Graphik-Medium.woff') format('woff'),
+      url('/fonts/Graphik-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Inter";
-    src: url("/fonts/Inter-Regular.ttf") format("truetype");
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Inter";
-    src: url("/fonts/Inter-Medium.ttf") format("truetype");
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "SpaceGrotesk";
-    src: url("/fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+    font-family: 'SpaceGrotesk';
+    src: url('/fonts/SpaceGrotesk-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -107,6 +107,7 @@
   }
 
   body {
+    font-family: 'Graphik', sans-serif;
     @apply bg-background text-light;
   }
 

@@ -10,6 +10,6 @@ export const prerender = true;
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<Layout title='contact.page' description='contact.page.description'>
-  <ContactDialog client:only='react' lang={lang} />
+<Layout title="contact.page" description="contact.page.description">
+  <ContactDialog client:only="react" lang={lang} />
 </Layout>

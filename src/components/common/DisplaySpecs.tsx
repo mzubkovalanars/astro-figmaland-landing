@@ -12,9 +12,9 @@ const DisplaySpecs = ({ lang, data }: DisplayProps) => {
     return null;
   }
   return (
-    <ul className='flex flex-col gap-3 items-start justify-start w-full p-2 mb-10 border border-primary rounded-sm'>
+    <ul className='mb-10 flex w-full flex-col items-start justify-start gap-3 rounded-sm border border-primary p-2'>
       {Object.entries(data).map(([key, value]) => (
-        <li key={key} className='flex gap-2 items-center justify-between w-full'>
+        <li key={key} className='flex w-full items-center justify-between gap-2'>
           <span className='text-sm'>{t(`products.${key}`)}</span>
           <span className='text-lg'>
             {typeof value === 'boolean' ? (value ? '+' : '-') : value}

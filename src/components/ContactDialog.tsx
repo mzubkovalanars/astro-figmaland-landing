@@ -71,32 +71,32 @@ const ContactDialog: React.FC<ContactDialogProps> = ({ lang }) => {
     <Dialog open={isOpenDialog} onOpenChange={(open) => setState({ ...state, isOpenDialog: open })}>
       <DialogContent
         hideCloseButton
-        className='flex flex-col items-center justify-center gap-0 sm:max-w-auto max-w-[1440px] w-full p-10 sm:py-5 sm:px-4 border-none bg-background'
+        className='sm:max-w-auto flex w-full max-w-[1440px] flex-col items-center justify-center gap-0 border-none bg-background p-10 sm:px-4 sm:py-5'
       >
-        <DialogTrigger asChild className='flex ml-auto w-max'>
+        <DialogTrigger asChild className='ml-auto flex w-max'>
           <DialogClose onClick={handleClose} aria-label='close dialog'>
             <X className='h-6 w-6' />
           </DialogClose>
         </DialogTrigger>
         {isFormDialog && (
           <>
-            <DialogHeader className='gap-[6px] sm:pt-3 items-center'>
-              <DialogTitle className='font-grotesk text-[54px] sm:text-3xl bg-gradient-to-r from-white to-gradient-violet bg-clip-text text-transparent tracking-tightest'>
+            <DialogHeader className='items-center gap-[6px] sm:pt-3'>
+              <DialogTitle className='bg-gradient-to-r from-white to-gradient-violet bg-clip-text font-grotesk text-[54px] tracking-tightest text-transparent sm:text-3xl'>
                 {t('contact.title')}
               </DialogTitle>
-              <DialogDescription className='font-inter text-[22px] sm:text-lg text-gray-text tracking-tightest text-center'>
+              <DialogDescription className='text-center font-inter text-[22px] tracking-tightest text-gray-text sm:text-lg'>
                 {t('contact.desc')}
               </DialogDescription>
             </DialogHeader>
-            <div className='flex justify-center gap-[30px] md:gap-5 md:flex-wrap mt-20 xl:mt-5 p-5 sm:p-3 font-inter max-w-[1092px] w-full rounded-[20px] bg-white/5'>
+            <div className='mt-20 flex w-full max-w-[1092px] justify-center gap-[30px] rounded-[20px] bg-white/5 p-5 font-inter xl:mt-5 md:flex-wrap md:gap-5 sm:p-3'>
               <form
                 onSubmit={handleSubmit}
-                className='flex flex-col flex-1 items-start w-full max-w-[506px] min-w-[288px] p-10 md:p-6 sm:p-3'
+                className='flex w-full min-w-[288px] max-w-[506px] flex-1 flex-col items-start p-10 md:p-6 sm:p-3'
               >
-                <p className='text-3xl sm:text-2xl font-medium mb-2'>{t('contact.form.title')}</p>
+                <p className='mb-2 text-3xl font-medium sm:text-2xl'>{t('contact.form.title')}</p>
                 <p className='text-[16px] sm:text-xs'>{t('contact.form.desc')}</p>
-                <div className='flex flex-col flex-1 gap-[14px]'>
-                  <div className='flex gap-[14px] mt-10 sm:mt-5'>
+                <div className='flex flex-1 flex-col gap-[14px]'>
+                  <div className='mt-10 flex gap-[14px] sm:mt-5'>
                     <input
                       id='lastName'
                       type='text'
@@ -140,10 +140,10 @@ const ContactDialog: React.FC<ContactDialogProps> = ({ lang }) => {
                   />
                   <Button
                     type='submit'
-                    className='leading-[18px] text-white justify-center h-max w-full py-3 px-8 sm:px-5 bg-contact-gradient hover:bg-none hover:bg-gradient-violet'
+                    className='h-max w-full justify-center bg-contact-gradient px-8 py-3 leading-[18px] text-white hover:bg-gradient-violet hover:bg-none sm:px-5'
                   >
                     {isLoading ? (
-                      <div className='w-[18px] h-[18px]'>
+                      <div className='h-[18px] w-[18px]'>
                         <Spinner />
                       </div>
                     ) : (
@@ -152,7 +152,7 @@ const ContactDialog: React.FC<ContactDialogProps> = ({ lang }) => {
                   </Button>
                 </div>
               </form>
-              <div className='flex md:hidden flex-col flex-1 justify-center w-full min-w-[288px]'>
+              <div className='flex w-full min-w-[288px] flex-1 flex-col justify-center md:hidden'>
                 <div className='flex flex-col justify-end gap-2 px-5 pb-12 text-[16px]'>
                   <img
                     src={AstronautImg.src}
@@ -178,4 +178,3 @@ const ContactDialog: React.FC<ContactDialogProps> = ({ lang }) => {
 };
 
 export default ContactDialog;
-

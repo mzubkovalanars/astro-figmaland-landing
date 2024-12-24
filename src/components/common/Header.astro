@@ -21,7 +21,7 @@ const translatePath = useTranslatedPath(lang);
         loading='eager'
       />
     </a>
-    <ul class='ml-11 flex items-center gap-8 lg:hidden'>
+    <ul class="ml-11 flex items-center gap-8 lg:hidden">
       {
         navLinks.map((item) => (
           <li class='p-[10px]'>
@@ -32,8 +32,8 @@ const translatePath = useTranslatedPath(lang);
         ))
       }
     </ul>
-    <div class='ml-auto flex items-center gap-5'>
-      <div class='lg:hidden'>
+    <div class="ml-auto flex items-center gap-5">
+      <div class="lg:hidden">
         <LanguageSelect client:load lng={lang} route={Astro.url.pathname} />
       </div>
       <a
@@ -43,6 +43,6 @@ const translatePath = useTranslatedPath(lang);
         {t('nav.login')}
       </a>
     </div>
-    <MenuDrawer client:only='react' lang={lang} route={Astro.url.pathname} />
+    <MenuDrawer client:only="react" lang={lang} route={Astro.url.pathname} />
   </div>
 </header>

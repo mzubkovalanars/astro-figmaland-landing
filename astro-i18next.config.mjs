@@ -2,8 +2,12 @@
 export default {
   defaultLocale: 'en',
   locales: ['en', 'no'],
+  load: ['server'],
   i18nextServer: {
-    debug: false,
+    debug: true,
+    backend: {
+      loadPath: './src/assets/locales/{{lng}}/{{ns}}.json',
+    },
   },
   routes: {
     no: {

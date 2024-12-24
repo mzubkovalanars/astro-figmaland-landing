@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
 import { changeLanguage } from 'i18next';
 import BaseHead from '@components/BaseHead.astro';
 import Header from '@components/common/Header.astro';
@@ -20,27 +19,26 @@ const lang = getLangFromUrl(Astro.url);
 <!doctype html>
 <html lang={lang}>
   <head>
-    <BaseHead title='blog.page.title' description='blog.page.description' />
+    <BaseHead title="blog.page.title" description="blog.page.description" />
   </head>
   <body>
     <Header />
-    <main class='mx-auto my-0 w-[1020px] font-grotesk lg:w-full'>
-      <section class='px-5 md:px-4 md:pb-16'>
-        <ul class='flex flex-wrap gap-x-6 gap-y-10 lg:justify-center'>
+    <main class="mx-auto my-0 w-[1020px] font-grotesk lg:w-full">
+      <section class="px-5 md:px-4 md:pb-16">
+        <ul class="flex flex-wrap gap-x-6 gap-y-10 lg:justify-center">
           {
             posts.map((post) => (
-              <li class='w-[calc(50%-1rem)] text-center transition-transform duration-200 ease-in-out first:w-full hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/50 lg:w-auto lg:first:w-auto'>
-                <a href={`/blog/${post.slug}/`}>
-                  <Image
+              <li class="w-[calc(50%-1rem)] text-center transition-transform duration-200 ease-in-out first:w-full hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/50 lg:w-auto lg:first:w-auto">
+                <a href={`/blog/${post.id}/`}>
+                  <img
                     width={720}
                     height={360}
-                    src={post.data.image}
+                    src={post.data.cover}
                     alt={post.data.title || ''}
-                    quality='max'
-                    class='mb-5 first:w-full'
+                    class="mb-5 first:w-full"
                   />
-                  <h4 class='text-3xl'>{post.data.title}</h4>
-                  <p class='date'>
+                  <h4 class="text-3xl">{post.data.title}</h4>
+                  <p class="date">
                     <FormattedDate date={post.data.pubDate} />
                   </p>
                 </a>

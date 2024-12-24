@@ -15,27 +15,27 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class='group relative font-grotesk sm:rounded-lg sm:border sm:border-purple-600'>
-  <div class='card-tilt sm:hidden'></div>
+<div class="group relative font-grotesk sm:rounded-lg sm:border sm:border-purple-600">
+  <div class="card-tilt sm:hidden"></div>
   <div
-    class='relative flex h-full min-h-[620px] max-w-[380px] flex-col gap-4 rounded-lg bg-background p-10 sm:min-h-full'
+    class="relative flex h-full min-h-[620px] max-w-[380px] flex-col gap-4 rounded-lg bg-background p-10 sm:min-h-full"
   >
     <img
-      width='500'
-      height='500'
+      width="500"
+      height="500"
       alt={image?.caption || ''}
       src={image
         ? urlFor(image).width(500).height(500).format('webp').quality(100).url()
         : DefaultImg.src}
     />
-    <h2 class='h-[72px] text-2xl sm:h-full'>{name}</h2>
-    <div class='mt-auto flex flex-col items-start gap-2 sm:mt-5'>
-      <p class='font-grotesk text-lg'>{description}</p>
-      <span class='text-sm'>$ {price}</span>
+    <h2 class="h-[72px] text-2xl sm:h-full">{name}</h2>
+    <div class="mt-auto flex flex-col items-start gap-2 sm:mt-5">
+      <p class="font-grotesk text-lg">{description}</p>
+      <span class="text-sm">$ {price}</span>
     </div>
     <a
       href={'products/' + slug.current}
-      class='mt-auto rounded-lg bg-purple-600 py-2 text-center hover:bg-pink-400 sm:mt-8'
+      class="mt-auto rounded-lg bg-purple-600 py-2 text-center hover:bg-pink-400 sm:mt-8"
     >
       {t('products.full')}
     </a>

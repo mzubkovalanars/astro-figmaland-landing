@@ -1,32 +1,35 @@
 ---
 import { Image } from 'astro:assets';
-import { t } from 'i18next';
 import ScreensImg from '@assets/images/screens.png';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<section class='flex flex-col items-center bg-background'>
+<section class="flex flex-col items-center bg-background">
   <div
-    class='flex max-w-[760px] flex-col items-center px-6 pt-[85px] pb-[50px] text-center md:max-w-[370px] md:px-[30px] sm:px-4 md:py-[57px]'
+    class="flex max-w-[760px] flex-col items-center px-6 pb-[50px] pt-[85px] text-center md:max-w-[370px] md:px-[30px] md:py-[57px] sm:px-4"
   >
     <h1
-      class='mb-[17px] p-[10px] text-[80px] leading-[88px] md:p-0 md:text-[52px] md:leading-[66px] sm:text-[38px]'
+      class="mb-[17px] p-[10px] text-[80px] leading-[88px] md:p-0 md:text-[52px] md:leading-[66px] sm:text-[38px]"
     >
       {t('main.screens')}
     </h1>
-    <p class='text-xl sm:text-xl'>{t('main.screens.desc')}</p>
+    <p class="text-xl sm:text-xl">{t('main.screens.desc')}</p>
   </div>
-  <div class='flex md:flex-col items-center gap-[35px] sm:gap-5 text-center mt-[35px] sm:mt-[57px]'>
-    <a href='#' target='_blank' class='btn btn-primary'>{t('btn-try-for-free')}</a>
-    <a href='#' target='_blank' class='btn btn-secondary'>{t('btn-learn-more')}</a>
+  <div class="mt-[35px] flex items-center gap-[35px] text-center md:flex-col sm:mt-[57px] sm:gap-5">
+    <a href="#" target="_blank" class="btn btn-primary">{t('btn-try-for-free')}</a>
+    <a href="#" target="_blank" class="btn btn-secondary">{t('btn-learn-more')}</a>
   </div>
   <div
-    class='gradient-img relative inline-block mt-[35px] mb-[160px] md:mb-0 sm:mt-[57px] before:top-67.1 before:max-h-full before:h-gradient'
+    class="gradient-img before:top-67.1 relative mb-[160px] mt-[35px] inline-block before:h-gradient before:max-h-full md:mb-0 sm:mt-[57px]"
   >
     <Image
       src={ScreensImg}
-      quality='max'
-      alt='graphics'
-      loading='eager'
+      quality="max"
+      alt="graphics"
+      loading="eager"
       widths={[240, 540, 720, ScreensImg.width]}
       sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, ${ScreensImg.width}px`}
     />

@@ -19,7 +19,7 @@ const components: PortableTextComponents = {
     h2: ({ children }) => <h2 className='font-grotesk text-2xl font-semibold'>{children}</h2>,
     normal: ({ children }) => <p className='font-grotesk'>{children}</p>,
     blockquote: ({ children }) => (
-      <blockquote className='font-grotesk border-l-4 border-gray-300 pl-4 italic text-gray-600'>
+      <blockquote className='border-l-4 border-gray-300 pl-4 font-grotesk italic text-gray-600'>
         {children}
       </blockquote>
     ),
