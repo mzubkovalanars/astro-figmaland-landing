@@ -1,26 +1,31 @@
 ---
 import { Image } from 'astro:assets';
-import { localizePath } from 'astro-i18next';
-import { t } from 'i18next';
 import LanguageSelect from '@components/common/LanguageSelect';
 import MenuDrawer from '@components/common/MenuDrawer';
 import LogoIcon from '@assets/icons/logo.svg';
-import { getLangFromUrl } from '@i18n/utils';
+import { getLangFromUrl, useTranslatedPath, useTranslations } from '@i18n/utils';
 import { navLinks } from '@utils/constants';
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<header class="paddings-x sticky left-0 right-0 top-0 z-50 w-full bg-background">
-  <div class="mx-auto my-0 flex w-full max-w-[1098px] items-center py-5 md:py-[14px]">
-    <a href={localizePath('/')} class="py-[10px]">
-      <Image src={LogoIcon} quality="max" alt="figma land" loading="eager" />
+<header class='paddings-x sticky left-0 right-0 top-0 z-50 w-full bg-background'>
+  <div class='mx-auto my-0 flex w-full max-w-[1098px] items-center py-5 md:py-[14px]'>
+    <a href={translatePath('/')} class="py-[10px]">
+      <Image
+        src={LogoIcon}
+        quality='max'
+        alt='figma land'
+        loading='eager'
+      />
     </a>
     <ul class="ml-11 flex items-center gap-8 lg:hidden">
       {
         navLinks.map((item) => (
-          <li class="p-[10px]">
-            <a href={localizePath(item.href)} class="line-hover pb-1">
+          <li class='p-[10px]'>
+            <a href={translatePath(item.href)} class='line-hover pb-1'>
               {t(item.title)}
             </a>
           </li>
@@ -32,8 +37,8 @@ const lang = getLangFromUrl(Astro.url);
         <LanguageSelect client:load lng={lang} route={Astro.url.pathname} />
       </div>
       <a
-        href={localizePath('/login/')}
-        class="blue-hover border border-white px-12 py-[13px] sm:hidden"
+        href={translatePath('/login/')}
+        class='blue-hover border border-white px-12 py-[13px] sm:hidden'
       >
         {t('nav.login')}
       </a>
